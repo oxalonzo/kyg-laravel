@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
-//guess-pages
+//guest-pages---------------------------------------------------------------
+
 
 Route::get('/', function () {
     return view('guest-pages/home');
@@ -30,7 +31,9 @@ Route::get('/contacto', function () {
     return view('guest-pages/contacto');
 })->name('contacto');
 
-//auth-user
+
+//auth-user--------------------------------------------------------------
+
 
 //dashboard
 Route::get('/dashboard', function () {
@@ -39,7 +42,7 @@ Route::get('/dashboard', function () {
 
 //banner
 Route::get('/banner', function () {
-    return view('admin-pages/banner');
+    return view('banner-admin/index');
 })->middleware(['auth', 'verified'])->name('banner.index');
 
 //informacion-general
@@ -49,7 +52,7 @@ Route::get('/informacion', function () {
 
 //redes-sociales
 Route::get('/Social', function () {
-    return view('admin-pages/Social');
+    return view('admin-pages/social');
 })->middleware(['auth', 'verified'])->name('Social.index');
 
 //nuestra-historia
@@ -59,13 +62,16 @@ Route::get('/nuestra-historia', function () {
 
 //actividades
 Route::get('/actividades-admin', function () {
-    return view('admin-pages/actividades-admin');
-})->middleware(['auth', 'verified'])->name('actividades.index');
+    return view('actividades-admin/index');
+})->middleware(['auth', 'verified'])->name('actividades-admin.index');
 
 //servicios
 Route::get('/servicios-admin', function () {
     return view('admin-pages/servicios-admin');
 })->middleware(['auth', 'verified'])->name('servicios.index');
+
+
+//profile--------------------------------------------------------------------------------------
 
 
 Route::middleware('auth')->group(function () {

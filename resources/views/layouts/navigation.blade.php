@@ -32,7 +32,7 @@
                         {{ __('nuestra historía') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('actividades.index')" :active="request()->routeIs('actividades.index')">
+                    <x-nav-link :href="route('actividades-admin.index')" :active="request()->routeIs('actividades-admin.index')">
                         {{ __('actividades') }}
                     </x-nav-link>
 
