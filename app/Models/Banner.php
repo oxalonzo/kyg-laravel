@@ -21,4 +21,12 @@ class Banner extends Model
         'imagen_banner',
         'user_id',
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }

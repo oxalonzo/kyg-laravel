@@ -12,10 +12,12 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //muestra la vista de candidatos
+        
         // return view('candidatos.index', [
         //     'vacante' => $vacante,
         // ]);
+
+        return view('banner-admin.index');
     }
 
     /**
@@ -23,7 +25,8 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
+        //crea un nuevo banner
+        return view('banner-admin.edit');
     }
 
 

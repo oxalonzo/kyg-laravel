@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InformacionGeneralController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RedSocialController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,39 +40,28 @@ Route::get('/contacto', function () {
 
 
 //dashboard
-Route::get('/dashboard', function () {
-    return view('admin-pages/dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
 
 //banner
-Route::get('/banner', function () {
-    return view('banner-admin/index');
-})->middleware(['auth', 'verified'])->name('banner.index');
+Route::get('/banner', [BannerController::class, 'index'])->middleware(['auth', 'verified'])->name('banner.index');
+Route::get('/banner/create', [BannerController::class, 'create'])->middleware(['auth', 'verified'])->name('banner.create');
+Route::post('/banner/store', [BannerController::class, 'store'])->middleware(['auth', 'verified'])->name('banner.store');
 
 //informacion-general
-Route::get('/informacion', function () {
-    return view('admin-pages/informacion');
-})->middleware(['auth', 'verified'])->name('informacion.index');
+Route::get('/informacion', [InformacionGeneralController::class, 'index'])->middleware(['auth', 'verified'])->name('informacion.index');
 
 //redes-sociales
-Route::get('/Social', function () {
-    return view('admin-pages/social');
-})->middleware(['auth', 'verified'])->name('Social.index');
+Route::get('/Social', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('Social.index');
 
 //nuestra-historia
-Route::get('/nuestra-historia', function () {
-    return view('admin-pages/nuestra-historia');
-})->middleware(['auth', 'verified'])->name('nuestra-historia.index');
+Route::get('/nuestra-historia', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('nuestra-historia.index');
 
 //actividades
-Route::get('/actividades-admin', function () {
-    return view('actividades-admin/index');
-})->middleware(['auth', 'verified'])->name('actividades-admin.index');
+Route::get('/actividades-admin', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('actividades-admin.index');
 
 //servicios
-Route::get('/servicios-admin', function () {
-    return view('admin-pages/servicios-admin');
-})->middleware(['auth', 'verified'])->name('servicios.index');
+Route::get('/servicios-admin', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('servicios.index');
 
 
 //profile--------------------------------------------------------------------------------------
