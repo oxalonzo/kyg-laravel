@@ -11,44 +11,36 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                {{-- <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("estoy en el editar banner!") }}
-                </div> --}}
+    <div class="py-12 flex justify-center">
 
-                <div class="container">
-                    <h2>Crear nuevo Banner</h2>
-                
-                    @if(session('success'))
-                        <div style="color: green;">{{ session('success') }}</div>
-                    @endif
-                
-                    @if ($errors->any())
-                        <div style="color: red;">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                
-                    <form action="{{ route('banner.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                
-                        <div>
-                            <label for="imagen_banner">Imagen del banner:</label><br>
-                            <input type="file" name="imagen_banner" required>
-                        </div>
-                
-                        <br>
-                
-                        <button type="submit">Guardar Banner</button>
-                    </form>
-                </div>
+
+        <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
+
+            <div class="flex justify-end items-center">
+                <x-link :href="route('banner.index')" class=" border border-yellow-300 p-3 text-xs text-gray-600 dark:text-gray-600 hover:text-gray-900 font-bold dark:hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300 dark:focus:ring-offset-2">
+                   Volver a los banners
+                </x-link>
             </div>
+
+            <form action="{{ route('banner.update', $banner->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+            
+                <div class="mb-4">
+                    <label for="imagen_banner" class="block text-sm font-medium text-gray-700">Imagen del Banner</label>
+                    <input type="file" name="imagen_banner" id="imagen_banner" class="mt-1 block w-full">
+                    <img src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" alt="Imagen Banner" class="mt-4 w-1/2">
+                </div>
+            
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+                    Guardar Cambios
+                </button>
+            </form>
+    
+            
         </div>
+      
+
+
     </div>
 </x-app-layout>
