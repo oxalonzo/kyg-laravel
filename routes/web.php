@@ -43,17 +43,28 @@ Route::get('/contacto', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-//banner
-Route::get('/banner', [BannerController::class, 'index'])->middleware(['auth', 'verified'])->name('banner.index');
-Route::get('/banner/create', [BannerController::class, 'create'])->middleware(['auth', 'verified'])->name('banner.create');
-Route::post('/banner/store', [BannerController::class, 'store'])->middleware(['auth', 'verified'])->name('banner.store');
-// Ruta para mostrar el formulario de edición de un banner
-Route::get('/banner/{id}/edit', [BannerController::class, 'edit'])->middleware(['auth', 'verified'])->name('banner.edit');
-// Ruta para actualizar el banner (POST que hace PUT)
-Route::put('/banner/{id}', [BannerController::class, 'update'])->middleware(['auth', 'verified'])->name('banner.update');
-// Ruta para eliminar el banner
-Route::delete('/banner/{id}', [BannerController::class, 'destroy'])->middleware(['auth', 'verified'])->name('banner.destroy');
+// //banner
+// Route::get('/banner', [BannerController::class, 'index'])->middleware(['auth', 'verified'])->name('banner.index');
+// Route::get('/banner/create', [BannerController::class, 'create'])->middleware(['auth', 'verified'])->name('banner.create');
+// Route::post('/banner/store', [BannerController::class, 'store'])->middleware(['auth', 'verified'])->name('banner.store');
+// // Ruta para mostrar el formulario de edición de un banner
+// Route::get('/banner/{id}/edit', [BannerController::class, 'edit'])->middleware(['auth', 'verified'])->name('banner.edit');
+// // Ruta para actualizar el banner (POST que hace PUT)
+// Route::put('/banner/{id}', [BannerController::class, 'update'])->middleware(['auth', 'verified'])->name('banner.update');
+// // Ruta para eliminar el banner
+// Route::delete('/banner/{id}', [BannerController::class, 'destroy'])->middleware(['auth', 'verified'])->name('banner.destroy');
 
+
+ // Grupo de rutas protegidas por middleware 'auth' y 'verified'
+Route::middleware(['auth', 'verified'])->group(function () {
+    //banner
+    Route::get('/banner', [BannerController::class, 'index'])->name('banner.index');
+    Route::get('/banner/create', [BannerController::class, 'create'])->name('banner.create');
+    Route::post('/banner/store', [BannerController::class, 'store'])->name('banner.store');
+    Route::get('/banner/{id}/edit', [BannerController::class, 'edit'])->name('banner.edit');
+    Route::put('/banner/{id}', [BannerController::class, 'update'])->name('banner.update');
+    Route::delete('/banner/{id}', [BannerController::class, 'destroy'])->name('banner.destroy');
+});
 
 //informacion-general
 Route::get('/informacion', [InformacionGeneralController::class, 'index'])->middleware(['auth', 'verified'])->name('informacion.index');
