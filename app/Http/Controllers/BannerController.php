@@ -38,7 +38,7 @@ class BannerController extends Controller
     {
         //validar si envio el banner
         $request->validate([
-            'imagen_banner' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'imagen_banner' => 'required|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', //100mb max
         ]);
 
 
@@ -93,9 +93,10 @@ class BannerController extends Controller
      // Actualizar un banner en la base de datos
      public function update(Request $request, $id)
      {
-         $request->validate([
-             'imagen_banner' => 'image|mimes:jpeg,png,jpg,gif',
-         ]);
+        $request->validate([
+            'imagen_banner' => 'nullable|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', // hasta 100MB
+        ]);
+        
  
          $banner = Banner::findOrFail($id); // Encuentra el banner
  

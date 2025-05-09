@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Informacion_General;
+
 use Illuminate\Http\Request;
+use App\Models\Informacion_General;
+use Illuminate\Support\Facades\Auth;
 
 class InformacionGeneralController extends Controller
 {
@@ -16,7 +18,8 @@ class InformacionGeneralController extends Controller
         //     'vacante' => $vacante,
         // ]);
 
-        return view('admin-pages.informacion');
+        $informaciones = Informacion_General::paginate(2);
+        return view('admin-informacion.index', compact('informaciones'));
     }
 
 
@@ -25,6 +28,9 @@ class InformacionGeneralController extends Controller
      */
     public function create()
     {
+
+        //para ver la view para crear nuevas informaciones
+        return view('admin-informacion.create');
        
     }
 
@@ -34,6 +40,25 @@ class InformacionGeneralController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'titulo_info_general' => 'required|string|max:255',
+            'descripcion_info' => 'required|string',
+            'imagen_info' => 'required|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', //100mb max
+        ]);
+
+
+        $imagePath = $request->file('imagen_info')->store('info_img', 'public');
+        $filename = basename($imagePath);
+
+        Informacion_General::create([
+            'titulo_info_general' => $request->titulo_info_general,
+            'descripcion_info' =>  $request->descripcion_info,
+            'imagen_info' => $filename,
+            'user_id' => Auth::id()
+        ]);
+
+        return redirect()->route('informacion.index')->with('success', 'información General creada correctamente');
         
 
     }
@@ -51,6 +76,9 @@ class InformacionGeneralController extends Controller
      */
     public function edit($id)
     {
+
+        // $informacion = Informacion_General::findOrFail($id); //encuentra la informacion por id 
+        // return view('informacion-admin.edit', compact($informacion));
         
     }
 

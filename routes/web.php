@@ -67,7 +67,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 //informacion-general
-Route::get('/informacion', [InformacionGeneralController::class, 'index'])->middleware(['auth', 'verified'])->name('informacion.index');
+Route::middleware(['auth', 'verified'])->group(function () {
+    //banner
+    Route::get('/informacion', [InformacionGeneralController::class, 'index'])->name('informacion.index');
+    Route::get('/informacion/create', [InformacionGeneralController::class, 'create'])->name('informacion.create');
+    Route::post('/informacion/store', [InformacionGeneralController::class, 'store'])->name('informacion.store');
+    Route::get('/informacion/{id}/edit', [InformacionGeneralController::class, 'edit'])->name('informacion.edit');
+    Route::put('/informacion/{id}', [InformacionGeneralController::class, 'update'])->name('informacion.update');
+    Route::delete('/informacion/{id}', [InformacionGeneralController::class, 'destroy'])->name('informacion.destroy');
+});
 
 //redes-sociales
 Route::get('/Social', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('Social.index');

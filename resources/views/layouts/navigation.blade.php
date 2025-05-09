@@ -20,23 +20,23 @@
                         {{ __('Banner') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('informacion.index')" :active="request()->routeIs('informacion.index')">
+                    <x-nav-link :href="route('informacion.index')" :active="request()->routeIs('informacion.*')">
                         {{ __('información') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('Social.index')" :active="request()->routeIs('Social.index')">
+                    <x-nav-link :href="route('Social.index')" :active="request()->routeIs('Social.*')">
                         {{ __('Redes Social') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('nuestra-historia.index')" :active="request()->routeIs('nuestra-historia.index')">
+                    <x-nav-link :href="route('nuestra-historia.index')" :active="request()->routeIs('nuestra-historia.*')">
                         {{ __('nuestra historía') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('actividades-admin.index')" :active="request()->routeIs('actividades-admin.index')">
+                    <x-nav-link :href="route('actividades-admin.index')" :active="request()->routeIs('actividades-admin.*')">
                         {{ __('actividades') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('servicios.index')" :active="request()->routeIs('servicios.index')">
+                    <x-nav-link :href="route('servicios.index')" :active="request()->routeIs('servicios.*')">
                         {{ __('servicios') }}
                     </x-nav-link>
 
@@ -61,7 +61,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Perfil') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -71,7 +71,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar sesión') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

@@ -15,7 +15,7 @@
 
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
 
-            <div class="flex justify-end items-center">
+            <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('banner.index')"
                     class=" border border-yellow-300 p-3 text-xs text-gray-900 dark:text-gray-900 hover:text-gray-900 font-bold dark:hover:text-gray-900 rounded-md focus:outline-none bg-yellow-300 hover:bg-transparent">
                     Ver todos los banners
@@ -35,13 +35,19 @@
                         class="mb-2 block uppercase text-gray-500 font-bold" />
 
                     <x-text-input id="imagen_banner" class="border p-3 w-full" type="file" name="imagen_banner"
-                        :value="old('imagen_banner')"  accept="image/*" onchange="previewImage(event)" />
+                        :value="old('imagen_banner')"  accept="image/*,video/mp4,video/webm,video/ogg" onchange="previewMedia(event)" />
 
-                    <!-- Contenedor del preview -->
-                    <div id="preview-container" class="mt-4 w-[300px] h-[200px]">
-                        <img id="image-preview" src="" alt="Vista previa de la imagen"
-                            class=" max-w-md rounded-lg shadow hidden w-full h-full object-cove" />
-                    </div>
+                   <!-- Contenedor del preview -->
+                   <div id="preview-container" class="mt-4  w-[300px] h-[200px] relative hidden">
+                    <img id="image-preview" src="" alt="Vista previa de la imagen"
+                      class="max-w-md rounded-lg shadow hidden w-full h-full object-cover" />
+    
+                    <video id="video-preview" controls
+                    class="max-w-md rounded-lg shadow hidden w-full h-full object-cover">
+                    <source id="video-source" src="" type="">
+                     Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
 
 
                 </div>
@@ -61,19 +67,44 @@
 
 
 <script>
-    function previewImage(event) {
+    function previewMedia(event) {
         const input = event.target;
-        const preview = document.getElementById('image-preview');
+        const file = input.files[0];
+        const previewContainer = document.getElementById('preview-container');
+        const imagePreview = document.getElementById('image-preview');
+        const videoPreview = document.getElementById('video-preview');
+        const videoSource = document.getElementById('video-source');
 
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
+        // Reset
+        imagePreview.classList.add('hidden');
+        videoPreview.classList.add('hidden');
+        imagePreview.src = '';
+        videoSource.src = '';
+        videoPreview.load();
 
-            reader.onload = function (e) {
-                preview.src = e.target.result;
-                preview.classList.remove('hidden');
-            }
-
-            reader.readAsDataURL(input.files[0]);
+        if (!file) {
+            previewContainer.classList.add('hidden');
+            return;
         }
+
+        const reader = new FileReader();
+        const fileType = file.type;
+
+        reader.onload = function (e) {
+
+            previewContainer.classList.remove('hidden');
+
+            if (fileType.startsWith('image/')) {
+                imagePreview.src = e.target.result;
+                imagePreview.classList.remove('hidden');
+            } else if (fileType.startsWith('video/')) {
+                videoSource.src = e.target.result;
+                videoSource.type = fileType;
+                videoPreview.load();
+                videoPreview.classList.remove('hidden');
+            }
+        };
+
+        reader.readAsDataURL(file);
     }
 </script>
