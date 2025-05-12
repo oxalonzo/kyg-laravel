@@ -11,7 +11,7 @@
 
     <div class="py-12 flex justify-center h-full">
 
-        <div class="md:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
+        <div class="md:w-3/4 p-10 bg-[url(https://i.pinimg.com/736x/bc/5a/98/bc5a986fae1696fd97ebb08f33493d89.jpg)] bg-no-repeat bg-cover brightness-90 rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
 
             <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('Social.create')"
@@ -39,7 +39,7 @@
 
                     
                         <div
-                            class="w-full bg-white p-6 rounded-lg shadow-sm shadow-gray-600 flex flex-col lg:flex-row gap-4">
+                            class="w-full bg-white/30 border border-white/40 backdrop-blur-xl p-6 rounded-lg shadow-md shadow-gray-600 flex flex-col lg:flex-row gap-4">
                             <!-- Imagen o video (65%) -->
                             <div class="w-full lg:w-[65%] flex justify-center items-center">
                                 @php
@@ -64,10 +64,10 @@
                             <!-- Información (35%) -->
                             <div class="w-full lg:w-[35%] flex flex-col justify-between">
                                 <!-- enlace -->
-                                <a href="{{ $publicacion->enlace_social }}" target="_blank" class="text-2xl font-bold text-yellow-300 mb-2">Ver publicacion</a>
+                                <a href="{{ $publicacion->enlace_social }}" target="_blank" class="text-2xl font-bold text-white hover:text-yellow-300 mb-2">Ver publicacion</a>
 
                                 <!-- Descripción -->
-                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                                <p class="text-white mb-4 text-sm leading-relaxed">
                                     {{ $publicacion->descripcion_social }}</p>
 
                                 <!-- Acciones -->
@@ -110,7 +110,7 @@
 
             </div>
 
-            <div class=" mt-6 ">
+            <div class=" mt-6">
                 {{ $publicaciones->links() }}
             </div>
 

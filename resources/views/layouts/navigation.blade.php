@@ -96,6 +96,30 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('banner.index')" :active="request()->routeIs('banner.*')">
+                {{ __('Banner') }}
+            </x-responsive-nav-link>
+            
+            <x-responsive-nav-link :href="route('informacion.index')" :active="request()->routeIs('informacion.*')">
+                {{ __('información') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('Social.index')" :active="request()->routeIs('Social.*')">
+                {{ __('Redes Social') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('historia.index')" :active="request()->routeIs('historia.*')">
+                {{ __('nuestra historía') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('actividades-admin.index')" :active="request()->routeIs('actividades-admin.*')">
+                {{ __('actividades') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('servicios.index')" :active="request()->routeIs('servicios.*')">
+                {{ __('servicios') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
