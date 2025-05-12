@@ -1,5 +1,5 @@
 @section('titulo')
-    Editar Información
+    Editar Publicación
 @endsection
 
 <x-app-layout>
@@ -14,14 +14,14 @@
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 ">
 
             <div class="flex justify-end items-center mb-4">
-                <x-link :href="route('informacion.index')"
+                <x-link :href="route('Social.index')"
                     class=" border border-yellow-300 p-3 text-xs text-gray-900 dark:text-gray-900 hover:text-gray-900 font-bold dark:hover:text-gray-900 rounded-md focus:outline-none bg-yellow-300 hover:bg-transparent">
-                    Ver las informaciones
+                    Volver a las Publicaciones
                 </x-link>
             </div>
 
 
-            <form action="{{ route('informacion.update', $informacion->id) }}" method="POST"
+            <form action="{{ route('Social.update', $publicacion->id) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -30,33 +30,33 @@
 
                     <!--titulo info general-->
 
-                    <x-input-label for="titulo_info_general" :value="__('Titulo información general')"
+                    <x-input-label for="enlace_social" :value="__('Titulo información general')"
                         class="mb-2 block uppercase text-gray-500 font-bold" />
 
-                    <x-text-input id="titulo_info_general" class=" p-3 w-full mb-4 " type="text"
-                        name="titulo_info_general" :value="old('titulo_info_general', $informacion->titulo_info_general ?? '' )" />
+                    <x-text-input id="enlace_social" class=" p-3 w-full mb-4 " type="text"
+                        name="enlace_social" :value="old('enlace_social', $publicacion->enlace_social ?? '' )" />
 
-                    <x-input-error :messages="$errors->get('titulo_info_general')" class="mt-2 mb-3" />
+                    <x-input-error :messages="$errors->get('enlace_social')" class="mt-2 mb-3" />
 
                     <!-- descripcion info general-->
 
-                    <x-input-label for="descripcion_info" :value="__('Descripción información general')"
+                    <x-input-label for="descripcion_social" :value="__('Descripción información general')"
                         class="mb-2 block uppercase text-gray-500 font-bold" />
 
-                    <textarea id="descripcion_info" name="descripcion_info"
+                    <textarea id="descripcion_social" name="descripcion_social"
                         class="border p-3 w-full rounded-md shadow-sm focus:ring-none focus:ring-yellow-300 dark:focus:ring-yellow-300 focus:border-yellow-300 dark:focus:border-yellow-300"
-                        rows="4">{{ old('descripcion_info', $informacion->descripcion_info) }}</textarea>
+                        rows="4">{{ old('descripcion_social', $publicacion->descripcion_social) }}</textarea>
 
-                    <x-input-error :messages="$errors->get('descripcion_info')" class="mt-2 mb-3" />
+                    <x-input-error :messages="$errors->get('descripcion_social')" class="mt-2 mb-3" />
 
                     <!-- imagen info general-->
 
-                    <x-input-label for="imagen_info" :value="__('Imagen del Banner')"
+                    <x-input-label for="imagen_social" :value="__('Imagen del Banner')"
                         class="mb-2 block uppercase  text-gray-500 font-bold" />
 
 
-                    <x-text-input id="imagen_info" class="border p-3 w-full" type="file" name="imagen_info"
-                        :value="old('imagen_info')" accept="image/*,video/mp4,video/webm,video/ogg"
+                    <x-text-input id="imagen_social" class="border p-3 w-full" type="file" name="imagen_social"
+                        :value="old('imagen_social')" accept="image/*,video/mp4,video/webm,video/ogg"
                         onchange="previewMedia(event)" />
 
 
@@ -66,18 +66,18 @@
                             <x-input-label :value="__('Archivo Actual')" class="mb-2 block uppercase text-gray-500 font-bold" />
 
                             @php
-                                $extension = pathinfo($informacion->imagen_info, PATHINFO_EXTENSION);
+                                $extension = pathinfo($publicacion->imagen_social, PATHINFO_EXTENSION);
                                 $isVideo = in_array($extension, ['mp4', 'webm', 'ogg']);
                             @endphp
 
                             @if ($isVideo)
                                 <video controls class="rounded-lg shadow-md w-full h-full object-cover">
-                                    <source src="{{ asset('storage/info_img/' . $informacion->imagen_info) }}"
+                                    <source src="{{ asset('storage/social_img/' . $publicacion->imagen_social) }}"
                                         type="video/{{ $extension }}">
                                     Tu navegador no soporta el video.
                                 </video>
                             @else
-                                <img src="{{ asset('storage/info_img/' . $informacion->imagen_info) }}"
+                                <img src="{{ asset('storage/social_img/' . $publicacion->imagen_social) }}"
                                     alt="Imagen info" class="rounded-lg shadow-md w-full h-full object-cover">
                             @endif
                         </div>

@@ -28,7 +28,7 @@
                         {{ __('Redes Social') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('nuestra-historia.index')" :active="request()->routeIs('nuestra-historia.*')">
+                    <x-nav-link :href="route('historia.index')" :active="request()->routeIs('historia.*')">
                         {{ __('nuestra historía') }}
                     </x-nav-link>
 

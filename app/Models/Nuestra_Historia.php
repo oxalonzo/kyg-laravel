@@ -21,5 +21,7 @@ class Nuestra_Historia extends Model
         'to_year',
         'empresa',
         'ubicacion',
+        'descripcion_historia',
+        'user_id'
     ];
 }

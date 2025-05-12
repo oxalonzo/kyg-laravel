@@ -17,6 +17,7 @@ class Red_Social extends Model
       * @var list<string>
       */
      protected $fillable = [
+         'imagen_social',
          'enlace_social',
          'descripcion_social',
          'user_id',

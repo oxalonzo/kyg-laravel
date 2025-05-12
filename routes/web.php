@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InformacionGeneralController;
+use App\Http\Controllers\NuestraHistoriaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RedSocialController;
+use App\Http\Controllers\ServicioController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -68,7 +71,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 //informacion-general
 Route::middleware(['auth', 'verified'])->group(function () {
-    //banner
+    //informacion general 
     Route::get('/informacion', [InformacionGeneralController::class, 'index'])->name('informacion.index');
     Route::get('/informacion/create', [InformacionGeneralController::class, 'create'])->name('informacion.create');
     Route::post('/informacion/store', [InformacionGeneralController::class, 'store'])->name('informacion.store');
@@ -78,16 +81,32 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 //redes-sociales
-Route::get('/Social', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('Social.index');
+Route::middleware(['auth', 'verified'])->group(function () {
+    //red social
+    Route::get('/Social', [RedSocialController::class, 'index'])->name('Social.index');
+    Route::get('/Social/create', [RedSocialController::class, 'create'])->name('Social.create');
+    Route::post('/Social/store', [RedSocialController::class, 'store'])->name('Social.store');
+    Route::get('/Social/{id}/edit', [RedSocialController::class, 'edit'])->name('Social.edit');
+    Route::put('/Social/{id}', [RedSocialController::class, 'update'])->name('Social.update');
+    Route::delete('/Social/{id}', [RedSocialController::class, 'destroy'])->name('Social.destroy');
+});
 
-//nuestra-historia
-Route::get('/nuestra-historia', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('nuestra-historia.index');
+//historia
+Route::middleware(['auth', 'verified'])->group(function () {
+    //red social
+    Route::get('/historia', [NuestraHistoriaController::class, 'index'])->name('historia.index');
+    Route::get('/historia/create', [NuestraHistoriaController::class, 'create'])->name('historia.create');
+    Route::post('/historia/store', [NuestraHistoriaController::class, 'store'])->name('historia.store');
+    Route::get('/historia/{id}/edit', [NuestraHistoriaController::class, 'edit'])->name('historia.edit');
+    Route::put('/historia/{id}', [NuestraHistoriaController::class, 'update'])->name('historia.update');
+    Route::delete('/historia/{id}', [NuestraHistoriaController::class, 'destroy'])->name('historia.destroy');
+});
 
 //actividades
-Route::get('/actividades-admin', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('actividades-admin.index');
+Route::get('/actividades-admin', [ActividadController::class, 'index'])->middleware(['auth', 'verified'])->name('actividades-admin.index');
 
 //servicios
-Route::get('/servicios-admin', [RedSocialController::class, 'index'])->middleware(['auth', 'verified'])->name('servicios.index');
+Route::get('/servicios-admin', [ServicioController::class, 'index'])->middleware(['auth', 'verified'])->name('servicios.index');
 
 
 //profile--------------------------------------------------------------------------------------

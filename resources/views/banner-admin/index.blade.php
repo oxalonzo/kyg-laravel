@@ -33,11 +33,11 @@
                 </div>
             @endif
 
-            <div class="container flex justify-center items-center flex-col lg:flex-col p-5 h-full  ">
-
                 @if ($banners->isEmpty())
                     <p class="mt-4">No hay banners disponibles aun. Por favor cree un banner</p>
                 @else
+
+                <div class="container flex justify-center items-center flex-col lg:flex-col p-5 h-full  ">
                     @foreach ($banners as $banner)
                         <!-- Contenedor del banner con imagen y acciones -->
                         <div

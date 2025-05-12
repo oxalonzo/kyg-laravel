@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class InformacionGeneralController extends Controller
 {
-    
+
 
     public function index()
     {
-        
+
         // return view('candidatos.index', [
         //     'vacante' => $vacante,
         // ]);
@@ -23,7 +23,7 @@ class InformacionGeneralController extends Controller
     }
 
 
-     /**
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -31,7 +31,6 @@ class InformacionGeneralController extends Controller
 
         //para ver la view para crear nuevas informaciones
         return view('admin-informacion.create');
-       
     }
 
 
@@ -59,17 +58,12 @@ class InformacionGeneralController extends Controller
         ]);
 
         return redirect()->route('informacion.index')->with('success', 'información General creada correctamente');
-        
-
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Informacion_General $Banner)
-    {
-        
-    }
+    public function show(Informacion_General $Banner) {}
 
     /**
      * Show the form for editing the specified resource.
@@ -77,9 +71,9 @@ class InformacionGeneralController extends Controller
     public function edit($id)
     {
 
-        // $informacion = Informacion_General::findOrFail($id); //encuentra la informacion por id 
-        // return view('informacion-admin.edit', compact($informacion));
-        
+        //mostrar la vista de editar informacion
+        $informacion = Informacion_General::findOrFail($id); //encuentra la informacion por id 
+        return view('admin-informacion.edit', compact('informacion'));
     }
 
     /**
@@ -91,11 +85,40 @@ class InformacionGeneralController extends Controller
     // }
 
 
-     // Actualizar un banner en la base de datos
-     public function update(Request $request, $id)
-     {
-        
-     }
+    // Actualizar un banner en la base de datos
+    public function update(Request $request, $id)
+    {
+
+        $request->validate([
+            'titulo_info_general' => 'required|string|max:255',
+            'descripcion_info' => 'required|string',
+            'imagen_info' => 'nullable|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', //100mb max
+        ]);
+
+
+        $informacion = Informacion_General::findOrFail($id); // Encuentra el banner
+
+
+        // Actualizar título y descripción
+        $informacion->titulo_info_general = $request->input('titulo_info_general');
+        $informacion->descripcion_info = $request->input('descripcion_info');
+
+        if ($request->hasFile('imagen_info')) {
+            // Eliminar la imagen anterior si existe
+            if ($informacion->imagen_info) {
+                unlink(storage_path('app/public/info_img/' . $informacion->imagen_info)); // Elimina la imagen antigua
+            }
+
+            // Guardar la nueva imagen
+            $imagePath = $request->file('imagen_info')->store('info_img', 'public');
+            $informacion->imagen_info = basename($imagePath); // Guarda solo el nombre del archivo
+        }
+
+        // Actualiza el resto de los datos
+        $informacion->save();
+
+        return redirect()->route('informacion.index')->with('success', 'Información general actualizado correctamente');
+    }
 
 
     /**
@@ -108,12 +131,21 @@ class InformacionGeneralController extends Controller
 
 
 
-     // Eliminar un banner
-     public function destroy($id)
-     {
-        
-     }
+    // Eliminar una informacion
+    public function destroy($id) {
+
+        $informacion = Informacion_General::findOrFail($id); // Encuentra el informacion por ID
+ 
+        // Elimina la imagen física
+        if ($informacion->imagen_info) {
+            unlink(storage_path('app/public/info_img/' . $informacion->imagen_info)); // Elimina la imagen del servidor
+        }
+
+        // Elimina el banner de la base de datos
+        $informacion->delete();
+
+        return redirect()->route('informacion.index')->with('success', 'Información general eliminado correctamente');
 
 
-
+    }
 }
