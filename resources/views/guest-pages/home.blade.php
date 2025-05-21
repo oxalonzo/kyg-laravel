@@ -43,7 +43,7 @@
                     {{ __('actividades') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('servicios')" :active="request()->routeIs('servicios')">
+                <x-nav-link :href="route('servicio')" :active="request()->routeIs('servicio')">
                     {{ __('servicios') }}
                 </x-nav-link>
 

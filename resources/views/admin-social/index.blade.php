@@ -11,7 +11,7 @@
 
     <div class="py-12 flex justify-center h-full">
 
-        <div class="md:w-3/4 p-10 bg-[url(https://i.pinimg.com/736x/bc/5a/98/bc5a986fae1696fd97ebb08f33493d89.jpg)] bg-no-repeat bg-cover brightness-90 rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
+        <div class="md:w-3/4 p-10 !bg-[url('/img/fondo-kyg.png')] bg-no-repeat bg-cover brightness-90 rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
 
             <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('Social.create')"
@@ -39,7 +39,7 @@
 
                     
                         <div
-                            class="w-full bg-white/30 border border-white/40 backdrop-blur-xl p-6 rounded-lg shadow-md shadow-gray-600 flex flex-col lg:flex-row gap-4">
+                            class="w-full bg-[#1b262c]/30 border border-[#1b262c]/40 backdrop-blur-xl p-6 rounded-lg shadow-md shadow-gray-600 flex flex-col lg:flex-row gap-4">
                             <!-- Imagen o video (65%) -->
                             <div class="w-full lg:w-[65%] flex justify-center items-center">
                                 @php

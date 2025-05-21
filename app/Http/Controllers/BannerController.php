@@ -81,14 +81,7 @@ class BannerController extends Controller
         return view('banner-admin.edit', compact('banner')); // Muestra el formulario de edición
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    // public function update(Request $request, Banner $Banner)
-    // {
-    //     //
-    // }
-
+   
 
      // Actualizar un banner en la base de datos
      public function update(Request $request, $id)
@@ -118,14 +111,7 @@ class BannerController extends Controller
      }
 
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    // public function destroy(Banner $Banner)
-    // {
-    //     //
-    // }
-
+  
 
 
      // Eliminar un banner

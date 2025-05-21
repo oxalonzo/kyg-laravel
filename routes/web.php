@@ -26,9 +26,9 @@ Route::get('/actividades', function () {
     return view('guest-pages/actividades');
 })->name('actividades');
 
-Route::get('/servicios', function () {
+Route::get('/servicio', function () {
     return view('guest-pages/servicios');
-})->name('servicios');
+})->name('servicio');
 
 Route::get('/politicas', function () {
     return view('guest-pages/politicas');
@@ -103,11 +103,30 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 //actividades
-Route::get('/actividades-admin', [ActividadController::class, 'index'])->middleware(['auth', 'verified'])->name('actividades-admin.index');
+// Route::get('/actividades-admin', [ActividadController::class, 'index'])->middleware(['auth', 'verified'])->name('actividades-admin.index');
+Route::middleware(['auth', 'verified'])->group(function () {
+    //red social
+    Route::get('/actividades-admin', [ActividadController::class, 'index'])->name('actividades-admin.index');
+    Route::get('/actividades-admin/create', [ActividadController::class, 'create'])->name('actividades-admin.create');
+    Route::post('/actividades-admin/store', [ActividadController::class, 'store'])->name('actividades-admin.store');
+    Route::get('/actividades-admin/{id}/edit', [ActividadController::class, 'edit'])->name('actividades-admin.edit');
+    Route::put('/actividades-admin/{id}', [ActividadController::class, 'update'])->name('actividades-admin.update');
+    Route::delete('/actividades-admin/{id}', [ActividadController::class, 'destroy'])->name('actividades-admin.destroy');
+    // Eliminar solo un archivo multimedia asociado a una actividad
+Route::delete('/actividades-admin/media/{id}', [ActividadController::class, 'eliminarMedia'])->name('actividades-admin.media.destroy');
+});
 
 //servicios
-Route::get('/servicios-admin', [ServicioController::class, 'index'])->middleware(['auth', 'verified'])->name('servicios.index');
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    //red social
+    Route::get('/servicios', [ServicioController::class, 'index'])->name('servicios.index');
+    Route::get('/servicios/create', [ServicioController::class, 'create'])->name('servicios.create');
+    Route::post('/servicios/store', [ServicioController::class, 'store'])->name('servicios.store');
+    Route::get('/servicios/{id}/edit', [ServicioController::class, 'edit'])->name('servicios.edit');
+    Route::put('/servicios/{id}', [ServicioController::class, 'update'])->name('servicios.update');
+    Route::delete('/servicios/{id}', [ServicioController::class, 'destroy'])->name('servicios.destroy');
+});
 
 //profile--------------------------------------------------------------------------------------
 

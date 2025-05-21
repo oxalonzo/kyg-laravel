@@ -25,7 +25,11 @@ class ActividadMedia extends Model
     ];
 
     
+     protected $table = 'actividad_medias';
 
+    /**
+     * Relación inversa con la actividad
+     */
     public function actividad()
     {
         return $this->belongsTo(Actividad::class);

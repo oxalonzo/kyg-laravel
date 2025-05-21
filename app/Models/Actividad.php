@@ -22,9 +22,13 @@ class Actividad extends Model
         'titulo',
         'descripcion',
         'enlace',
+        'user_id'
     ];
 
 
+    /**
+     * Relación uno a muchos con los archivos multimedia
+     */
     public function medios()
     {
         return $this->hasMany(ActividadMedia::class);
