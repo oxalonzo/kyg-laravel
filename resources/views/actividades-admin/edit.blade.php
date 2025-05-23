@@ -41,14 +41,14 @@
                     :value="old('titulo', $actividad->titulo)" required />
 
                 <x-input-label for="descripcion" :value="__('Descripción')" class="mb-2 block uppercase text-gray-500 font-bold" />
-                <textarea id="descripcion" name="descripcion" class="border p-3 w-full rounded-md shadow-sm" rows="4" required>{{ old('descripcion', $actividad->descripcion) }}</textarea>
+                <textarea id="descripcion" name="descripcion" class="border p-3 w-full rounded-md shadow-sm focus:ring-yellow-300 dark:focus:ring-yellow-300 focus:border-yellow-300 dark:focus:border-yellow-300" rows="4" required>{{ old('descripcion', $actividad->descripcion) }}</textarea>
 
-                <x-input-label for="enlace" :value="__('Enlace (opcional)')" class="mb-2 block uppercase text-gray-500 font-bold" />
+                <x-input-label for="enlace" :value="__('Enlace')" class="mb-2 block uppercase text-gray-500 font-bold" />
                 <x-text-input id="enlace" class="p-3 w-full mb-4" type="url" name="enlace"
                     :value="old('enlace', $actividad->enlace)" />
 
                 {{-- ARCHIVOS NUEVOS --}}
-                <x-input-label for="medios" :value="__('Subir nuevos archivos multimedia (opcional)')" />
+                <x-input-label for="medios" :value="__('Subir nuevos archivos multimedia')" />
                 <input type="file" name="medios[]" multiple accept="image/*,video/*"
                     class="p-3 w-full mb-4 border rounded" onchange="previewMedia(event)" />
 

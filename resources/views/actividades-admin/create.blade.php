@@ -32,12 +32,12 @@
     <!-- Descripción -->
     <x-input-label for="descripcion" :value="__('Descripción')" class="mb-2 block uppercase text-gray-500 font-bold" />
     <textarea id="descripcion" name="descripcion"
-        class="border p-3 w-full rounded-md shadow-sm"
+        class="border p-3 w-full rounded-md shadow-sm focus:ring-yellow-300 dark:focus:ring-yellow-300 focus:border-yellow-300 dark:focus:border-yellow-300"
         rows="4" required>{{ old('descripcion') }}</textarea>
     <x-input-error :messages="$errors->get('descripcion')" class="mt-2 mb-3" />
 
     <!-- Enlace -->
-    <x-input-label for="enlace" :value="__('Enlace (opcional)')" class="mb-2 block uppercase text-gray-500 font-bold" />
+    <x-input-label for="enlace" :value="__('Enlace')" class="mb-2 block uppercase text-gray-500 font-bold" />
     <x-text-input id="enlace" class="p-3 w-full mb-4" type="url" name="enlace" :value="old('enlace')" required />
     <x-input-error :messages="$errors->get('enlace')" class="mt-2 mb-3" />
 

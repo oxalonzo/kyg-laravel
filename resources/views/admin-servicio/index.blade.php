@@ -30,68 +30,81 @@
     </div>
 @endif
 
-{{-- 
-         <!-- Mostrar los servicios -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            @foreach ($servicios as $servicio)
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <!-- Título -->
-                    <h3 class="text-xl font-semibold mb-2">{{ $servicio->titulo }}</h3>
-                    
-                    <!-- Descripción -->
-                    <p class="text-gray-600 mb-4">{{ $servicio->descripcion }}</p>
+        @if ($servicios->isEmpty())
+    <p class="mt-4 text-center text-gray-600">No hay servicios aún. Por favor crea uno.</p>
+@else
+    <div class="container flex justify-center items-center flex-col sm:flex-col md:flex-col lg:grid lg:grid-cols-2 p-5 h-full gap-6">
+        @foreach ($servicios as $servicio)
+            <div class="w-full bg-white p-6 rounded-lg shadow-sm shadow-gray-600 flex flex-col lg:flex-row gap-4">
+                
+                <!-- Imagen (65%) -->
+                <div class="w-full lg:w-[65%] flex justify-center items-center">
+                    <img src="{{ asset('storage/servicios/' . $servicio->imagen) }}"
+                         alt="Imagen del servicio"
+                         class="w-full h-[250px] lg:h-[300px] rounded-lg shadow-md object-cover">
+                </div>
 
-                    <!-- Lista de ítems -->
-                    <div class="mb-4">
-                        <h4 class="font-semibold text-gray-700">Lista de Elementos:</h4>
-                        <ul class="list-disc pl-5">
-                            @foreach (json_decode($servicio->list) as $item)
-                                <li>{{ $item }}</li>
+                <!-- Información (35%) -->
+                <div class="w-full lg:w-[35%] flex flex-col justify-between">
+                    
+                    <!-- Título -->
+                    <p class="text-2xl font-bold text-yellow-400 mb-2">{{ $servicio->titulo }}</p>
+
+                    <!-- Descripción (colapsable si es larga) -->
+                    <p x-show="!expand" x-cloak>
+                            {{ Str::limit($servicio->descripcion, 40) }}
+                    </p>
+                    <!-- Lista -->
+                    @if (!empty($servicio->list))
+                        @php
+                             $items = json_decode($servicio->list, true); // Convierte JSON a array
+                        @endphp
+                        <ul class="list-disc list-inside text-gray-600 text-sm mb-4 space-y-1">
+                            @foreach ($items as $item)
+                                <li>{{ trim($item) }}</li>
                             @endforeach
                         </ul>
-                    </div>
-
-                    <!-- Imagen del servicio -->
-                    @if ($servicio->imagen)
-                        <img src="{{ Storage::url($servicio->imagen) }}" alt="Imagen de {{ $servicio->titulo }}" class="w-full h-48 object-cover rounded-md mb-4">
                     @endif
 
-                    <!-- Mostrar todos los campos del servicio -->
-                    <div class="mt-4">
-                        <h4 class="font-semibold text-gray-700">Detalles del Servicio:</h4>
-                        <ul class="list-none pl-0">
-                            <li><strong>Título:</strong> {{ $servicio->titulo }}</li>
-                            <li><strong>Descripción:</strong> {{ $servicio->descripcion }}</li>
-                            <li><strong>Lista de Elementos:</strong>
-                                <ul class="list-disc pl-5">
-                                    @foreach (json_decode($servicio->list) as $item)
-                                        <li>{{ $item }}</li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            @if ($servicio->imagen)
-                                <li><strong>Imagen:</strong> <img src="{{ Storage::url($servicio->imagen) }}" alt="Imagen de {{ $servicio->titulo }}" class="w-16 h-16 object-cover rounded-md mt-2"></li>
-                            @endif
-                        </ul>
-                    </div>
+                    <!-- Acciones -->
+                    <div class="flex space-x-3 flex-col gap-2">
+                        <!-- Editar -->
+                        <a href="{{ route('servicios.edit', $servicio->id) }}"
+                           class="inline-flex items-center bg-blue-500 w-full justify-center text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M15.232 5.232l3.536 3.536M9 13l6.536-6.536a2 2 0 012.828 0l.172.172a2 2 0 010 2.828L12 17H9v-3z"/>
+                            </svg>
+                            Editar
+                        </a>
 
-                    <!-- Enlace para editar o eliminar -->
-                    <div class="mt-4 flex justify-between">
-                        <a href="{{ route('servicios.edit', $servicio->id) }}" class="text-blue-500 hover:underline">Editar</a>
-                        <form action="{{ route('servicios.destroy', $servicio->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar este servicio?');">
+                        <!-- Eliminar -->
+                        <form action="{{ route('servicios.destroy', $servicio->id) }}" method="POST" class="!ml-0"
+                              onsubmit="return confirm('¿Estás seguro de eliminar este servicio?');">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-red-500 hover:underline">Eliminar</button>
+                            <button type="submit"
+                                    class="inline-flex items-center bg-red-500 w-full justify-center text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-300 text-sm">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2"
+                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                                Eliminar
+                            </button>
                         </form>
                     </div>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
+    </div>
 
-        <!-- Si no hay servicios -->
-        @if ($servicios->isEmpty())
-            <p class="text-gray-500 mt-4">No tienes servicios creados aún.</p>
-        @endif --}}
+    <!-- Paginación -->
+    <div class="mt-6">
+        {{ $servicios->links() }}
+    </div>
+@endif
 
 
         </div>

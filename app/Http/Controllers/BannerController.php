@@ -17,7 +17,7 @@ class BannerController extends Controller
         // return view('candidatos.index', [
         //     'vacante' => $vacante,
         // ]);
-        $banners = Banner::paginate(5); // Trae todos los banners de la base de datos y los paginas
+        $banners = Banner::paginate(2); // Trae todos los banners de la base de datos y los paginas
         return view('banner-admin.index', compact('banners')); // Pasa los banners a la vista
     }
 

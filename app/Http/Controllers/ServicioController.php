@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ServicioController extends Controller
 {
@@ -15,12 +16,12 @@ class ServicioController extends Controller
     public function index()
     {
        
-
            // Obtener todos los servicios del usuario logueado (puedes modificar esto según tu necesidad)
-    $servicios = Servicio::where('user_id', Auth::id())->get();
+            // $servicios = Servicio::where('user_id', Auth::id())->paginate(2);
+             $servicios = Servicio::paginate(2);
 
-    // Retornar la vista con los servicios
-    return view('admin-servicio.index', compact('servicios'));
+           // Retornar la vista con los servicios
+            return view('admin-servicio.index', compact('servicios'));
     }
 
 
@@ -44,8 +45,12 @@ class ServicioController extends Controller
     $rutaImagen = null;
 
     if ($request->hasFile('imagen')) {
-        $rutaImagen = $request->file('imagen')->store('servicios', 'public');
-    }
+    // Guardar el archivo con nombre hasheado en la carpeta 'servicios'
+    $rutaCompleta = $request->file('imagen')->store('servicios', 'public');
+
+    // Extraer solo el nombre del archivo (sin la carpeta)
+    $rutaImagen = basename($rutaCompleta); // ejemplo: Xks12asd.jpg
+}
 
     Servicio::create([
         'titulo' => $request->titulo,
@@ -63,49 +68,72 @@ class ServicioController extends Controller
 
 public function edit($id)
 {
-    // $actividad = Actividad::with('medios')->findOrFail($id);
-    return view('actividades-admin.edit');
+    $servicio = Servicio::findOrFail($id);
+    return view('admin-servicio.edit', compact('servicio'));
 }
 
 
 public function update(Request $request, $id)
 {
-    // $actividad = Actividad::findOrFail($id);
+     // Validación
+    $request->validate([
+        'titulo' => 'required|string|max:255',
+        'descripcion' => 'required|string',
+        'list' => 'required|array|min:1',
+        'list.*' => 'nullable|string|max:255',
+        'imagen' => 'nullable|image|max:102400', // 5MB
+    ]);
 
-    // $request->validate([
-    //     'titulo' => 'required|string|max:255',
-    //     'descripcion' => 'required',
-    //     'enlace' => 'nullable|url',
-    //     'medios.*' => 'file|mimes:jpg,jpeg,png,mp4,avif,webp,mov,avi|max:102400',
-    // ]);
+    $servicio = Servicio::findOrFail($id);
 
-    //  // Creamos la actividad y le asignamos el usuario autenticado
-    // $actividad->update([
-    //     'titulo' => $request->titulo,
-    //     'descripcion' => $request->descripcion,
-    //     'enlace' => $request->enlace,
-    //     'user_id' => Auth::id(), // usuario autenticado
-    // ]);
+    // Eliminar ítems vacíos del array de lista
+    $listaLimpia = array_filter($request->list, fn($item) => trim($item) !== '');
 
-    // if ($request->hasFile('medios')) {
-    //     foreach ($request->file('medios') as $file) {
-    //         $path = $file->store('actividades', 'public');
-    //         $tipo = str_starts_with($file->getMimeType(), 'video') ? 'video' : 'imagen';
+    // Si se eliminan todos, devolver error
+    if (count($listaLimpia) === 0) {
+        return back()->withErrors(['list' => 'Debes ingresar al menos un ítem.'])->withInput();
+    }
 
-    //         $actividad->medios()->create([
-    //             'archivo' => $path,
-    //             'tipo' => $tipo
-    //         ]);
-    //     }
-    // }
+    // Procesar imagen si hay una nueva
+    $rutaImagen = $servicio->imagen;
 
-    // return redirect()->route('actividades-admin.index')->with('success', 'Actividad actualizada correctamente.');
+    if ($request->hasFile('imagen')) {
+        if ($servicio->imagen) {
+            Storage::disk('public')->delete('servicios/' . $servicio->imagen);
+        }
+
+        $rutaCompleta = $request->file('imagen')->store('servicios', 'public');
+        $rutaImagen = basename($rutaCompleta);
+    }
+
+    // Actualizar servicio
+    $servicio->update([
+        'titulo' => $request->titulo,
+        'descripcion' => $request->descripcion,
+        'list' => json_encode(array_values($listaLimpia)), // asegúrate de que es un array indexado
+        'imagen' => $rutaImagen,
+        'user_id' => Auth::id(),
+    ]);
+
+    return redirect()->route('servicios.index')->with('success', 'Servicio actualizado exitosamente.');
 }
 
 
 public function destroy($id)
 {
 
+      // Obtener el servicio a eliminar
+    $servicio = Servicio::findOrFail($id);
+
+    // Eliminar la imagen asociada si existe
+    if ($servicio->imagen) {
+        Storage::disk('public')->delete('servicios/' . $servicio->imagen);
+    }
+
+    // Eliminar el servicio de la base de datos
+    $servicio->delete();
+
+    return redirect()->route('servicios.index')->with('success', 'Servicio eliminado exitosamente.');
 
 }
 

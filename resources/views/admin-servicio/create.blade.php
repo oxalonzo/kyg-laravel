@@ -30,13 +30,13 @@
 
     <!-- Descripción -->
     <x-input-label for="descripcion" :value="__('Descripción')" class="mb-2 block uppercase text-gray-500 font-bold" />
-    <textarea id="descripcion" name="descripcion" class="border p-3 w-full rounded-md shadow-sm" rows="4" required>{{ old('descripcion') }}</textarea>
+    <textarea id="descripcion" name="descripcion" class="border focus:ring-yellow-300 dark:focus:ring-yellow-300 focus:border-yellow-300 dark:focus:border-yellow-300 p-3 w-full rounded-md shadow-sm" rows="4" required>{{ old('descripcion') }}</textarea>
     <x-input-error :messages="$errors->get('descripcion')" class="mt-2 mb-3" />
 
     <!-- Lista de ítems -->
     <x-input-label for="lista" :value="__('Lista de elementos')" class="mb-2 block uppercase text-gray-500 font-bold" />
     <div id="lista-container" class="mb-4 space-y-2">
-        <input type="text" name="list[]" class="p-2 w-full border rounded" placeholder="Escribe un ítem y presiona Enter" onkeydown="agregarCampoLista(event)">
+        <input type="text" name="list[]" class="p-2 w-full border rounded focus:border-yellow-300 dark:focus:border-yellow-300 focus:ring-yellow-300 dark:focus:ring-yellow-300" placeholder="Escribe un ítem y presiona Enter" onkeydown="agregarCampoLista(event)">
     </div>
     <x-input-error :messages="$errors->get('list')" class="mt-2 mb-3" />
 
@@ -75,7 +75,7 @@
                 const nuevoInput = document.createElement('input');
                 nuevoInput.type = 'text';
                 nuevoInput.name = 'list[]';
-                nuevoInput.className = 'p-2 w-full border rounded';
+                nuevoInput.className = 'p-2 w-full border rounded focus:border-yellow-300 dark:focus:border-yellow-300 focus:ring-yellow-300 dark:focus:ring-yellow-300';
                 nuevoInput.placeholder = 'Escribe un ítem y presiona Enter';
                 nuevoInput.onkeydown = agregarCampoLista;
 
