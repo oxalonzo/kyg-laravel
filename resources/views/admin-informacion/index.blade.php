@@ -61,7 +61,9 @@
                                 <p class="text-2xl font-bold text-yellow-300 mb-2">{{ $informacion->titulo_info_general }}</p>
             
                                 <!-- Descripción -->
-                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">{{ $informacion->descripcion_info }}</p>
+                                <p class="text-gray-700 mb-4 text-sm leading-relaxed">{{ Str::limit($informacion->descripcion_info, 40) }}</p> 
+                                
+
             
                                 <!-- Acciones -->
                                 <div class="flex space-x-3 flex-col gap-2">

@@ -21,5 +21,6 @@ class Servicio extends Model
          'descripcion',
          'list',
          'imagen',
+         'user_id'
      ];
 }

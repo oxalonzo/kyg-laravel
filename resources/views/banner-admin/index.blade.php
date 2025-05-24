@@ -134,7 +134,7 @@
                         </div>
                     @endforeach
 
-                    <div class="mt-4">
+                    <div class="mt-4 justify-between">
                         {{ $banners->links() }}
                     </div>
 
