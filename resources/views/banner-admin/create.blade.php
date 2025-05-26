@@ -28,6 +28,25 @@
 
                 <div class="mb-5">
 
+
+                    <!--titulo banner-->
+
+                    <x-input-label for='titulo' :value="_('Titulo')" class="mb-2 block uppercase text-gray-500 font-bold"/>
+
+                    <x-text-input id="titulo" name="titulo" class="p-3 w-full mb-4" type="text" :value="old('titulo')" /> 
+
+                    <x-input-error :messages="$errors->get('titulo')" class="mt-2 mb-3" />
+
+                    <!--enlace banner-->
+
+                    <x-input-label for="enlace" :value="_('enlace')" class="mb-2 block uppercase text-gray-500 font-bold" /> 
+
+                    <x-text-input id="enlace" name="enlace" class="p-3 w-full mb-4" type="text" :value="old('enlace')" />
+                    
+                    <x-input-error :messages="$errors->get('enlace')" class="mt-2 mb-3" />
+
+                     <!--iamgen banner-->
+
                     <x-input-error :messages="$errors->get('imagen_banner')" class="mt-2" />
 
 
@@ -35,19 +54,20 @@
                         class="mb-2 block uppercase text-gray-500 font-bold" />
 
                     <x-text-input id="imagen_banner" class="border p-3 w-full" type="file" name="imagen_banner"
-                        :value="old('imagen_banner')"  accept="image/*,video/mp4,video/webm,video/ogg" onchange="previewMedia(event)" />
+                        :value="old('imagen_banner')" accept="image/*,video/mp4,video/webm,video/ogg"
+                        onchange="previewMedia(event)" />
 
-                   <!-- Contenedor del preview -->
-                   <div id="preview-container" class="mt-4  w-[300px] h-[200px] relative hidden">
-                    <img id="image-preview" src="" alt="Vista previa de la imagen"
-                      class="max-w-md rounded-lg shadow hidden w-full h-full object-cover" />
-    
-                    <video id="video-preview" controls
-                    class="max-w-md rounded-lg shadow hidden w-full h-full object-cover">
-                    <source id="video-source" src="" type="">
-                     Tu navegador no soporta la reproducción de video.
-                    </video>
-                </div>
+                    <!-- Contenedor del preview -->
+                    <div id="preview-container" class="mt-4  w-[300px] h-[200px] relative hidden">
+                        <img id="image-preview" src="" alt="Vista previa de la imagen"
+                            class="max-w-md rounded-lg shadow hidden w-full h-full object-cover" />
+
+                        <video id="video-preview" controls
+                            class="max-w-md rounded-lg shadow hidden w-full h-full object-cover">
+                            <source id="video-source" src="" type="">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
 
 
                 </div>
@@ -90,7 +110,7 @@
         const reader = new FileReader();
         const fileType = file.type;
 
-        reader.onload = function (e) {
+        reader.onload = function(e) {
 
             previewContainer.classList.remove('hidden');
 

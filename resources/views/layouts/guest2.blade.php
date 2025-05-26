@@ -12,77 +12,101 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!--faviicon-->
-        <link rel="icon"  href="{{ asset('img/logok.png') }}" type="image/png">
+        <link rel="icon"  href="{{ asset('img/logokyg.webp') }}" type="image/png">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
     </head>
     <body class="bg-gray-100 min-h-screen flex flex-col items-center ">
-        
-            {{-- @include('layouts.navigation') --}}
 
-            <!-- Page Heading -->
+
+         <!-- Page Heading -->
             {{-- @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="relative w-full h-screen border rounded-lg text-white overflow-hidden">
+                   
                         {{ $header }}
-                    </div>
+                   
                 </header>
             @endisset --}}
-
-            <header>
-                
-            <div class="flex">
-          
-                 <!-- Logo -->
-            <a href="{{ route('home') }}">
-                    <img src="{{ asset('/img/logoblanco.png') }}" alt="Logo" class="w-12 h-12">
-            </a>
-            
-
-            <!-- Navigation Links -->
-            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-
-                <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                    {{ __('home') }}
-                </x-nav-link>
-
-                <x-nav-link :href="route('nosotros')" :active="request()->routeIs('nosotros')">
-                    {{ __('nosotros') }}
-                </x-nav-link>
-
-                <x-nav-link :href="route('actividades')" :active="request()->routeIs('actividades')">
-                    {{ __('actividades') }}
-                </x-nav-link>
-
-                <x-nav-link :href="route('servicio')" :active="request()->routeIs('servicio')">
-                    {{ __('servicios') }}
-                </x-nav-link>
-
-                <x-nav-link :href="route('politicas')" :active="request()->routeIs('politicas')">
-                    {{ __('politicas') }}
-                </x-nav-link>
-
-                <x-nav-link :href="route('contacto')" :active="request()->routeIs('contacto')">
-                    {{ __('contacto') }}
-                </x-nav-link>
-
-                <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
-                    {{ __('login') }}
-                </x-nav-link>
-
-                </div>
-             </div>
-
-            </header>
+    
 
             <!-- Page Content -->
-            <main>
+            <main class="w-full flex flex-col min-h-screen ">
                 {{ $slot }}
             </main>
 
+             <!-- footer -->
             @include('layouts.footer')
 
         
+
+{{-- JavaScript para ocultar el preloader tras 2 segundos --}}
+<script>
+   
+
+
+     document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('menuClose');
+
+        toggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
+
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+
+    });
+
+
+    const currentPath = window.location.pathname;
+
+    if (currentPath === '/nosotros') {
+        const frases = [
+            "En KYG, transformamos el cuidado de tu vehículo en una experiencia confiable y sin complicaciones.",
+            "En KYG, tu seguridad en la carretera comienza con productos de calidad y un servicio que responde.",
+            "En KYG, nos movemos contigo: gomas, baterías, aceite y mantenimiento en un solo lugar.",
+            "En KYG, cuidamos tu carro como si fuera nuestro, porque sabemos lo que significa para ti."
+        ];
+
+        let index = 0;
+
+        const texto = document.getElementById('rotatingText')
+
+        setInterval(() => {
+            
+            
+            //oculta el texto suavemente 
+            texto.classList.add('opacity-0');
+
+            //espera y cambia el texto
+            setTimeout(() => {
+                index = (index + 1) % frases.length;
+                texto.textContent = frases[index];
+                texto.classList.remove("opacity-0");
+            }, 500);
+
+
+        }, 4000);
+
+    }
+
+
+     
+</script>
+
+
+
+
     </body>
 </html>

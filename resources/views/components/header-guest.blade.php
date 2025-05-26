@@ -1,0 +1,122 @@
+
+    <section  {{ $attributes->merge(['class' => 'relative w-full h-screen text-white overflow-hidden ']) }}>
+        
+        <!-- Fondo video o imagen -->
+        <div class="absolute inset-0">
+            <!-- VIDEO o IMG -->
+            {{-- <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="{{ asset('video/video1.mp4') }}" type="video/mp4">
+            </video> --}}
+            <!-- o -->
+             <img src="{{ asset($picture) }}" alt="imagen fondo" class="w-full h-full object-cover" /> 
+        </div>
+
+        <!-- Capa negra semi-transparente encima del video -->
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+
+        <!-- NAVBAR superpuesto -->
+        <header class="relative z-10 flex items-center justify-between px-6 py-4">
+
+    <!-- Logo + Enlaces alineados -->
+    <div class="flex items-center space-x-6">
+        <!-- Logo -->
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('/img/logoblanco.png') }}" alt="Logo" class="w-12 h-12">
+        </a>
+
+        <!-- Enlaces (solo visible en pantallas medianas o más grandes) -->
+        <nav class="hidden md:flex space-x-4 text-lg font-semibold">
+            <a href="{{ route('home') }}" class="hover:underline">Home</a>
+            <a href="{{ route('nosotros') }}" class="hover:underline">Nosotros</a>
+            <a href="{{ route('actividades') }}" class="hover:underline">Actividades</a>
+            <a href="{{ route('servicio') }}" class="hover:underline">Servicios</a>
+            <a href="{{ route('politicas') }}" class="hover:underline">Políticas</a>
+            <a href="{{ route('contacto') }}" class="hover:underline">Contacto</a>
+            <a href="{{ route('login') }}" class="hover:underline">Login</a>
+        </nav>
+    </div>
+
+    <!-- Lupa + hamburguesa -->
+    <div class="flex items-center space-x-4 md:space-x-6">
+        <!-- Icono lupa -->
+        <button>
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/>
+            </svg>
+        </button>
+
+        <!-- Icono hamburguesa -->
+        <button class="md:hidden" id="menuToggle">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                 viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </div>
+</header>
+
+
+@php
+    $path = request()->path();
+@endphp
+
+@if ($path === 'nosotros')
+    <!-- texto flotante -->
+   <div class="absolute font-Roboto bottom-52 left-10  lg:bottom-80 lg:left-40 text-white max-w-md opacity-0 animate-slide-in-left">
+        <h1 class=" text-4xl lg:text-6xl font-bold mb-2 drop-shadow-sm">Sobre Nosotros</h1>
+        <p id="rotatingText" class="text-sm font-semibold lg:text-lg leading-relaxed drop-shadow-sm transition-opacity duration-500 ">En KYG, transformamos el cuidado de tu vehículo en una experiencia confiable y sin complicaciones.</p>
+    </div>
+@endif
+
+<a class="absolute bottom-24 left-1/2  lg:bottom-70 lg:left-1/2 " href="#{{ $section  }}" >
+     <span class="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-white hover:scale-105 transition duration-300">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-6 h-6 text-white"
+       fill="none" viewBox="0 0 24 24"
+       stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+</span>
+</a>
+
+
+       <aside id="mobileMenu"
+       class="fixed inset-0 bg-black bg-opacity-30 text-white transform -translate-x-full transition-transform duration-300 z-50 shadow-lg overflow-hidden">
+
+    <!-- Fondo blur -->
+    <div class="absolute inset-0 backdrop-blur-md bg-black bg-opacity-60 pointer-events-none"></div>
+
+    <!-- Contenido del menú (sobre el blur) -->
+    <div class="relative flex flex-col h-full">
+        <!-- Header del menú móvil con logo y botón de cerrar -->
+        <div class="flex items-center justify-between px-6 py-4 border-b z-10">
+            <div class="w-full flex justify-center">
+                <img src="{{ asset('/img/logoblanco.png') }}" alt="Logo" class="w-12 h-12">
+            </div>
+            <!-- Botón cerrar -->
+            <button id="menuClose" class="absolute right-5 top-6 text-gray-700 z-10">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Enlaces del menú -->
+        <div class="p-6 space-y-4 text-start relative z-10">
+            <a href="{{ route('home') }}" class="block font-semibold">Home</a>
+            <a href="{{ route('nosotros') }}" class="block font-semibold">Nosotros</a>
+            <a href="{{ route('actividades') }}" class="block font-semibold">Actividades</a>
+            <a href="{{ route('servicio') }}" class="block font-semibold">Servicios</a>
+            <a href="{{ route('politicas') }}" class="block font-semibold">Políticas</a>
+            <a href="{{ route('contacto') }}" class="block font-semibold">Contacto</a>
+            <a href="{{ route('login') }}" class="block font-semibold">Login</a>
+        </div>
+    </div>
+</aside>
+
+    </section>

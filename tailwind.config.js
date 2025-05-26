@@ -8,8 +8,13 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
- 
+    theme: {
+      extend: {
+        fontFamily: {
+          'Raleway': ['Raleway', 'sans-serif'], // nombre personalizado
+        },
+      },
+    },
 
     plugins: [forms],
 };

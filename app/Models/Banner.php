@@ -18,6 +18,8 @@ class Banner extends Model
      * @var list<string>
      */
     protected $fillable = [
+        'titulo',
+        'enlace',
         'imagen_banner',
         'user_id',
     ];

@@ -38,6 +38,8 @@ class BannerController extends Controller
     {
         //validar si envio el banner
         $request->validate([
+            'titulo'        => 'nullable|string|max:255',
+            'enlace'        => 'nullable|string|max:255',
             'imagen_banner' => 'required|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', //100mb max
         ]);
 
@@ -48,6 +50,8 @@ class BannerController extends Controller
 
         //crear banner
         Banner::create([
+            'titulo' => $request->titulo,
+            'enlace' => $request->enlace, 
             'imagen_banner' => $filename,
             'user_id' => Auth::id()
         ]);
@@ -87,11 +91,17 @@ class BannerController extends Controller
      public function update(Request $request, $id)
      {
         $request->validate([
+            'titulo'        => 'nullable|string|max:255',
+            'enlace'        => 'nullable|string|max:255',
             'imagen_banner' => 'nullable|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', // hasta 100MB
         ]);
         
  
          $banner = Banner::findOrFail($id); // Encuentra el banner
+
+
+         $banner->titulo = $request->titulo;
+         $banner->enlace = $request->enlace;
  
          if ($request->hasFile('imagen_banner')) {
              // Eliminar la imagen anterior si existe

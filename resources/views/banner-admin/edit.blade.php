@@ -27,26 +27,51 @@
                 @method('PUT')
 
                 <div class="mb-4">
-                    
-                    <x-input-label for="imagen_banner" :value="__('Imagen del Banner')" class="mb-2 block uppercase  text-gray-500 font-bold" />
 
 
-                    <x-text-input id="imagen_banner" class="border p-3 w-full" type="file" name="imagen_banner" :value="old('imagen_banner')"  accept="image/*,video/mp4,video/webm,video/ogg" onchange="previewMedia(event)" />
 
-                    
+                    <!--titulo banner-->
+
+                    <x-input-label for="titulo" :value="_('titulo')" class="mb-2 block uppercase text-gray-500 font-bold" />
+
+                    <x-text-input id="titulo" name="titulo" class="p-3 w-full mb-4" type="text" :value="old('titulo', $banner->titulo)" />
+
+                    <x-input-error :messages="$errors->get('titulo')" class="mt-2 mb-3" /> 
+
+                    <!--enlace banner-->
+
+                    <x-input-label for="enlace" :value="_('enlace')" class="mb-2 block uppercase text-gray-500 font-bold" />
+
+                    <x-text-input id="enlace" name="enlace" class="p-3 w-full mb-4" type="text" :value="old('enlace', $banner->enlace)" />
+
+                    <x-input-error :messages="$errors->get('enlace')" class="mt-2 mb-3" /> 
+
+
+                    <!--iamgen banner-->
+
+                    <x-input-label for="imagen_banner" :value="__('Imagen del Banner')"
+                        class="mb-2 block uppercase  text-gray-500 font-bold" />
+
+
+                    <x-text-input id="imagen_banner" class="border p-3 w-full" type="file" name="imagen_banner"
+                        :value="old('imagen_banner')" accept="image/*,video/mp4,video/webm,video/ogg"
+                        onchange="previewMedia(event)" />
+
+
                     <div class="flex gap-2 flex-col sm:flex-row md:flex-row lg:flex-row">
 
                         <div class="mt-4 w-[300px] h-[200px] relative overflow-hidden rounded-lg">
                             <x-input-label :value="__('Archivo Actual')" class="mb-2 block uppercase text-gray-500 font-bold" />
-                    
+
                             @php
                                 $extension = pathinfo($banner->imagen_banner, PATHINFO_EXTENSION);
                                 $isVideo = in_array($extension, ['mp4', 'webm', 'ogg']);
                             @endphp
-                    
+
                             @if ($isVideo)
                                 <video controls class="rounded-lg shadow-md w-full h-full object-cover">
-                                    <source src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" type="video/{{ $extension }}">
+                                    <source src="{{ asset('storage/banners/' . $banner->imagen_banner) }}"
+                                        type="video/{{ $extension }}">
                                     Tu navegador no soporta el video.
                                 </video>
                             @else
@@ -54,10 +79,12 @@
                                     class="rounded-lg shadow-md w-full h-full object-cover">
                             @endif
                         </div>
-                    
-                        <div id="preview-container" class="mt-4 w-[300px] h-[200px] relative overflow-hidden hidden rounded-lg">
-                            <x-input-label id="new-media-label" :value="__('Archivo Nuevo')" class="mb-2 block uppercase text-gray-500 font-bold" />
-                    
+
+                        <div id="preview-container"
+                            class="mt-4 w-[300px] h-[200px] relative overflow-hidden hidden rounded-lg">
+                            <x-input-label id="new-media-label" :value="__('Archivo Nuevo')"
+                                class="mb-2 block uppercase text-gray-500 font-bold" />
+
                             <img id="image-preview" src="" alt="Vista previa de imagen"
                                 class="max-w-md rounded-lg shadow-md w-full h-full object-cover hidden" />
                             <video id="video-preview" controls
@@ -66,12 +93,13 @@
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                         </div>
-                    
+
                     </div>
 
                 </div>
 
-                <button type="submit" class=" bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">
+                <button type="submit"
+                    class=" bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">
                     Guardar Cambios
                 </button>
             </form>
@@ -110,7 +138,7 @@
         const reader = new FileReader();
         const fileType = file.type;
 
-        reader.onload = function (e) {
+        reader.onload = function(e) {
             if (fileType.startsWith('image/')) {
                 imagePreview.src = e.target.result;
                 imagePreview.classList.remove('hidden');
@@ -127,4 +155,3 @@
         reader.readAsDataURL(file);
     }
 </script>
-
