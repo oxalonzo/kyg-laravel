@@ -12,9 +12,27 @@ export default {
       extend: {
         fontFamily: {
           'Raleway': ['Raleway', 'sans-serif'], // nombre personalizado
+          'Roboto': ['Roboto', 'sans-serif'],
+        },
+        keyframes: {
+          'slide-in-left': {
+            '0%': {
+              opacity: '0',
+              transform: 'translateX(-100%)',
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateX(0)',
+            },
+          },
+        },
+        animation: {
+          'slide-in-left': 'slide-in-left 0.8s ease-out forwards',
         },
       },
     },
+
+    
 
     plugins: [forms],
 };

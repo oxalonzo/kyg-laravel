@@ -55,7 +55,7 @@
                 <video class="w-full h-full object-cover" autoplay muted loop playsinline>
                     <source src="{{ asset('video/video1.mp4') }}" type="video/mp4">
                 </video>
-                
+
             </div>
 
             <!-- Capa negra semi-transparente encima del video -->
@@ -76,53 +76,75 @@
 
                         <ul class="flex space-x-4">
                             <li>
-                                <a href="{{ route('home') }}" class=" relative group text-white uppercase text-[14px] font-Raleway mx-[14px] my-0 leading-[1.27em] tracking-wider">
+                                <a href="{{ route('home') }}"
+                                    class=" relative group text-white uppercase text-[14px] font-Raleway mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Home
-                                    <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
+                                    <span
+                                        class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('nosotros') }}" class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
+                                <a href="{{ route('nosotros') }}"
+                                    class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Nosotros
-                                    <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
+                                    <span
+                                        class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('actividades') }}" class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
+                                <a href="{{ route('actividades') }}"
+                                    class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Actividades
-                                    <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
+                                    <span
+                                        class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('servicio') }}" class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
+                                <a href="{{ route('servicio') }}"
+                                    class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Servicios
-                                    <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
+                                    <span
+                                        class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('politicas') }}" class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
+                                <a href="{{ route('politicas') }}"
+                                    class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Políticas
-                                    <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
+                                    <span
+                                        class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('contacto') }}" class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
+                                <a href="{{ route('contacto') }}"
+                                    class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Contacto
-                                    <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
+                                    <span
+                                        class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="{{ route('login') }}" class=" relative group text-white uppercase text-[14px] font-Raleway  mx-[14px] my-0 leading-[1.27em] tracking-wider">
                                     Login
                                     <span class=" absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 lg:group-hover:w-full"></span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </nav>
                 </div>
 
                 <!-- Lupa + hamburguesa -->
                 <div class="flex items-center space-x-4 md:space-x-6">
+
+                    {{-- icono login --}}
+                    <a href="/login">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M5.121 17.804A9 9 0 0112 15a9 9 0 016.879 2.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </a>
+
                     <!-- Icono lupa -->
                     <button>
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
@@ -185,7 +207,7 @@
 
         <!-- FOOTER -->
         <footer class="bg-white shadow-inner py-4 text-center text-sm text-gray-500">
-            &copy; {{ date('Y') }} Mi Sitio. Todos los derechos reservados.
+            <p>Importadora KYG SAS  &copy; {{ date('Y') }}. Derechos Reservados</p>
         </footer>
     </div>
 
