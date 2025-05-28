@@ -112,7 +112,7 @@
             document.getElementById('dynamicHeading').textContent = dynamicNumber;
 
 
-            //para que aparezca el elemento cuando vaya por ahi en la pagina
+            //para que aparezca el elemento cuando vaya por ahi en la pagina en la parte historia y foto
 
             document.addEventListener("DOMContentLoaded", () => {
                 const target = document.getElementById("apareceScroll");
@@ -124,7 +124,28 @@
                             target.classList.add("opacity-100", "translate-y-0");
                         }
                     }, {
-                        threshold: 0.2, // Aparece cuando el 20% del elemento es visible
+                        threshold: 0.4, // Aparece cuando el 20% del elemento es visible
+                    }
+                );
+
+                if (target) {
+                    observer.observe(target);
+                }
+            });
+
+            //para que aparezca el elemento cuando vaya por ahi en la pagina en la parte de valores
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const target = document.getElementById("apareceValores");
+
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (entry.isIntersecting) {
+                            target.classList.remove("opacity-0", "translate-y-10");
+                            target.classList.add("opacity-100", "translate-y-0");
+                        }
+                    }, {
+                        threshold: 0.5, // Aparece cuando el 20% del elemento es visible
                     }
                 );
 
@@ -134,9 +155,10 @@
             });
 
 
-
-
         }
+
+
+
     </script>
 
 
