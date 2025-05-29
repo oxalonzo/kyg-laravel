@@ -17,7 +17,7 @@
 
             <!-- Div 1 -->
             <div
-                class="relative w-full md:w-[40%] border rounded-3xl p-6 bg-[linear-gradient(50deg,_#f2cd01_0%,_white_10%,_white_90%,_#f2cd01_100%)] shadow-lg flex flex-col justify-center min-h-[300px]">
+                class="relative w-full md:w-[40%] border rounded-3xl p-6 bg-[linear-gradient(50deg,_#f2cd01_0%,_white_10%)] shadow-lg flex flex-col justify-center min-h-[300px]">
                 <h3 id="dynamicHeading" class="text-7xl font-bold text-black mb-2"></h3>
                 <p class="text-gray-700 font-Raleway text-base">años en el negocio de neumáticos y centros de servicio.
                 </p>
