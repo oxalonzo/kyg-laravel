@@ -3,12 +3,23 @@
         
         <!-- Fondo video o imagen -->
         <div class="absolute inset-0">
-            <!-- VIDEO o IMG -->
-            {{-- <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                <source src="{{ asset('video/video1.mp4') }}" type="video/mp4">
-            </video> --}}
-            <!-- o -->
-             <img src="{{ asset($picture) }}" alt="imagen fondo" class="w-full h-full object-cover" /> 
+
+            @php
+               $extensiones_video = ['mp4', 'avi', 'mov', 'mkv', 'flv', 'wmv', 'webm'];
+               $extension = strtolower(pathinfo($picture, PATHINFO_EXTENSION));
+           @endphp
+
+@if (in_array($extension, $extensiones_video))
+    <!-- Es un video -->
+    <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+        <source src="{{ asset($picture) }}" type="video/{{ $extension }}">
+        Tu navegador no soporta el video.
+    </video>
+@else
+    <!-- Es una imagen -->
+    <img src="{{ asset($picture) }}" alt="imagen fondo" class="w-full h-full object-cover" />
+@endif
+
         </div>
 
         <!-- Capa negra semi-transparente encima del video -->

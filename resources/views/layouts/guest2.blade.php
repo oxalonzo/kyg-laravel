@@ -24,10 +24,14 @@
         rel="stylesheet">
 
 
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
 
 </head>
 
-<body class=" bg-white min-h-screen flex flex-col items-center scroll-smooth">
+<body class=" bg-transparent min-h-screen flex flex-col items-center scroll-smooth">
 
 
     <!-- Page Heading -->
@@ -41,7 +45,7 @@
 
 
     <!-- Page Content -->
-    <main class="w-full flex flex-col min-h-screen ">
+    <main class="w-full flex-1 px-0 py-10">
         {{ $slot }}
     </main>
 
@@ -155,7 +159,43 @@
             });
 
 
-        }
+            //para el div de la filosofia bushido
+             document.addEventListener("DOMContentLoaded", () => {
+                const target = document.getElementById("aparecebushido");
+
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (entry.isIntersecting) {
+                            target.classList.remove("opacity-0", "translate-y-10");
+                            target.classList.add("opacity-100", "translate-y-0");
+                        }
+                    }, {
+                        threshold: 0.5, // Aparece cuando el 20% del elemento es visible
+                    }
+                );
+
+                if (target) {
+                    observer.observe(target);
+                }
+            });
+
+            //para la rotacion de bushido depediendo la pantalla 
+            function applyResponsiveStyles() {
+    const elements = document.querySelectorAll('[data-lg-style]');
+
+    elements.forEach(el => {
+      if (window.innerWidth >= 1024) {
+        el.style.cssText = el.getAttribute('data-lg-style');
+      } else {
+        el.style.cssText = 'writing-mode: horizontal-tb;';
+      }
+    });
+  }
+
+  applyResponsiveStyles();
+  window.addEventListener('resize', applyResponsiveStyles);
+
+        } //final del path de la pagina nosotros
 
 
 

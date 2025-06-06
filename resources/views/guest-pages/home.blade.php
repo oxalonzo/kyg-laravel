@@ -203,6 +203,7 @@
                 <p class="text-gray-600">Este es el contenido principal de tu aplicación.</p>
             </section>
             <!-- Más secciones aquí -->
+            
         </main>
 
         <!-- FOOTER -->
