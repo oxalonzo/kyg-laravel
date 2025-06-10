@@ -106,7 +106,7 @@
 <div id="banner-progress" class="absolute w-full bottom-[40px]  flex items-end justify-center gap-2 p-4 z-10 ">
     @foreach ($banners as $index => $banner)
         <div class="w-[30px] h-1 bg-white/30 rounded overflow-hidden relative">
-            <div class="progress-fill absolute top-0 left-0 h-full bg-white w-0 transition-all duration-[8000ms]"></div>
+            <div class="progress-fill absolute top-0 left-0 h-full bg-white w-0 transition-all duration-[5000ms] ease-in-out"></div>
         </div>
     @endforeach
 </div>
@@ -382,7 +382,7 @@
    document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.banner-slide');
     const progressFills = document.querySelectorAll('.progress-fill');
-    const duration = 8000; // 🔁 Aquí defines los 10 segundos
+    const duration = 5000; // 🔁 Aquí defines los 10 segundos
     let current = 0;
 
     function resetProgressBars() {
