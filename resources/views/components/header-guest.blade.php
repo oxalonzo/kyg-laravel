@@ -160,15 +160,72 @@
         </div>
 
         <!-- Enlaces del menú -->
-        <div class="p-6 space-y-4 text-start relative z-10">
-            <a href="{{ route('home') }}" class="block font-semibold">Home</a>
-            <a href="{{ route('nosotros') }}" class="block font-semibold">Nosotros</a>
-            <a href="{{ route('actividades') }}" class="block font-semibold">Actividades</a>
-            <a href="{{ route('servicio') }}" class="block font-semibold">Servicios</a>
-            <a href="{{ route('politicas') }}" class="block font-semibold">Políticas</a>
-            <a href="{{ route('contacto') }}" class="block font-semibold">Contacto</a>
-            <a href="{{ route('login') }}" class="block font-semibold">Login</a>
-        </div>
+         <div class="p-6 space-y-4 text-start">
+    <a href="{{ route('home') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Home
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('nosotros') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Nosotros
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('actividades') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Actividades
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('servicio') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Servicios
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('politicas') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Políticas
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('contacto') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Contacto
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('login') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Login
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+</div>
+
     </div>
 </aside>
 

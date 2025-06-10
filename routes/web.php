@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformacionGeneralController;
 use App\Http\Controllers\NuestraHistoriaController;
 use App\Http\Controllers\ProfileController;
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 //guest-pages---------------------------------------------------------------
 
 
-Route::get('/', function () {
-    return view('guest-pages/home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/nosotros', function () {
     return view('guest-pages/nosotros');

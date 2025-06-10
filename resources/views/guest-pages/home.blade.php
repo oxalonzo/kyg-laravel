@@ -11,12 +11,16 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
+     <!--faviicon-->
+    <link rel="icon" href="{{ asset('img/logokyg.webp') }}" type="image/png">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+        
 
 
 </head>
@@ -49,17 +53,32 @@
         <!-- BANNER FULLSCREEN -->
         <section class="relative w-full h-screen text-white overflow-hidden">
 
-            <!-- Fondo video o imagen -->
-            <div class="absolute inset-0">
-                <!-- VIDEO o IMG -->
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                    <source src="{{ asset('video/video1.mp4') }}" type="video/mp4">
-                </video>
 
-            </div>
+          <!-- Carousel de banners -->
+@foreach ($banners as $index => $banner)
+    @php
+        $ext = pathinfo($banner->imagen_banner, PATHINFO_EXTENSION);
+        $isVideo = in_array(strtolower($ext), ['mp4', 'webm', 'ogg']);
+    @endphp
+
+    <div
+        class="banner-slide absolute inset-0 transition-opacity duration-700 @if($index === 0) opacity-100 @else opacity-0 @endif"
+        style="z-index: {{ 10 - $index }}"
+    >
+        @if ($isVideo)
+            <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" type="video/{{ $ext }}">
+                Tu navegador no soporta video.
+            </video>
+        @else
+            <img src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" alt="Banner {{ $index + 1 }}" class="w-full h-full object-cover">
+        @endif
+    </div>
+@endforeach
+
 
             <!-- Capa negra semi-transparente encima del video -->
-            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
             <!-- NAVBAR superpuesto -->
             <header class="relative z-10 flex items-center justify-between px-6 py-4">
@@ -184,15 +203,72 @@
                 </div>
 
                 <!-- Enlaces del menú -->
-                <div class="p-6 space-y-4 text-start ">
-                    <a href="{{ route('home') }}" class="block font-semibold">Home</a>
-                    <a href="{{ route('nosotros') }}" class="block font-semibold">Nosotros</a>
-                    <a href="{{ route('actividades') }}" class="block font-semibold">Actividades</a>
-                    <a href="{{ route('servicio') }}" class="block font-semibold">Servicios</a>
-                    <a href="{{ route('politicas') }}" class="block font-semibold">Políticas</a>
-                    <a href="{{ route('contacto') }}" class="block font-semibold">Contacto</a>
-                    <a href="{{ route('login') }}" class="block font-semibold">Login</a>
-                </div>
+               <div class="p-6 space-y-4 text-start">
+    <a href="{{ route('home') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Home
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('nosotros') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Nosotros
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('actividades') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Actividades
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('servicio') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Servicios
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('politicas') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Políticas
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('contacto') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Contacto
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+    <a href="{{ route('login') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
+        Login
+        <span class="transform transition-transform duration-300 group-hover:translate-x-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 4L16 12L8 20" />
+            </svg>
+        </span>
+    </a>
+</div>
+
             </aside>
         </section>
 
@@ -244,6 +320,25 @@
             });
 
         });
+
+        //esto es para el carousel del banner
+           document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.banner-slide');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 10000); // Cambia cada 10 segundos
+
+
+    });
     </script>
 
     {{-- Animación personalizada --}}
