@@ -61,10 +61,11 @@
         $isVideo = in_array(strtolower($ext), ['mp4', 'webm', 'ogg']);
     @endphp
 
-    <div
-        class="banner-slide absolute inset-0 transition-opacity duration-700 @if($index === 0) opacity-100 @else opacity-0 @endif"
-        style="z-index: {{ 10 - $index }}"
-    >
+   <div
+    class="banner-slide absolute inset-0 transition-all duration-700 @if($index === 0) opacity-100 visible @else opacity-0 invisible @endif"
+    style="z-index: {{ 10 - $index }}"
+>
+
         @if ($isVideo)
             <video class="w-full h-full object-cover" autoplay muted loop playsinline>
                 <source src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" type="video/{{ $ext }}">
@@ -73,15 +74,46 @@
         @else
             <img src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" alt="Banner {{ $index + 1 }}" class="w-full h-full object-cover">
         @endif
+
+        <div class="absolute inset-0 bottom-[100px] flex items-end justify-center z-20 ">
+           <div class=" bg-transparent text-white p-4  mb-4 text-center">
+             
+            <h2 class="text-[36px] font-bold mb-4 uppercase font-Raleway">{{ $banner->titulo }}</h2>
+            
+            @if (!empty($banner->enlace))
+                <a href="{{ $banner->enlace }}" target="_blank" class=" group flex items-end justify-center hover:text-gray-200 transition">
+               <span class=" border-2 border-gray-400 rounded-full text-center p-2 transform transition-transform duration-300 group-hover:translate-x-1">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 4L16 12L8 20" />
+                 </svg>
+               </span>
+               </a>
+           @endif
+           </div>
+       </div>
+
+       <!-- Capa negra semi-transparente encima del video -->
+            <div class="absolute inset-0 bg-black bg-opacity-20 z-10 pointer-events-none"></div>
+
     </div>
+
+    
+
 @endforeach
 
-
-            <!-- Capa negra semi-transparente encima del video -->
-            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+            <!-- Progress bars container -->
+<div id="banner-progress" class="absolute w-full bottom-[40px]  flex items-end justify-center gap-2 p-4 z-10 ">
+    @foreach ($banners as $index => $banner)
+        <div class="w-[30px] h-1 bg-white/30 rounded overflow-hidden relative">
+            <div class="progress-fill absolute top-0 left-0 h-full bg-white w-0 transition-all duration-[8000ms]"></div>
+        </div>
+    @endforeach
+</div>
+            
 
             <!-- NAVBAR superpuesto -->
-            <header class="relative z-10 flex items-center justify-between px-6 py-4">
+            <header class="relative z-20 flex items-center justify-between px-6 py-4">
 
                 <!-- Logo + Enlaces alineados -->
                 <div class="flex items-center space-x-6">
@@ -322,23 +354,75 @@
         });
 
         //esto es para el carousel del banner
-           document.addEventListener('DOMContentLoaded', function () {
-        const slides = document.querySelectorAll('.banner-slide');
-        let current = 0;
+//         document.addEventListener('DOMContentLoaded', function () {
+//     const slides = document.querySelectorAll('.banner-slide');
+//     let current = 0;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-            });
-        }
+//     function showSlide(index) {
+//         slides.forEach((slide, i) => {
+//             if (i === index) {
+//                 slide.classList.remove('opacity-0', 'invisible');
+//                 slide.classList.add('opacity-100', 'visible');
+//             } else {
+//                 slide.classList.remove('opacity-100', 'visible');
+//                 slide.classList.add('opacity-0', 'invisible');
+//             }
+//         });
+//     }
 
-        setInterval(() => {
-            current = (current + 1) % slides.length;
-            showSlide(current);
-        }, 10000); // Cambia cada 10 segundos
+//     setInterval(() => {
+//         current = (current + 1) % slides.length;
+//         showSlide(current);
+//     }, 8000);
+// });
 
 
-    });
+    //barra de progreso 
+
+   document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.banner-slide');
+    const progressFills = document.querySelectorAll('.progress-fill');
+    const duration = 8000; // 🔁 Aquí defines los 10 segundos
+    let current = 0;
+
+    function resetProgressBars() {
+        progressFills.forEach((fill) => {
+            fill.style.width = '0%';
+            fill.style.transition = 'none';
+        });
+    }
+
+    function animateProgressBar(index) {
+        const fill = progressFills[index];
+        fill.style.transition = `width ${duration}ms linear`; // ⏱ Aquí también
+        fill.style.width = '100%';
+    }
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.remove('opacity-0', 'invisible');
+                slide.classList.add('opacity-100', 'visible');
+            } else {
+                slide.classList.remove('opacity-100', 'visible');
+                slide.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        resetProgressBars();
+        animateProgressBar(index);
+    }
+
+    // Inicializar
+    showSlide(current);
+
+    // Loop automático cada 10 segundos
+    setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }, duration);
+});
+
     </script>
 
     {{-- Animación personalizada --}}
