@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col items-center ">
+<body class="bg-gray-100 min-h-screen flex flex-col items-center scroll-smooth ">
 
 
 
