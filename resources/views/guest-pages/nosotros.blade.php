@@ -494,7 +494,7 @@
                 <!-- CONTENEDOR -->
                 <div class="w-full flex flex-col items-center justify-center py-10">
 
-                    <div class="text-center z-10 text-black mb-5 p-5 w-[90%] font-bold text-5xl bg-transparent">
+                    <div class="text-center z-10 text-black mb-5 p-5 w-[90%] font-bold font-Raleway text-5xl bg-transparent">
                         <h2>Esta es nuestra historia</h2>
                     </div>
 
@@ -523,19 +523,19 @@
                             <!-- ITEM 4 -->
                             <div
                                 class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 3</h1>
+                                <h1 class="text-black text-2xl">Línea de Tiempo 4</h1>
                             </div>
 
                             <!-- ITEM 5 -->
                             <div
                                 class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 3</h1>
+                                <h1 class="text-black text-2xl">Línea de Tiempo 5</h1>
                             </div>
 
                             <!-- ITEM 6 -->
                             <div
                                 class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 3</h1>
+                                <h1 class="text-black text-2xl">Línea de Tiempo 6</h1>
                             </div>
 
                         </div>

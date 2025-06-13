@@ -11,8 +11,8 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!--faviicon-->
-        <link rel="icon"  href="{{ asset('img/logok.png') }}" type="image/png">
+         <!--faviicon-->
+    <link rel="icon" href="{{ asset('img/logokyg.webp') }}" type="image/png">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])

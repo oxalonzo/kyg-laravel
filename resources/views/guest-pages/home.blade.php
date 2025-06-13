@@ -78,12 +78,12 @@
         <div class="absolute inset-0 bottom-[100px] flex items-end justify-center z-20 ">
            <div class=" bg-transparent text-white p-4  mb-4 text-center">
              
-            <h2 class="text-[36px] font-bold mb-4 uppercase font-Raleway">{{ $banner->titulo }}</h2>
+            <h2 class=" text-[26px] lg:text-[36px] font-bold mb-4 uppercase font-Raleway tracking-wider">{{ $banner->titulo }}</h2>
             
             @if (!empty($banner->enlace))
                 <a href="{{ $banner->enlace }}" target="_blank" class=" group flex items-end justify-center hover:text-gray-200 transition">
                <span class=" border-2 border-gray-400 rounded-full text-center p-2 transform transition-transform duration-300 group-hover:translate-x-1">
-                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  <svg class="  w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M8 4L16 12L8 20" />
                  </svg>
@@ -218,24 +218,31 @@
 
             <!-- Menú lateral (solo móviles) -->
             <aside id="mobileMenu"
-                class="fixed inset-0 bg-black bg-opacity-90 text-white transform -translate-x-full transition-transform duration-300 z-50 shadow-lg">
+                class="fixed inset-0 bg-black bg-opacity-30 text-white transform -translate-x-full transition-transform duration-300 z-50 shadow-lg">
 
-                <!-- Header del menú móvil con logo y botón de cerrar -->
-                <div class="flex items-center justify-between px-6 py-4 border-b">
-                    <div class="w-full flex justify-center">
-                        <img src="{{ asset('/img/logoblanco.png') }}" alt="Logo" class="w-12 h-12">
-                    </div>
-                    <!-- Botón cerrar -->
-                    <button id="menuClose" class="absolute right-5 top-6 text-gray-700">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+                 <!-- Fondo blur -->
+            <div class="absolute inset-0 backdrop-blur-md bg-black bg-opacity-60 pointer-events-none"></div>
 
-                <!-- Enlaces del menú -->
-               <div class="p-6 space-y-4 text-start">
+
+           <!-- Contenido del menú (sobre el blur) -->
+    <div class="relative flex flex-col h-full">
+        <!-- Header del menú móvil con logo y botón de cerrar -->
+        <div class="flex items-center justify-between px-6 py-4 border-b z-10">
+            <div class="w-full flex justify-center">
+                <img src="{{ asset('/img/logoblanco.png') }}" alt="Logo" class="w-12 h-12">
+            </div>
+            <!-- Botón cerrar -->
+            <button id="menuClose" class="absolute right-5 top-6 text-gray-700 z-10">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Enlaces del menú -->
+         <div class="p-6 space-y-4 text-start">
     <a href="{{ route('home') }}" class="group flex items-center justify-between font-semibold font-Raleway transition-all">
         Home
         <span class="transform transition-transform duration-300 group-hover:translate-x-1">
@@ -300,6 +307,8 @@
         </span>
     </a>
 </div>
+
+    </div>
 
             </aside>
         </section>
