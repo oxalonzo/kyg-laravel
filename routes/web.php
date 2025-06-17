@@ -3,7 +3,8 @@
 use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Guest\NosotrosController;
+use App\Http\Controllers\Guest\HomeController;
 use App\Http\Controllers\InformacionGeneralController;
 use App\Http\Controllers\NuestraHistoriaController;
 use App\Http\Controllers\ProfileController;
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/nosotros', function () {
-    return view('guest-pages/nosotros');
-})->name('nosotros');
+
+Route::get('/nosotros', [NosotrosController::class, 'index'])->name('nosotros');
+
 
 Route::get('/actividades', function () {
     return view('guest-pages/actividades');

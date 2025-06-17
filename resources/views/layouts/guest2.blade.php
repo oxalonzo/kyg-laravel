@@ -59,7 +59,7 @@
 
 
 
-    {{-- JavaScript para ocultar el preloader tras 2 segundos --}}
+    {{-- JavaScript para el menu responsive --}}
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const toggle = document.getElementById('menuToggle');

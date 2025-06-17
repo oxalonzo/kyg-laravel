@@ -486,7 +486,7 @@
 
 
 
-                <!-- Capa negra semi-transparente encima del video -->
+                <!-- Capa negra semi-transparente encima  -->
                 <div class="absolute backdrop-blur-md inset-0 bg-white bg-opacity-10"></div>
 
 
@@ -498,48 +498,40 @@
                         <h2>Esta es nuestra historia</h2>
                     </div>
 
+                   
+                        
+                    
+
                     <!-- CARRUSEL -->
                     <div class="relative w-[90%] overflow-hidden">
                         <div id="carousel" class="flex transition-transform duration-500 ease-out space-x-6">
 
+ @foreach ($historias as $historia)
+
                             <!-- ITEM 1 -->
-                            <div
-                                class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 1</h1>
-                            </div>
+<div class="w-[90%] md:w-[600px] lg:w-[1200px] h-auto lg:h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/30 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center shrink-0 gap-4">
+    <div class="flex flex-col space-y-2 text-black w-full lg:w-1/2">
+       <div class="flex gap-2 mb-3">
+         <p class="font-bold"><span class=" font-light">FROM:</span> {{ $historia->from_year }}</p>
+         <p class="font-bold"><span class=" font-light">TO:</span> {{ $historia->to_year }}</p>
+       </div>
+        <p class="font-bold">{{ $historia->empresa }}</p>
+        <p class="font-bold">{{ $historia->ubicacion }}</p>
+    </div>
+    <div class="text-black w-full lg:w-1/2">
+        <p class="text-sm md:text-base lg:text-lg leading-snug font-semibold break-words">
+            {!! nl2br(e($historia->descripcion_historia)) !!}
+        </p>
+    </div>
+</div>
 
-                            <!-- ITEM 2 -->
-                            <div
-                                class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 2</h1>
-                            </div>
 
-                            <!-- ITEM 3 -->
-                            <div
-                                class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 3</h1>
-                            </div>
-
-                            <!-- ITEM 4 -->
-                            <div
-                                class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 4</h1>
-                            </div>
-
-                            <!-- ITEM 5 -->
-                            <div
-                                class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 5</h1>
-                            </div>
-
-                            <!-- ITEM 6 -->
-                            <div
-                                class="w-[1200px] h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/20 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex justify-center items-center shrink-0">
-                                <h1 class="text-black text-2xl">Línea de Tiempo 6</h1>
-                            </div>
+            @endforeach                  
 
                         </div>
                     </div>
+
+                  
 
                     <!-- FLECHAS -->
                     <div class="flex justify-center mt-6 space-x-8 z-10">
