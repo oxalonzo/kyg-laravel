@@ -317,17 +317,85 @@
         </section>
 
         <!-- MAIN -->
-        <main class="flex-1 px-4 py-12 bg-gray-50">
-            <section class="max-w-4xl mx-auto text-center bg-white p-8 rounded shadow">
-                <h2 class="text-3xl font-bold mb-4">Bienvenido</h2>
-                <p class="text-gray-600">Este es el contenido principal de tu aplicación.</p>
+        <main class="flex justify-center items-center flex-col bg-gray-50">
+
+
+             <!-- section branches -->
+            <section class=" flex flex-col lg:flex-row justify-center items-center w-full px-4 py-12">
+                <div class=" w-full lg:w-[55%] flex flex-col items-center">
+                    <h2 class=" text-2xl sm:text-4xl font-extrabold font-Raleway tracking-wider">Centros de servicios</h2>
+                </div>
+
+                <div id="slider" class=" relative flex justify-between items-center w-full lg:w-[45%] h-[420px] rounded-lg shadow-md ">
+
+                    @php
+                    
+                    $slides = [
+                        ['img' => 'img/centrojfk.jpg', 'title' => 'Centro de servicios Kenedy', 'link' => 'https://www.youtube.com/'],
+                        ['img' => 'img/centroduarte.jpg', 'title' => 'Centro de servicios Duarte', 'link' => 'https://www.youtube.com/'],
+                        ['img' => 'img/centropuntacana.jpg', 'title' => 'Centro de servicios punta cana', 'link' => 'https://www.youtube.com/'],
+                    ]
+
+                    @endphp
+
+                    @foreach ($slides as $index => $slide)
+                    
+                        <div class="slide absolute inset-0 transition-opacity duration-700 {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}}">
+                            <img class="w-full h-full object-cover rounded-lg" src="{{ asset($slide['img']) }}" alt="{{ $slide['title'] }}">
+                            <h3 class=" absolute bottom-2 left-2 uppercase text-md sm:text-xl text-white font-semibold">{{ $slide['title'] }}</h3>
+                            <a href="{{ $slide['link'] }}" class=" absolute bottom-2 right-4 text-sm font-bold bg-[#f2cd01] hover:bg-[#f6d939] p-2 rounded-md border-1 border-black ">Ver centro</a>
+                        </div>
+                    
+                    @endforeach
+
+                      
+                      
+                      
+                </div>
             </section>
-            <!-- Más secciones aquí -->
+            
+            
+            <!-- section price and goal -->
+
+
+            <section class=" flex flex-col lg:flex-row justify-center items-center w-full px-8 py-4 ">
+
+                <div class=" relative w-full lg:w-[40%] h-[800px]">
+
+                    <!--fondo oscuro en la imagen-->
+                    <div class=" absolute inset-0 bg-black opacity-10"></div>
+
+                    <!--content-->
+                     <img class="w-full h-full object-cover rounded-lg" src="{{ asset('img/backgroundprice.jpg') }}" alt="{{ $slide['title'] }}">
+
+                     <h3 class=" absolute top-[200px] left-[50px] uppercase text-md sm:text-3xl text-white font-bold">¿Estós pensando en cambiar tus neumáticos?</h3>
+
+                     <p class="absolute top-[300px] left-[50px] uppercase text-md sm:text-xl text-white font-semibold">Comunicate con uno de nuestros expertos y solicita tu cotizacion. 829-638-8334</p>
+                     
+                     <a href="#" class=" absolute bottom-[100px] right-[50px] text-sm text-[#f2cd01] font-bold bg-black p-2 rounded-md border-1 border-black ">Cotiza con nosotros</a>
+                
+                </div>
+
+                <div class=" relative w-full lg:w-[60%] flex flex-col justify-center items-center">
+                    <!--lines-->
+                    {{-- <div class=" absolute top-1 w-[1300px] h-[6px] bg-[#f2cd01] rotate-[140deg]"></div>
+                    <div class=" absolute top-5 w-[1280px] h-[6px] bg-[#f2cd01] rotate-[140deg]"></div> --}}
+
+                     <!--content-->
+                    <h2 class=" text-2xl sm:text-4xl font-extrabold font-Raleway tracking-wider z-10">texto</h2>
+                </div>
+
+            </section>
+
+          
             
         </main>
+        
 
         <!-- FOOTER -->
         @include('layouts.footer')
+
+
     </div>
 
 
@@ -362,29 +430,6 @@
             });
 
         });
-
-        //esto es para el carousel del banner
-//         document.addEventListener('DOMContentLoaded', function () {
-//     const slides = document.querySelectorAll('.banner-slide');
-//     let current = 0;
-
-//     function showSlide(index) {
-//         slides.forEach((slide, i) => {
-//             if (i === index) {
-//                 slide.classList.remove('opacity-0', 'invisible');
-//                 slide.classList.add('opacity-100', 'visible');
-//             } else {
-//                 slide.classList.remove('opacity-100', 'visible');
-//                 slide.classList.add('opacity-0', 'invisible');
-//             }
-//         });
-//     }
-
-//     setInterval(() => {
-//         current = (current + 1) % slides.length;
-//         showSlide(current);
-//     }, 8000);
-// });
 
 
     //barra de progreso 
@@ -432,6 +477,28 @@
         showSlide(current);
     }, duration);
 });
+
+
+        // js de carousel de centros de servicios 
+
+        let currentslide = 0;
+        const slides = document.querySelectorAll('#slider .slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('opacity-100', i === index);
+                slide.classList.toggle('z-10', i === index);
+                slide.classList.toggle('opacity-0', i !== index);
+                slide.classList.toggle('z-0', i !== index);
+            });
+        }
+
+        setInterval(() => {
+            currentslide = (currentslide + 1) % totalSlides;
+            showSlide(currentslide);
+        }, 6000); // cambia cada 6 segundos
+
 
     </script>
 
