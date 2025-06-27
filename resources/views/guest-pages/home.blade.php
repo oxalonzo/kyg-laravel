@@ -365,7 +365,7 @@
 
                     @foreach ($slides as $index => $slide)
                         <div
-                            class="slide absolute inset-0 transition-opacity duration-700 {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }} group overflow-hidden">
+                            class="slide absolute inset-0 transition-opacity duration-700 {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }} group overflow-hidden rounded-lg">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300 ease-out rounded-lg" src="{{ asset($slide['img']) }}"
                                 alt="{{ $slide['title'] }}">
                             <h3
@@ -418,7 +418,7 @@
 
 
                     <!--line divide of number-->
-                    <div class=" absolute top-[125px] sm:top-[125px] lg:top-[96px] left-[0px] sm:left-[52px] lg:left-[204px] bg-gray-50 w-[160px] sm:w-[165px] lg:w-[162px] h-[5px] rotate-[160deg]"></div>
+                    <div class=" absolute top-[125px] sm:top-[125px] lg:top-[96px] left-[0px] sm:left-[52px] lg:left-[204px] 2xl:left-[270px] bg-gray-50 w-[160px] sm:w-[165px] lg:w-[162px] 2xl:w-[156px] h-[5px] rotate-[160deg]"></div>
                     
                     <!--logic for the number increase-->
 
@@ -444,6 +444,8 @@
 
             </section>
 
+
+               <!-- section process -->
             <section class="flex flex-col items-center bg-[#161616] w-full h-auto lg:h-screen ">
                 
                 <!--content-->
@@ -476,6 +478,54 @@
                 </div>
 
             </section>
+
+             <!-- section products -->
+
+             <section class=" relative flex flex-col justify-center items-center w-full py-24 bg-white">
+
+                <!--circles-->
+                <div class=" absolute top-[150px] left-[700px] w-[500px] h-[500px] rounded-full border-2 border-gray-300"></div>
+                <div class=" absolute top-[120px] left-[670px] w-[560px] h-[560px] rounded-full border-2 border-gray-300"></div>
+                <div class=" absolute top-[90px] left-[640px] w-[620px] h-[620px] rounded-full border-2 border-gray-300"></div>
+                <div class=" absolute top-[380px] left-[785px] text-4xl font-Raleway font-bold tracking-wide">Nuestros Productos</div>
+
+
+                <!--content cards-->
+                <div class="flex justify-around items-center w-full mb-4 p-5">
+
+                    <!--card product-->
+                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
+                        <h3>Aceites</h3>
+                        <p>Motor, transmision, frenos, etc.</p>
+                    </div>
+
+                    <!--card product-->
+                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
+                        <h3>Aceites</h3>
+                        <p>Motor, transmision, frenos, etc.</p>
+                    </div>
+
+                </div>
+
+                <!--content cards-->
+                <div class="flex justify-around items-center w-full p-5">
+
+                    <!--card product-->
+                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
+                        <h3>Aceites</h3>
+                        <p>Motor, transmision, frenos, etc.</p>
+                    </div>
+
+                    <!--card product-->
+                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
+                        <h3>Aceites</h3>
+                        <p>Motor, transmision, frenos, etc.</p>
+                    </div>
+
+                </div>
+
+             </section>
+
 
             
 

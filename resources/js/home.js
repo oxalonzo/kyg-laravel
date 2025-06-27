@@ -170,14 +170,14 @@ if (currentPath === '/') {
                     const card2 = document.getElementById("card2");
                     card2.classList.remove("opacity-0", "translate-y-10");
                     card2.classList.add("opacity-100", "translate-y-0");
-                }, 800);
+                }, 500);
 
                 // 👉 Card 3
                 setTimeout(() => {
                     const card3 = document.getElementById("card3");
                     card3.classList.remove("opacity-0", "translate-y-10");
                     card3.classList.add("opacity-100", "translate-y-0");
-                }, 1600);
+                }, 1000);
 
   
                       // Para que solo ocurra una vez:
