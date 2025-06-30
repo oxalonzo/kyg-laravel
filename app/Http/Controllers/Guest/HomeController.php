@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Red_Social;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,15 @@ class HomeController extends Controller
     {
 
         $banners = Banner::all();
+        $posts = Red_Social::all();
 
-        return view('guest-pages/home', compact('banners'));
+        return view('guest-pages/home', compact('banners', 'posts'));
     }
+
+
+
+
+    
+
+
 }

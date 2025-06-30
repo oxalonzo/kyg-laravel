@@ -84,6 +84,19 @@ export default {
           '100%': { transform: 'translateX(0) translateY(0)' },
         },
 
+        brandcircle: {
+          '0%': { transform: 'translateY(500px) rotate(0deg)' },
+          '100%': { transform: 'translateY(500px) rotate(360deg)' },
+        },
+
+        callicon: {
+          '0%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-2px)' },
+          ' 50%': { transform: 'translateX(2px)' },
+          '75%': { transform: 'translateX(-2px)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+
       },
       animation: {
         'slide-in-left': 'slide-in-left 0.8s ease-out forwards',
@@ -98,6 +111,8 @@ export default {
         'burbuja-tres': 'burbujaTres 30s ease-out infinite',
         'burbuja-cuatro': 'burbujaCuatro 30s ease-out infinite',
         'burbuja-cinco': 'burbujaCinco 30s ease-out infinite',
+        'brand-circle': 'brandcircle 40s linear infinite',
+        'call-icon': 'callicon 0.3s ease-in-out',
       },
 
     },

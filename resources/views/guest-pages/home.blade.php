@@ -332,7 +332,8 @@
 
 
             <!-- section branches -->
-            <section id="showServiceCenter" class=" opacity-0 translate-y-10 transition-all duration-700 ease-in-out lg:h-[800px] flex flex-col lg:flex-row justify-center items-center w-full px-4 py-12">
+            <section id="showServiceCenter"
+                class=" opacity-0 translate-y-10 transition-all duration-700 ease-in-out lg:h-[800px] flex flex-col lg:flex-row justify-center items-center w-full px-4 py-12">
                 <div class=" w-full lg:w-[55%] flex flex-col items-center mb-7 lg:mb-0">
                     <h2 class=" text-2xl sm:text-5xl font-extrabold font-Raleway tracking-wider">Centros de servicios
                     </h2>
@@ -366,8 +367,8 @@
                     @foreach ($slides as $index => $slide)
                         <div
                             class="slide absolute inset-0 transition-opacity duration-700 {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }} group overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300 ease-out rounded-lg" src="{{ asset($slide['img']) }}"
-                                alt="{{ $slide['title'] }}">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300 ease-out rounded-lg"
+                                src="{{ asset($slide['img']) }}" alt="{{ $slide['title'] }}">
                             <h3
                                 class=" absolute bottom-2 left-2 uppercase text-md sm:text-xl text-white font-semibold">
                                 {{ $slide['title'] }}</h3>
@@ -387,7 +388,8 @@
             <!-- section price and goal -->
 
 
-            <section id="showBranches" class=" opacity-0 translate-y-10 transition-all duration-700 ease-in-out flex flex-col lg:flex-row justify-center items-center w-full px-8 py-6 ">
+            <section id="showBranches"
+                class=" opacity-0 translate-y-10 transition-all duration-700 ease-in-out flex flex-col lg:flex-row justify-center items-center w-full px-8 py-6 ">
 
                 <div class=" relative w-full lg:w-[40%] h-[800px]">
 
@@ -418,8 +420,10 @@
 
 
                     <!--line divide of number-->
-                    <div class=" absolute top-[125px] sm:top-[125px] lg:top-[96px] left-[0px] sm:left-[52px] lg:left-[204px] 2xl:left-[270px] bg-gray-50 w-[160px] sm:w-[165px] lg:w-[162px] 2xl:w-[156px] h-[5px] rotate-[160deg]"></div>
-                    
+                    <div
+                        class=" absolute top-[125px] sm:top-[125px] lg:top-[96px] left-[0px] sm:left-[52px] lg:left-[204px] 2xl:left-[270px] bg-gray-50 w-[160px] sm:w-[165px] lg:w-[162px] 2xl:w-[156px] h-[5px] rotate-[160deg]">
+                    </div>
+
                     <!--logic for the number increase-->
 
                     @php
@@ -427,17 +431,21 @@
                         $numberBase = 0; //start number
                         $currentYear = now()->year; // current year
                         $diferent = $currentYear - $yearBase; //logic
-                        $valueFinal = $numberBase + $diferent; 
+                        $valueFinal = $numberBase + $diferent;
                     @endphp
 
                     <!--content-->
                     <div class="flex text-center justify-center items-center mb-[40px] gap-4">
                         <h2 class="text-[120px] font-bold text-[#f2cd01]">{{ $valueFinal }}</h2>
-                        <p class=" text-[20px] text-gray-400 font-Raleway font-semibold tracking-wide max-w-96">años comprometidos con la satisfacción y seguridad de nuestros clientes a nivel nacional.</p>
+                        <p class=" text-[20px] text-gray-400 font-Raleway font-semibold tracking-wide max-w-96">años
+                            comprometidos con la satisfacción y seguridad de nuestros clientes a nivel nacional.</p>
                     </div>
 
                     <div>
-                        <h3 class="max-w-[550px] text-[25px] font-Raleway font-semibold">Nuestra <span class="text-[#f2cd01]">meta</span> es exceder las expectativas del mercado y agregar valor sostenible, combinando alianzas con marcas innovadoras y una cultura de excelencia</h3>
+                        <h3 class="max-w-[550px] text-[25px] font-Raleway font-semibold">Nuestra <span
+                                class="text-[#f2cd01]">meta</span> es exceder las expectativas del mercado y agregar
+                            valor sostenible, combinando alianzas con marcas innovadoras y una cultura de excelencia
+                        </h3>
                     </div>
 
                 </div>
@@ -445,89 +453,279 @@
             </section>
 
 
-               <!-- section process -->
+            <!-- section process -->
             <section class="flex flex-col items-center bg-[#161616] w-full h-auto lg:h-screen ">
-                
+
                 <!--content-->
                 <div class="flex flex-col justify-center items-center text-white mb-28 py-[70px]">
-                    <h2 class=" text-2xl sm:text-4xl lg:text-5xl font-Raleway font-bold tracking-wider mb-8">¿Conoces Nuestro Proceso?</h2>
-                    <p class=" text-gray-300 max-w-[520px] text-[14px] sm:text-[16px] lg:text-[18px] font-Raleway font-semibold text-center tracking-wide ">Nuestro proceso de mejora de flotillas esta diseñado para reducir costos, tiempo y riezgo a tu personal.</p>
+                    <h2 class=" text-2xl sm:text-4xl lg:text-5xl font-Raleway font-bold tracking-wider mb-8">¿Conoces
+                        Nuestro Proceso?</h2>
+                    <p
+                        class=" text-gray-300 max-w-[520px] text-[14px] sm:text-[16px] lg:text-[18px] font-Raleway font-semibold text-center tracking-wide ">
+                        Nuestro proceso de mejora de flotillas esta diseñado para reducir costos, tiempo y riezgo a tu
+                        personal.</p>
                 </div>
 
                 <!--cards-->
-                <div id="showCards" class="flex flex-col lg:flex-row justify-center items-center w-full mb-3 gap-8 opacity-0 translate-y-10 transition-all duration-700 ease-in-out ">
+                <div id="showCards"
+                    class="flex flex-col lg:flex-row justify-center items-center w-full mb-3 gap-8 opacity-0 translate-y-10 transition-all duration-700 ease-in-out ">
 
-                    <div id="card1" class="relative h-[570px] w-full sm:w-[500px] rounded-none sm:rounded-lg lg:rounded-none lg:rounded-tl-lg lg:rounded-tr-lg bg-[#5e5e5e] flex flex-col text-start px-8 py-20 overflow-hidden opacity-0 translate-y-10 transition-all duration-700 ">
-                        <h3 class="text-white text-3xl font-Raleway font-bold  tracking-wider mb-5 z-10">Optimización</h3>
-                        <p class="text-gray-300 font-Raleway font-semibold z-10">Logística de trabajo optimizada para reducir tiempo de espera en taller, reflejandose en mayor tiempo de productividad en tu negocio.</p>
-                        <img class=" absolute left-0 bottom-[40px] w-[350px] h-[350px]" src="{{ asset('img/aceite.png') }}" alt="aceite kyg">
+                    <div id="card1"
+                        class="relative h-[570px] w-full sm:w-[500px] rounded-none sm:rounded-lg lg:rounded-none lg:rounded-tl-lg lg:rounded-tr-lg bg-[#5e5e5e] flex flex-col text-start px-8 py-20 overflow-hidden opacity-0 translate-y-10 transition-all duration-700 ">
+                        <h3 class="text-white text-3xl font-Raleway font-bold  tracking-wider mb-5 z-10">Optimización
+                        </h3>
+                        <p class="text-gray-300 font-Raleway font-semibold z-10">Logística de trabajo optimizada para
+                            reducir tiempo de espera en taller, reflejandose en mayor tiempo de productividad en tu
+                            negocio.</p>
+                        <img class=" absolute left-0 bottom-[40px] w-[350px] h-[350px]"
+                            src="{{ asset('img/aceite.png') }}" alt="aceite kyg">
                     </div>
 
-                    <div id="card2" class="relative h-[570px] w-full sm:w-[500px] rounded-none sm:rounded-lg lg:rounded-none lg:rounded-tl-lg lg:rounded-tr-lg bg-black flex flex-col text-start px-8 py-20 overflow-hidden opacity-0 translate-y-10 transition-all duration-700 ">
+                    <div id="card2"
+                        class="relative h-[570px] w-full sm:w-[500px] rounded-none sm:rounded-lg lg:rounded-none lg:rounded-tl-lg lg:rounded-tr-lg bg-black flex flex-col text-start px-8 py-20 overflow-hidden opacity-0 translate-y-10 transition-all duration-700 ">
                         <h3 class="text-white text-3xl font-Raleway font-bold  tracking-wider mb-5">Prevención</h3>
-                        <p class="text-gray-300 font-Raleway font-semibold">Logística de trabajo optimizada para reducir tiempo de espera en taller, reflejandose en mayor tiempo de productividad en tu negocio.</p>
-                        <img class=" absolute left-[20px] bottom-[0px] w-[450px] h-[350px]" src="{{ asset('img/goma2.jpg') }}" alt="aceite kyg">
+                        <p class="text-gray-300 font-Raleway font-semibold">Logística de trabajo optimizada para
+                            reducir tiempo de espera en taller, reflejandose en mayor tiempo de productividad en tu
+                            negocio.</p>
+                        <img class=" absolute left-[20px] bottom-[0px] w-[450px] h-[350px]"
+                            src="{{ asset('img/goma2.jpg') }}" alt="aceite kyg">
                     </div>
 
-                    <div id="card3" class="relative h-[570px] w-full sm:w-[500px] rounded-none sm:rounded-lg lg:rounded-none lg:rounded-tl-lg lg:rounded-tr-lg bg-[#f2cd01] flex flex-col text-start px-8 py-20 overflow-hidden opacity-0 translate-y-10 transition-all duration-700 ">
+                    <div id="card3"
+                        class="relative h-[570px] w-full sm:w-[500px] rounded-none sm:rounded-lg lg:rounded-none lg:rounded-tl-lg lg:rounded-tr-lg bg-[#f2cd01] flex flex-col text-start px-8 py-20 overflow-hidden opacity-0 translate-y-10 transition-all duration-700 ">
                         <h3 class="text-white text-3xl font-Raleway font-bold  tracking-wider mb-5">Ahorro</h3>
-                        <p class="text-white font-Raleway font-semibold">Logística de trabajo optimizada para reducir tiempo de espera en taller, reflejandose en mayor tiempo de productividad en tu negocio.</p>
-                        <img class=" absolute right-[-60px] bottom-[5px] w-[310px] h-[310px]" src="{{ asset('img/bateria.png') }}" alt="aceite kyg">
+                        <p class="text-white font-Raleway font-semibold">Logística de trabajo optimizada para reducir
+                            tiempo de espera en taller, reflejandose en mayor tiempo de productividad en tu negocio.</p>
+                        <img class=" absolute right-[-60px] bottom-[5px] w-[310px] h-[310px]"
+                            src="{{ asset('img/bateria.png') }}" alt="aceite kyg">
                     </div>
 
                 </div>
 
             </section>
 
-             <!-- section products -->
+            <!-- section products -->
 
-             <section class=" relative flex flex-col justify-center items-center w-full py-24 bg-white">
+            <section class="relative flex flex-col items-center w-full py-24 bg-white overflow-hidden">
 
-                <!--circles-->
-                <div class=" absolute top-[150px] left-[700px] w-[500px] h-[500px] rounded-full border-2 border-gray-300"></div>
-                <div class=" absolute top-[120px] left-[670px] w-[560px] h-[560px] rounded-full border-2 border-gray-300"></div>
-                <div class=" absolute top-[90px] left-[640px] w-[620px] h-[620px] rounded-full border-2 border-gray-300"></div>
-                <div class=" absolute top-[380px] left-[785px] text-4xl font-Raleway font-bold tracking-wide">Nuestros Productos</div>
+                <!-- Círculos y texto centrados -->
+                <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                    <div class="relative">
+                        <!-- Círculos -->
+                        <div
+                            class="absolute top-1/2 left-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-gray-300">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 w-[360px] h-[360px] sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-gray-300">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 w-[420px] h-[420px] sm:w-[520px] sm:h-[520px] md:w-[620px] md:h-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-gray-300">
+                        </div>
 
+                        <!-- Texto centrado -->
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-xl sm:text-2xl md:text-4xl font-Raleway font-bold tracking-wide">
+                            Nuestros Productos
+                        </div>
+                    </div>
+                </div>
 
-                <!--content cards-->
-                <div class="flex justify-around items-center w-full mb-4 p-5">
+                <!-- Content cards fila 1 -->
+                <div
+                    class="flex flex-wrap  justify-around  gap-24 sm:gap-24 lg:gap-52 w-full max-w-7xl mb-16 sm:mb-10 lg:mb-6 p-5 z-10">
 
-                    <!--card product-->
-                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
-                        <h3>Aceites</h3>
-                        <p>Motor, transmision, frenos, etc.</p>
+                    <div
+                        class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
+                        <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
+                            <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
+                                src="{{ asset('img/iconproducts/tire.png') }}" alt="">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Neumáticos</h3>
+                        <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Comerciales, Industriales,
+                            Agricultura, etc.</p>
                     </div>
 
-                    <!--card product-->
-                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
-                        <h3>Aceites</h3>
-                        <p>Motor, transmision, frenos, etc.</p>
+                    <div
+                        class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
+                        <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
+                            <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
+                                src="{{ asset('img/iconproducts/batery.png') }}" alt="">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Baterias</h3>
+                        <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Automoviles, SUV, Camiones.
+                        </p>
                     </div>
 
                 </div>
 
-                <!--content cards-->
-                <div class="flex justify-around items-center w-full p-5">
+                <!-- Content cards fila 2 -->
+                <div
+                    class="flex flex-wrap  justify-around gap-24 sm:gap-24 lg:gap-40 w-full max-w-7xl sm:mt-10 mb-10 p-5 z-10">
 
-                    <!--card product-->
-                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
-                        <h3>Aceites</h3>
-                        <p>Motor, transmision, frenos, etc.</p>
+                    <div
+                        class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
+                        <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
+                            <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
+                                src="{{ asset('img/iconproducts/carup.png') }}" alt="">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Equipos</h3>
+                        <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Gruas, alineadoras, atf,
+                            balanceadoras.</p>
                     </div>
 
-                    <!--card product-->
-                    <div class=" relative w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 z-10 text-black shadow-lg opacity-70">
-                        <h3>Aceites</h3>
-                        <p>Motor, transmision, frenos, etc.</p>
+                    <div
+                        class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
+                        <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
+                            <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
+                                src="{{ asset('img/iconproducts/oil.png') }}" alt="">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Aceites</h3>
+                        <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Motor, transmisión, frenos,
+                            etc.</p>
                     </div>
 
                 </div>
 
-             </section>
+            </section>
 
 
-            
+            <!-- section brands -->
+
+            <section class=" relative flex justify-center items-center w-full h-[900px] bg-black  overflow-hidden">
+
+
+                <!-- Texto encima del círculo -->
+                <div class="absolute top-[540px] w-full text-center px-4 md:px-0">
+                    <h3 class="text-white text-3xl md:text-4xl font-bold mb-4">Nuestras Marcas</h3>
+                    <p class="text-white text-base md:text-lg max-w-2xl mx-auto">
+                        Nuestra conexión con fabricantes visionarios se traduce directamente en la capacidad de ofrecer
+                        soluciones prácticas y efectivas, superando las expectativas convencionales y proporcionando un
+                        valor añadido a cada usuario.
+                    </p>
+                </div>
+
+
+
+                <!-- Círculo principal -->
+                <div class="relative w-[1600px] h-[1600px] rounded-full  animate-brand-circle">
+                    @php
+                        $cuadros = 13;
+                        $radio = 680;
+                        $cuadroSize = 160;
+
+                        $imagenes = [
+                            'giti.png',
+                            'gtradial.png',
+                            'linglong.png',
+                            'jktyre.png',
+                            'mrf.png',
+                            'forerunner.png',
+                            'windforce.png',
+                            'zmax.png',
+                            'lionstone.png',
+                            'bizol.png',
+                            'mol.png',
+                            'gonher.png',
+                            'fortatech.png',
+                        ];
+                    @endphp
+
+                    @for ($i = 0; $i < $cuadros; $i++)
+                        @php
+                            $angle = ($i / $cuadros) * 2 * pi();
+                            $x = $radio * cos($angle);
+                            $y = $radio * sin($angle);
+                            $deg = ($angle * 180) / pi() + 90;
+                            $img = $imagenes[$i % count($imagenes)];
+                        @endphp
+
+                        <div class="absolute w-40 h-40 bg-white rounded-xl shadow-md flex items-center justify-center"
+                            style="
+                                top: calc(50% + {{ $y }}px - {{ $cuadroSize / 2 }}px);
+                                left: calc(50% + {{ $x }}px - {{ $cuadroSize / 2 }}px);
+                                transform: rotate({{ $deg }}deg);
+                            ">
+                            <img src="{{ asset('img/brands/' . $img) }}" alt="Icono"
+                                class=" w-36 h-36 object-contain">
+
+                        </div>
+                    @endfor
+                </div>
+
+            </section>
+
+
+            <!--sectioon of redes social-->
+
+            <section class="w-full h-auto bg-black flex flex-col  items-center ">
+
+
+                <div class=" px-5 py-24 text-white mb-8 w-full flex justify-center items-center">
+                    <h3 class="text-5xl font-Raleway font-bold tracking-wide text-white">nuestras redes sociales</h3>
+                </div>
+
+
+                <!--boxs content principal-->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-4 w-full mb-5">
+
+                    @foreach ($posts as $post)
+                        <!--box content-->
+                        <div class="flex flex-col justify-center items-center">
+
+                            <div class="w-full flex justify-start items-center mb-3 ml-2 sm:ml-4 md:ml-6">
+                                <img class="w-5 h-5" src="{{ asset('img/logoblanco.png') }}" alt="">
+                            </div>
+
+                            <!--box-->
+                            <a href="{{ $post->enlace_social }}"
+                                class="relative w-full aspect-square rounded-2xl mb-2 group" target="_blank">
+                                <img class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                                    src="{{ asset('storage/social_img/' . $post->imagen_social) }}"
+                                    alt="picture social media">
+
+                                <div class="absolute inset-0 flex justify-start items-end rounded-2xl opacity-0 translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-in-out"
+                                    style="background: linear-gradient(to top, #f2cd01 0%, transparent 40%);">
+                                    <h3 class="text-white absolute pb-3 ml-3 text-sm sm:text-base">
+                                        {{ $post->descripcion_social }}</h3>
+                                </div>
+                            </a>
+
+                            <!--bottom of instagram-->
+                            <div
+                                class="flex justify-start items-center w-full gap-3 text-[18px] text-white ml-4 sm:ml-6 md:ml-8">
+                                <i id="heart" class="fa-solid fa-heart cursor-pointer" title="Me gusta"></i>
+                                <i class="fa-regular fa-comment" title="Ver Comentario"></i>
+                                <a href="{{ $post->enlace_social }}" target="_blank">
+                                    <i class="fa-solid fa-paper-plane text-white" title="Ver publicación"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+
+                <div class="mb-5">
+                    <a href="https://www.instagram.com/kygrd/" target="_blank"
+                        class=" flex justify-center items-center gap-2  text-white p-1 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"
+                            class="w-6 h-6 group-hover:animate-call-icon">
+                            <path
+                                d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5Zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5Zm8 2.75a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5h-.01ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" />
+                        </svg>
+                        <span class="text-md font-semibold "> Ver mas publicaciones </span>
+                    </a>
+                </div>
+
+
+
+
+            </section>
+
+
+
+
+
 
 
 
@@ -540,7 +738,7 @@
 
     </div>
 
-   
+
 
     {{-- Animación personalizada --}}
     <style>

@@ -193,5 +193,25 @@ if (currentPath === '/') {
         }
     })
 
+    //hear channge the color when click
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const heart = document.querySelectorAll("#heart");
+
+        heart.forEach((heart) => {
+            heart.addEventListener('click', () => {
+            
+                heart.classList.toggle('text-red-500');
+            })
+        });
+       
+
+        
+
+
+
+
+    })
+
 
 }

@@ -36,7 +36,7 @@ class RedSocialController extends Controller
 
         $request->validate([
             'enlace_social' => 'required|url|max:255',
-            'descripcion_social' => 'required|string',
+            'descripcion_social' => 'nullable|string',
             'imagen_social' => 'required|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', //100mb max
         ]);
 
@@ -75,7 +75,7 @@ class RedSocialController extends Controller
  
          $request->validate([
              'enlace_social' => 'required|string|max:255',
-             'descripcion_social' => 'required|string',
+             'descripcion_social' => 'nullable|string',
              'imagen_social' => 'nullable|mimes:jpeg,png,jpg,gif,avif,mp4,webm,ogg|max:102400', //100mb max
          ]);
  

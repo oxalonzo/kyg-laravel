@@ -33,6 +33,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- Swiper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+   
+
+
 
 </head>
 
@@ -55,10 +60,10 @@
         {{ $slot }}
 
         <!-- footer -->
-      @include('layouts.footer')
+        @include('layouts.footer')
     </div>
 
-    
+
 
 
 
@@ -79,10 +84,9 @@
             });
 
         });
-
-
-        
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 
 
