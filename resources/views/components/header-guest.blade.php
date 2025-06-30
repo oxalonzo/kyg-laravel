@@ -137,6 +137,16 @@
         </div>
     @endif
 
+
+    @if ($path === 'actividades')
+        <!-- texto flotante -->
+        <div
+            class="absolute font-Raleway top-[270px] left-[30px] sm:top-[270px] sm:left-[98px]  lg:top-[270px] lg:left-[668px] text-white max-w-xl flex justify-center items-center text-center">
+            <h1 id="rotatingLetters" class="  uppercase text-[70px] sm:text-[95px] lg:text-[158px] font-bold mb-2 drop-shadow-sm tracking-wide leading-relaxed transition-all duration-500 "
+            style="background-image: url('./img/montaña3.jpg'); background-size: cover; background-position: center; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">Adventura</h1>
+        </div>
+    @endif
+
     <a class="absolute bottom-24 left-1/2  lg:bottom-70 lg:left-1/2  " href="#{{ $section }}">
         <span
             class="inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-white hover:scale-105 transition duration-300">

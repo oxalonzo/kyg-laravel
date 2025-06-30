@@ -4,7 +4,7 @@
 
 <x-guest2-layout>
 
-    <x-header-guest class="relative w-full h-screen  text-white overflow-hidden" :picture="'img/nosotros6.jpg'" :section="'actividades'" />
+    <x-header-guest class="relative w-full h-screen  text-white overflow-hidden" :picture="'img/montaña2.jpg'" :section="'actividades'" />
 
 
     <main class="flex-1 px-0 pb-0 pt-0 bg-gray-50 flex-col">
@@ -12,12 +12,12 @@
 
         @foreach ($actividades as $actividad)
             <section id="actividades"
-                class=" w-full flex justify-center items-center bg-[#111111] px-24 py-20 border-2 border-black shadow-lg ">
+                class=" w-full flex flex-col lg:flex-row justify-center items-center bg-[#111111] px-4 sm:px-24 py-20 border-2 border-black shadow-lg ">
 
 
                 <!-- Carousel container -->
                 <div 
-                    class=" contentImage relative w-[40%] bg-[#2c2b29] h-[450px] rounded-xl -translate-x-10 opacity-0 transition-all duration-700 ease-in-out">
+                    class=" contentImage relative w-full lg:w-[40%] bg-[#2c2b29] h-[450px] rounded-xl -translate-x-10 opacity-0 transition-all duration-700 ease-in-out">
 
                     <div id="shadow"
                         class="absolute inset-0 bg-black rounded-xl opacity-1 w-full transition-all duration-700 ease-in-out">
@@ -50,9 +50,9 @@
 
 
                 <!--content text-->
-                <div class="w-[60%] flex flex-col text-[#e7e7e5] px-14  py-5 ">
+                <div class=" w-full lg:w-[60%] flex flex-col text-[#e7e7e5] p-0 lg:px-14  py-5 ">
                     <h3 id="titleActiviti"
-                        class="text-5xl text-[#e7e7e5] mb-8 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">
+                        class=" text-4xl sm:text-5xl text-[#e7e7e5] mb-8 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">
                         {{ $actividad->titulo }}</h3>
                     <p id="paragraphActiviti"
                         class="text-2xl text-gray-300 mb-24 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">

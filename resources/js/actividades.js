@@ -2,6 +2,36 @@ const currentPath = window.location.pathname;
 
 if (currentPath === '/actividades') {
 
+
+    //letters of banner
+    const frases = [
+
+        "Aventura",
+        "Explorar",
+        "Descubrir",
+        
+    ];
+
+    let index = 0;
+
+    const texto = document.getElementById('rotatingLetters')
+
+    setInterval(() => {
+
+
+        //oculta el texto suavemente 
+        texto.classList.add("opacity-0", "translate-y-10");
+
+        //espera y cambia el texto
+        setTimeout(() => {
+            index = (index + 1) % frases.length;
+            texto.textContent = frases[index];
+            texto.classList.remove("opacity-0", "translate-y-10");
+        }, 500);
+
+
+    }, 3000);
+
      //showboxactiviti
 
      document.addEventListener("DOMContentLoaded", () => {
