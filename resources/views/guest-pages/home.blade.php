@@ -678,7 +678,7 @@
 
                             <!--box-->
                             <a href="{{ $post->enlace_social }}"
-                                class="relative w-full h-[400px] rounded-2xl mb-2 group" target="_blank">
+                                class="relative w-full h-[300px] rounded-2xl mb-2 group" target="_blank">
                                 <img class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                     src="{{ asset('storage/social_img/' . $post->imagen_social) }}"
                                     alt="picture social media">
