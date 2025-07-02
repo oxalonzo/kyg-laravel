@@ -77,7 +77,7 @@ if (currentPath === '/servicio') {
                     observe.unobserve(target);
                 }
             }, {
-            threshold: 0.2,
+            threshold: 0.4, //wait for 40% of the page
         }
         );
 

@@ -497,7 +497,7 @@
                 <!-- CONTENEDOR -->
                 <div class="w-full flex flex-col items-center justify-center py-10">
 
-                    <div class="text-center z-10 text-black mb-5 p-5 w-[90%] font-bold font-Raleway text-5xl bg-transparent">
+                    <div class="text-center z-10 text-black mb-5 p-5 w-[90%] font-bold font-Raleway text-5xl bg-transparent tracking-wide">
                         <h2>Esta es nuestra historia</h2>
                     </div>
 
