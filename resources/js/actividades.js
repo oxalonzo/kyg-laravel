@@ -54,7 +54,7 @@ if (currentPath === '/actividades') {
                     
 
                     // 👉 Card 1
-                    const titleActiviti = document.querySelectorAll("#titleActiviti");
+                    const titleActiviti = document.querySelectorAll(".titleActiviti");
                     
                     titleActiviti.forEach((titleActiviti) => {
                         titleActiviti.classList.remove("opacity-0", "translate-y-10");
@@ -63,7 +63,7 @@ if (currentPath === '/actividades') {
                    
                     // 👉 Card 2
                     setTimeout(() => {
-                        const paragraphActiviti = document.querySelectorAll("#paragraphActiviti");
+                        const paragraphActiviti = document.querySelectorAll(".paragraphActiviti");
 
                         paragraphActiviti.forEach((paragraphActiviti) => {
                             paragraphActiviti.classList.remove("opacity-0", "translate-y-10");
@@ -74,7 +74,7 @@ if (currentPath === '/actividades') {
 
                     // 👉 Card 3
                     setTimeout(() => {
-                        const linkActiviti = document.querySelectorAll("#linkActiviti");
+                        const linkActiviti = document.querySelectorAll(".linkActiviti");
 
                         linkActiviti.forEach((linkActiviti) => {
                             linkActiviti.classList.remove("opacity-0", "translate-x-10");
@@ -85,7 +85,7 @@ if (currentPath === '/actividades') {
 
                     //shadow of banner
                     setTimeout(() => {
-                        const shadow = document.querySelectorAll("#shadow");
+                        const shadow = document.querySelectorAll(".shadow");
                        
 
                         shadow.forEach((shadow) => {

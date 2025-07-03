@@ -538,7 +538,7 @@
                         class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
                         <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
                             <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
-                                src="{{ asset('img/iconproducts/tire.png') }}" alt="">
+                                src="{{ asset('img/iconproducts/tire.png') }}" alt="tire">
                         </div>
                         <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Neumáticos</h3>
                         <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Comerciales, Industriales,
@@ -549,7 +549,7 @@
                         class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
                         <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
                             <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
-                                src="{{ asset('img/iconproducts/batery.png') }}" alt="">
+                                src="{{ asset('img/iconproducts/batery.png') }}" alt="batery">
                         </div>
                         <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Baterias</h3>
                         <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Automoviles, SUV, Camiones.
@@ -566,7 +566,7 @@
                         class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
                         <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
                             <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
-                                src="{{ asset('img/iconproducts/carup.png') }}" alt="">
+                                src="{{ asset('img/iconproducts/carup.png') }}" alt="carup">
                         </div>
                         <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Equipos</h3>
                         <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Gruas, alineadoras, atf,
@@ -577,7 +577,7 @@
                         class=" relative w-full sm:w-[48%] max-w-[500px] h-[250px] bg-gray-50 rounded-xl p-5 text-black shadow-xl overflow-hidden ">
                         <div class=" absolute inset-0 flex justify-center items-center pointer-events-none">
                             <img class=" absolute right-0 w-[240px] sm:w-[280px] lg:w-[240px] h-[240px] sm:h-[280px] lg:h-[240px]"
-                                src="{{ asset('img/iconproducts/oil.png') }}" alt="">
+                                src="{{ asset('img/iconproducts/oil.png') }}" alt="oil">
                         </div>
                         <h3 class="text-xl font-semibold mb-2 tracking-wider py-5 z-20 relative ">Aceites</h3>
                         <p class="font-semibold tracking-wide text-gray-700 z-20 relative ">Motor, transmisión, frenos,

@@ -19,8 +19,8 @@
                 <div 
                     class=" contentImage relative w-full lg:w-[40%] bg-[#2c2b29] h-[450px] rounded-xl -translate-x-10 opacity-0 transition-all duration-700 ease-in-out">
 
-                    <div id="shadow"
-                        class="absolute inset-0 bg-black rounded-xl opacity-1 w-full transition-all duration-700 ease-in-out">
+                    <div 
+                        class=" shadow absolute inset-0 bg-black rounded-xl opacity-1 w-full transition-all duration-700 ease-in-out z-10">
                     </div>
 
                     <!-- Swiper -->
@@ -51,16 +51,16 @@
 
                 <!--content text-->
                 <div class=" w-full lg:w-[60%] flex flex-col text-[#e7e7e5] p-0 lg:px-14  py-5 ">
-                    <h3 id="titleActiviti"
-                        class=" text-4xl sm:text-5xl text-[#e7e7e5] mb-8 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">
+                    <h3
+                        class="titleActiviti text-4xl sm:text-5xl text-[#e7e7e5] mb-8 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">
                         {{ $actividad->titulo }}</h3>
-                    <p id="paragraphActiviti"
-                        class="text-2xl text-gray-300 mb-24 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">
+                    <p
+                        class=" paragraphActiviti text-2xl text-gray-300 mb-24 text-start tracking-wide translate-y-10 opacity-0 transition-all duration-700 ease-in-out">
                         {{ $actividad->descripcion }}
                     </p>
                     <div class="w-full flex justify-end items-center">
-                        <a id="linkActiviti" href="{{ $actividad->enlace }}" target="_blank"
-                            class=" group flex text-center justify-end items-center gap-2 p-2 text-xl tracking-wide translate-x-10 opacity-0 transition-all duration-700 ease-in-out max-w-40 mr-14">
+                        <a href="{{ $actividad->enlace }}" target="_blank"
+                            class=" linkActiviti group flex text-center justify-end items-center gap-2 p-2 text-xl tracking-wide translate-x-10 opacity-0 transition-all duration-700 ease-in-out max-w-40 mr-14">
                             Ver mas
                             <span class="transform transition-transform duration-300 group-hover:translate-x-1">
                                 <svg class=" w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -16,6 +16,13 @@ class Servicio extends Model
       *
       * @var list<string>
       */
+
+
+    //    public function getListAttribute($value)
+    // {
+    //     return json_decode($value, true);
+    // }
+
      protected $fillable = [
          'titulo',
          'descripcion',

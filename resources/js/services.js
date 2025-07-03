@@ -87,6 +87,8 @@ if (currentPath === '/servicio') {
     })
 
 
+    //btns for show more services or less
+
    document.addEventListener("DOMContentLoaded", () => {
     const showMoreBtn = document.getElementById("showMoreBtn");
     const showLessBtn = document.getElementById("showLessBtn");
@@ -148,6 +150,189 @@ if (currentPath === '/servicio') {
 
 
 });
+
+
+//show the divs with the link your click
+ document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[data-target]');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const divId = button.getAttribute('data-target');
+      const contents = document.querySelectorAll('[id^="div"]');
+      contents.forEach(div => div.classList.add('hidden'));
+      document.getElementById(divId).classList.remove('hidden');
+    });
+  });
+});
+
+//active the btn of category when you click
+
+document.querySelectorAll('.category-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            // Quitar clase activa a todos
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('border-2', 'border-[#f2cd01]');
+                btn.classList.add('border', 'border-transparent');
+            });
+
+            // Activar el botón clickeado
+            this.classList.remove('border', 'border-transparent');
+            this.classList.add('border-2', 'border-[#f2cd01]');
+        });
+    });
+
+//show tools
+
+document.addEventListener("DOMContentLoaded", () => {
+        const target = document.getElementById("productsServicesSection");
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    // target.classList.remove("opacity-0", "translate-y-10");
+                    // target.classList.add("opacity-100", "translate-y-0", "visible");
+
+
+                     const tire =  document.getElementById("tire");
+                     tire.classList.remove("opacity-0", "translate-y-10");
+                     tire.classList.add("opacity-100", "translate-y-0");
+
+                  
+                    setTimeout(() => {
+                     const accessory =  document.getElementById("accessory");
+                        accessory.classList.remove("opacity-0", "translate-y-10");
+                        accessory.classList.add("opacity-100", "translate-y-0");
+                    }, 200);
+
+                    setTimeout(() => {
+                      const carup =  document.getElementById("carup");
+                        carup.classList.remove("opacity-0", "translate-y-10");
+                        carup.classList.add("opacity-100", "translate-y-0");
+                    }, 400);
+
+                    setTimeout(() => {
+                      const oil =  document.getElementById("oil");
+                         oil.classList.remove("opacity-0", "translate-y-10");
+                         oil.classList.add("opacity-100", "translate-y-0");
+                    }, 600);
+
+                    
+
+                    // Para que solo ocurra una vez:
+                    observer.unobserve(target);
+                }
+            }, {
+            threshold: 0.3
+        }
+        );
+
+        if (target) {
+            observer.observe(target);
+        }
+    });
+
+
+
+    //show information about services that the admin can edit
+
+
+document.addEventListener("DOMContentLoaded", () => {
+   const targets = document.querySelectorAll(".contentInfoService");
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        const contentImginfo = entry.target.querySelectorAll(".contentImginfo");
+        contentImginfo.forEach((el) => {
+          el.classList.remove("opacity-0", "translate-y-10");
+          el.classList.add("opacity-100", "translate-y-0");
+        });
+
+         setTimeout(() => {
+             const contentDetinfo = entry.target.querySelectorAll(".contentDetinfo");
+           contentDetinfo.forEach((el) => {
+             el.classList.remove("opacity-0", "translate-x-10");
+             el.classList.add("opacity-100", "translate-x-0");
+           });
+         }, 600);
+
+          setTimeout(() => {
+             const contentTitleinfo = entry.target.querySelectorAll(".contentTitleinfo");
+           contentTitleinfo.forEach((el) => {
+             el.classList.remove("opacity-0", "translate-x-10");
+             el.classList.add("opacity-100", "translate-x-0");
+           });
+         }, 600);
+
+         setTimeout(() => {
+             const textInfo = entry.target.querySelectorAll(".textInfo");
+           textInfo.forEach((el) => {
+             el.classList.remove("opacity-0", "translate-y-10");
+             el.classList.add("opacity-100", "translate-y-0");
+           });
+         }, 1100);
+
+         setTimeout(() => {
+             const listText = entry.target.querySelectorAll(".listText");
+           listText.forEach((el) => {
+             el.classList.remove("opacity-0", "translate-y-10");
+             el.classList.add("opacity-100", "translate-y-0");
+           });
+         }, 1100);
+
+
+        // Detener la observación si quieres que ocurra solo una vez
+        observer.unobserve(entry.target);
+
+
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+     targets.forEach(target => observer.observe(target));
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

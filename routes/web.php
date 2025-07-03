@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Guest\ActividadGuestController;
 use App\Http\Controllers\Guest\NosotrosController;
 use App\Http\Controllers\Guest\HomeController;
+use App\Http\Controllers\Guest\serviciosInfoController;
 use App\Http\Controllers\InformacionGeneralController;
 use App\Http\Controllers\NuestraHistoriaController;
 use App\Http\Controllers\ProfileController;
@@ -25,9 +26,9 @@ Route::get('/nosotros', [NosotrosController::class, 'index'])->name('nosotros');
 
 Route::get('/actividades', [ActividadGuestController::class, 'index'])->name('actividades');
 
-Route::get('/servicio', function () {
-    return view('guest-pages/servicios');
-})->name('servicio');
+
+Route::get('/servicio', [serviciosInfoController::class, 'index'])->name('servicio');
+
 
 Route::get('/politicas', function () {
     return view('guest-pages/politicas');

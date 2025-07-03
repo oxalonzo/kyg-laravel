@@ -139,9 +139,10 @@
 
 
    @if ($path === 'actividades')
-    <div class="absolute inset-0 flex justify-center items-center z-0">
+    <div class="absolute inset-0 flex flex-col justify-center items-center z-0">
+        <h2 class="uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold mb-2 drop-shadow-sm tracking-wide text-white font-Raleway" >Somos</h2>
         <h1 id="rotatingLetters"
-            class="uppercase text-[70px] sm:text-[95px] lg:text-[150px] font-bold mb-2 drop-shadow-sm tracking-wide leading-relaxed transition-all duration-500 text-center"
+            class="uppercase text-[70px] sm:text-[95px] lg:text-[150px] font-bold mb-2 drop-shadow-sm tracking-wide font-Raleway leading-relaxed transition-all duration-500 text-center"
             style="background-image: url('./img/montaña3.jpg'); background-size: cover; background-position: center; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
             Adventura
         </h1>
