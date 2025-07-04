@@ -24,6 +24,15 @@
     <!-- Capa negra semi-transparente encima del video -->
     <div class="absolute inset-0 bg-black bg-opacity-30"></div>
 
+     @php
+        $path = request()->path();
+    @endphp
+
+    @if ($path === 'contacto')
+        <!-- Capa negra encima de la imagen solo par ala pagina de servicio -->
+    <div class="absolute inset-0 bg-black bg-opacity-100"></div>
+    @endif
+
     <!-- NAVBAR superpuesto -->
     <header class="relative z-10 flex items-center justify-between px-6 py-4">
 
@@ -142,11 +151,181 @@
     <div class="absolute inset-0 flex flex-col justify-center items-center z-0">
         <h2 class="uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold mb-2 drop-shadow-sm tracking-wide text-white font-Raleway" >Somos</h2>
         <h1 id="rotatingLetters"
-            class="uppercase text-[70px] sm:text-[95px] lg:text-[150px] font-bold mb-2 drop-shadow-sm tracking-wide font-Raleway leading-relaxed transition-all duration-500 text-center"
+            class="uppercase text-[70px] sm:text-[95px] lg:text-[150px] font-bold mb-2 drop-shadow-sm tracking-wide font-Raleway leading-relaxed transition-all duration-500 text-center flex gap-1 overflow-hidden"
             style="background-image: url('./img/montaña3.jpg'); background-size: cover; background-position: center; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
             Adventura
         </h1>
     </div>
+@endif
+
+{{-- @if ($path === 'servicio')
+    <div class="absolute inset-0 flex flex-col justify-center items-center z-0 overflow-hidden">
+
+         <h2 class=" absolute top-[240px] left-[520px] uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >¿Conoces nuestros servicios?</h2>
+
+        <div class=" absolute bg-black w-[1800px] h-[1800px] rounded-full translate-y-[844px]" style="box-shadow:   0 0px 0px #f2cd01,  0 -10px 100px #f2cd01, 0 -5px 20px #f2cd01,  0 -2px 3px #f2cd01;"></div>
+        
+
+
+
+
+         <h2 class="uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold mb-2 drop-shadow-sm tracking-wide text-white font-Raleway" >Somos</h2>
+        <h1 id="rotatingLetters"
+            class="uppercase text-[70px] sm:text-[95px] lg:text-[150px] font-bold mb-2 drop-shadow-sm tracking-wide font-Raleway leading-relaxed transition-all duration-500 text-center flex gap-1 overflow-hidden"
+            style="background-image: url('./img/montaña3.jpg'); background-size: cover; background-position: center; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
+            Adventura
+        </h1>
+    </div> 
+@endif --}}
+
+  @if ($path === 'contacto')
+    <div class="absolute inset-0 flex flex-col items-center z-0 overflow-hidden ">
+
+        <!--card-->
+        <div id="card1" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out backface-hidden absolute top-[388px] left-[176px] w-[250px] h-[150px] p-2 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation" >
+            <div class="w-full h-full bg-black rounded-2xl flex flex-col justify-center items-center p-2">
+               
+                         <div class=" w-full h-full flex justify-between items-center px-3">
+
+                            <div class="w-[30px] h-[30px] rounded-full ">
+                                <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil1.jpg') }}" alt="">
+                            </div>
+
+                            <a href="#" class="w-[30px] h-[30px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                                <span class="transform transition-transform duration-300 ">
+                                <svg class=" w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 4L16 12L8 20" />
+                                </svg>
+                            </span>
+                            </a>
+
+                         </div>
+
+                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3">
+                            <p>¿Qué marcas de aceite tienen disponible?</p>
+                         </div>
+               
+            </div>
+        </div>
+
+        <!--card-->
+
+        <div id="card2" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out absolute bottom-[66px] left-[256px] w-[450px] h-[250px] p-2  bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation z-10">
+        
+             <div class="w-full h-full bg-black rounded-2xl flex flex-col justify-center items-center p-2">
+               
+                         <div class=" w-full h-full flex justify-between items-center px-3">
+
+                            <div class="w-[60px] h-[60px] rounded-full ">
+                                <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil3.jpg') }}" alt="">
+                            </div>
+
+                            <a href="#" class="w-[55px] h-[55px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                                <span class="transform transition-transform duration-300 ">
+                                <svg class=" w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 4L16 12L8 20" />
+                                </svg>
+                            </span>
+                            </a>
+
+                         </div>
+
+                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3">
+                            <p>¿Ofrecen algún tipo de garantía en las gomas, baterías o servicios que brindan?</p>
+                         </div>
+               
+            </div>
+
+        </div>
+        
+
+        <!--card-->
+        <div id="card3" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out absolute top-[350px] right-[250px] w-[400px] h-[200px] p-2  bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation z-10">
+        
+             <div class="w-full h-full bg-black rounded-2xl flex flex-col justify-center items-center p-2">
+               
+                         <div class=" w-full h-full flex justify-between items-center px-3">
+
+                            <div class="w-[50px] h-[50px] rounded-full ">
+                                <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil2.jpg') }}" alt="">
+                            </div>
+
+                            <a href="#" class="w-[50px] h-[50px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                                <span class="transform transition-transform duration-300 ">
+                                <svg class=" w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8 4L16 12L8 20" />
+                                </svg>
+                            </span>
+                            </a>
+
+                         </div>
+
+                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3 text-md">
+                            <p>¿Qué tipo de aceite recomiendan según el kilometraje o el uso que le doy a mi vehículo?</p>
+                         </div>
+               
+            </div>
+
+        </div>
+
+
+
+         <h2 id="contentTextcontac" class=" mt-56 z-10 uppercase  flex justify-center items-center font-bold drop-shadow-sm text-white font-Raleway mb-4" >
+        
+            <span class="letter1 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">¿</span>
+            <span class="letter2 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">C</span>
+            <span class="letter3 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">o</span>
+            <span class="letter4 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">n</span>
+            <span class="letter5 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">o</span>
+            <span class="letter6 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">c</span>
+            <span class="letter7 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">e</span>
+            <span class="letter8 mr-2 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">s</span>
+
+            <span class="letter9 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">n</span>
+            <span class="letter10 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">u</span>
+            <span class="letter11 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">e</span>
+            <span class="letter12 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">s</span>
+            <span class="letter13 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">t</span>
+            <span class="letter14 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">r</span>
+            <span class="letter15 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">o</span>
+            <span class="letter16 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl mr-2">s</span>
+
+            <span class="letter17 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">s</span>
+            <span class="letter18 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">e</span>
+            <span class="letter19 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">r</span>
+            <span class="letter20 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">v</span>
+            <span class="letter21 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">i</span>
+            <span class="letter22 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">c</span>
+            <span class="letter23 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">i</span>
+            <span class="letter24 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">o</span>
+            <span class="letter25 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">s</span>
+            <span class="letter26 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">?</span>
+            
+        
+        </h2>
+
+        <!-- Segunda frase oculta por defecto -->
+<h2 id="secondText" class=" z-10 uppercase   flex justify-center items-center font-bold drop-shadow-sm text-white font-Raleway">
+    <span class="letterB1 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">C</span>
+    <span class="letterB2 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">o</span>
+    <span class="letterB3 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">n</span>
+    <span class="letterB4 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">t</span>
+    <span class="letterB5 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">á</span>
+    <span class="letterB6 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">c</span>
+    <span class="letterB7 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">t</span>
+    <span class="letterB8 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">a</span>
+    <span class="letterB9 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">n</span>
+    <span class="letterB10 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">o</span>
+    <span class="letterB11 opacity-0 translate-y-10 transition-all duration-500 ease-in-out text-2xl sm:text-4xl lg:text-6xl">s</span>
+</h2>
+
+        <div class=" absolute bg-black w-[1800px] h-[1800px] rounded-full translate-y-[544px] animate-sombra-amarilla"></div>
+
+    </div>
+
 @endif
 
 
