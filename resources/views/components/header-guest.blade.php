@@ -182,18 +182,18 @@
     <div class="absolute inset-0 flex flex-col items-center z-0 overflow-hidden ">
 
         <!--card-->
-        <div id="card1" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out backface-hidden absolute top-[388px] left-[176px] w-[250px] h-[150px] p-2 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation" >
+        <div id="card1" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out backface-hidden absolute top-[352px] sm:top-[370px] lg:top-[388px] left-[40px] sm:left-[80px] lg:left-[176px] w-[160px] sm:w-[200px] lg:w-[250px] h-[70px] sm:h-[100px] lg:h-[150px] p-2 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation" >
             <div class="w-full h-full bg-black rounded-2xl flex flex-col justify-center items-center p-2">
                
                          <div class=" w-full h-full flex justify-between items-center px-3">
 
-                            <div class="w-[30px] h-[30px] rounded-full ">
+                            <div class=" w-[20px] sm:w-[25px] lg:w-[30px] h-[20px] sm:h-[25px] lg:h-[30px] rounded-full ">
                                 <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil1.jpg') }}" alt="">
                             </div>
 
-                            <a href="#" class="w-[30px] h-[30px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                            <a href="#" class=" w-[20px] sm:w-[25px] lg:w-[30px] h-[20px] sm:h-[25px] lg:h-[30px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
                                 <span class="transform transition-transform duration-300 ">
-                                <svg class=" w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                <svg class=" w-1 sm:w-2 lg:w-3 h-1 sm:h-2 lg:h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M8 4L16 12L8 20" />
                                 </svg>
@@ -202,7 +202,7 @@
 
                          </div>
 
-                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3">
+                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3 text-[6px] sm:text-[11px] lg:text-[15px]">
                             <p>¿Qué marcas de aceite tienen disponible?</p>
                          </div>
                
@@ -211,19 +211,19 @@
 
         <!--card-->
 
-        <div id="card2" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out absolute bottom-[66px] left-[256px] w-[450px] h-[250px] p-2  bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation z-10">
+        <div id="card2" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out absolute bottom-[250px] sm:bottom-[200px] lg:bottom-[66px] left-[50px] sm:left-[50px] lg:left-[256px] w-[280px] sm:w-[380px] lg:w-[450px] h-[130px] sm:h-[180px] lg:h-[250px] p-2  bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation z-10">
         
              <div class="w-full h-full bg-black rounded-2xl flex flex-col justify-center items-center p-2">
                
                          <div class=" w-full h-full flex justify-between items-center px-3">
 
-                            <div class="w-[60px] h-[60px] rounded-full ">
+                            <div class=" w-[40px] sm:w-[50px] lg:w-[60px] h-[40px] sm:h-[50px] lg:h-[60px] rounded-full ">
                                 <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil3.jpg') }}" alt="">
                             </div>
 
-                            <a href="#" class="w-[55px] h-[55px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                            <a href="#" class=" w-[45px] sm:w-[50px] lg:w-[55px] h-[45px] sm:h-[50px] lg:h-[55px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
                                 <span class="transform transition-transform duration-300 ">
-                                <svg class=" w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                <svg class=" w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M8 4L16 12L8 20" />
                                 </svg>
@@ -232,7 +232,7 @@
 
                          </div>
 
-                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3">
+                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3 text-[11px] sm:text-[16px]">
                             <p>¿Ofrecen algún tipo de garantía en las gomas, baterías o servicios que brindan?</p>
                          </div>
                
@@ -242,19 +242,19 @@
         
 
         <!--card-->
-        <div id="card3" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out absolute top-[350px] right-[250px] w-[400px] h-[200px] p-2  bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation z-10">
+        <div id="card3" class=" opacity-0 translate-y-10 transition-all duration-500 ease-in-out absolute top-[390px] sm:top-[370px] lg:top-[350px] right-[30px] sm:right-[30px] lg:right-[250px] w-[200px] sm:w-[300px] lg:w-[400px] h-[100px] sm:h-[150px] lg:h-[200px] p-2  bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-md shadow-white/20 animate-rotation z-10">
         
              <div class="w-full h-full bg-black rounded-2xl flex flex-col justify-center items-center p-2">
                
                          <div class=" w-full h-full flex justify-between items-center px-3">
 
-                            <div class="w-[50px] h-[50px] rounded-full ">
+                            <div class=" w-[30px] sm:w-[40px] lg:w-[50px] h-[30px] sm:h-[40px] lg:h-[50px] rounded-full ">
                                 <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil2.jpg') }}" alt="">
                             </div>
 
-                            <a href="#" class="w-[50px] h-[50px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                            <a href="#" class=" w-[30px] sm:w-[40px] lg:w-[50px] h-[30px] sm:h-[40px] lg:h-[50px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
                                 <span class="transform transition-transform duration-300 ">
-                                <svg class=" w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                <svg class=" w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M8 4L16 12L8 20" />
                                 </svg>
@@ -263,7 +263,7 @@
 
                          </div>
 
-                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3 text-md">
+                         <div class=" w-full h-full text-start font-Raleway font-semibold flex justify-start items-center px-3 text-[8px] sm:text-sm lg:text-md">
                             <p>¿Qué tipo de aceite recomiendan según el kilometraje o el uso que le doy a mi vehículo?</p>
                          </div>
                
