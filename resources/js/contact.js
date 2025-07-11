@@ -67,105 +67,129 @@ if (currentPath === '/contacto') {
 });
 
 
- //show the location about the place
 
- document.addEventListener("DOMContentLoaded", () => {
-    const target = document.getElementById("contacto");
+    //carousel of branches
 
-    if (!target) return;
+   document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    let currentIndex = 0;
 
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                const letters = document.querySelector(".img-location");
+    const resetAnimationClasses = (slide) => {
+        const img = slide.querySelector(".img-location");
+        const city = slide.querySelector(".titleCity");
+        const street = slide.querySelector(".titleStreet");
+        const number = slide.querySelector(".titleNumber");
+        const infoCity = slide.querySelector(".infoCity");
+        const infoStreet = slide.querySelector(".infoStreet");
+        const infoNumber = slide.querySelector(".infoNumber");
+        const shadowblack = slide.querySelector(".shadowblack");
 
+        img.classList.add("opacity-0", "-translate-x-20");
+        img.classList.remove("opacity-100", "translate-x-0");
 
+        shadowblack.classList.remove("w-0");
+        shadowblack.classList.add("w-full");
 
-                observer.unobserve(target);
+        [city, street, number].forEach(el => {
+            el.classList.add("opacity-0", "translate-y-20");
+            el.classList.remove("opacity-100", "translate-y-0");
+        });
+
+        [infoCity, infoStreet, infoNumber].forEach(el => {
+            el.classList.add("opacity-0", "translate-x-20");
+            el.classList.remove("opacity-100", "translate-y-0");
+        });
+    };
+
+    const animateSlide = (slide) => {
+        const img = slide.querySelector(".img-location");
+        const city = slide.querySelector(".titleCity");
+        const street = slide.querySelector(".titleStreet");
+        const number = slide.querySelector(".titleNumber");
+        const infoCity = slide.querySelector(".infoCity");
+        const infoStreet = slide.querySelector(".infoStreet");
+        const infoNumber = slide.querySelector(".infoNumber");
+        const shadowblack = slide.querySelector(".shadowblack");
+
+        setTimeout(() => {
+            img.classList.remove("opacity-0", "-translate-x-20");
+            img.classList.add("opacity-100", "translate-x-0");
+        }, 100);
+
+        setTimeout(() => {
+            shadowblack.classList.remove("w-full");
+            shadowblack.classList.add("w-0");
+        }, 300);
+
+        setTimeout(() => {
+            city.classList.remove("opacity-0", "translate-y-20");
+            city.classList.add("opacity-100", "translate-y-0");
+        }, 500);
+
+        setTimeout(() => {
+            street.classList.remove("opacity-0", "translate-y-20");
+            street.classList.add("opacity-100", "translate-y-0");
+        }, 600);
+
+        setTimeout(() => {
+            number.classList.remove("opacity-0", "translate-y-20");
+            number.classList.add("opacity-100", "translate-y-0");
+        }, 700);
+
+        setTimeout(() => {
+            infoCity.classList.remove("opacity-0", "translate-x-20");
+            infoCity.classList.add("opacity-100", "translate-y-0");
+        }, 900);
+
+        setTimeout(() => {
+            infoStreet.classList.remove("opacity-0", "translate-x-20");
+            infoStreet.classList.add("opacity-100", "translate-y-0");
+        }, 1000);
+
+        setTimeout(() => {
+            infoNumber.classList.remove("opacity-0", "translate-x-20");
+            infoNumber.classList.add("opacity-100", "translate-y-0");
+        }, 1100);
+    };
+
+    const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.remove("hidden");
+                resetAnimationClasses(slide); // Reiniciar clases de animación
+                animateSlide(slide);         // Ejecutar animación
+            } else {
+                slide.classList.add("hidden");
+                resetAnimationClasses(slide);
             }
-        },
-        {
-            threshold: 0.3,
-        }
-    );
+        });
+    };
 
-    observer.observe(target);
+    showSlide(currentIndex);
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }, 7000);
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-        const target = document.getElementById("contacto");
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                   
-
-                     const imgLocation = document.querySelector(".img-location");
-                    imgLocation.classList.remove("opacity-0", "-translate-x-20");
-                    imgLocation.classList.remove("opacity-100", "translate-x-0");
-
-                     setTimeout(() => {
-
-                    const titleCity = document.querySelector(".titleCity");
-                    titleCity.classList.remove("opacity-0", "translate-y-20");
-                    titleCity.classList.remove("opacity-100", "translate-y-0");
-
-                    }, 200);
-
-                     setTimeout(() => {
-
-                    const titleStreet = document.querySelector(".titleStreet");
-                    titleStreet.classList.remove("opacity-0", "translate-y-20");
-                    titleStreet.classList.remove("opacity-100", "translate-y-0");
-
-                    }, 200);
-
-                     setTimeout(() => {
-
-                    const titleNumber = document.querySelector(".titleNumber");
-                    titleNumber.classList.remove("opacity-0", "translate-y-20");
-                    titleNumber.classList.remove("opacity-100", "translate-y-0");
-
-                    }, 200);
-
-                    setTimeout(() => {
-
-                    const infoCity = document.querySelector(".infoCity");
-                    infoCity.classList.remove("opacity-0", "translate-x-20");
-                    infoCity.classList.remove("opacity-100", "translate-y-0");
-
-                    }, 600);
-
-                    setTimeout(() => {
-
-                    const infoStreet = document.querySelector(".infoStreet");
-                    infoStreet.classList.remove("opacity-0", "translate-x-20");
-                    infoStreet.classList.remove("opacity-100", "translate-y-0");
-
-                    }, 600);
-
-                    setTimeout(() => {
-
-                    const infoNumber = document.querySelector(".infoNumber");
-                    infoNumber.classList.remove("opacity-0", "translate-x-20");
-                    infoNumber.classList.remove("opacity-100", "translate-y-0");
-
-                    }, 600);
+//show the form of contact
 
 
-                    // Para que solo ocurra una vez:
-                    observer.unobserve(target);
-                }
-            }, {
-            threshold: 0.3, // Aparece cuando el 20% del elemento es visible
-        }
-        );
+  document.getElementById('btn-contacto').addEventListener('click', function () {
 
-        if (target) {
-            observer.observe(target);
-        }
+        const card1 = document.querySelector('.card1');
+        card1.classList.remove('translate-x-[0px]');
+        card1.classList.add('translate-x-[-251px]');
+
+        const card2 = document.querySelector('.card2');
+        card2.classList.remove('translate-x-[0px]');
+        card2.classList.add('translate-x-[253px]');
+
     });
+
+
     
 
 

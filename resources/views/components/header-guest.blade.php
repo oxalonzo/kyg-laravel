@@ -191,7 +191,7 @@
                                 <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil1.jpg') }}" alt="">
                             </div>
 
-                            <a href="#" class=" w-[20px] sm:w-[25px] lg:w-[30px] h-[20px] sm:h-[25px] lg:h-[30px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                            <a href="#form" class=" w-[20px] sm:w-[25px] lg:w-[30px] h-[20px] sm:h-[25px] lg:h-[30px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
                                 <span class="transform transition-transform duration-300 ">
                                 <svg class=" w-1 sm:w-2 lg:w-3 h-1 sm:h-2 lg:h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -221,7 +221,7 @@
                                 <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil3.jpg') }}" alt="">
                             </div>
 
-                            <a href="#" class=" w-[45px] sm:w-[50px] lg:w-[55px] h-[45px] sm:h-[50px] lg:h-[55px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                            <a href="#form" class=" w-[45px] sm:w-[50px] lg:w-[55px] h-[45px] sm:h-[50px] lg:h-[55px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
                                 <span class="transform transition-transform duration-300 ">
                                 <svg class=" w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -252,7 +252,7 @@
                                 <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/perfil2.jpg') }}" alt="">
                             </div>
 
-                            <a href="#" class=" w-[30px] sm:w-[40px] lg:w-[50px] h-[30px] sm:h-[40px] lg:h-[50px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
+                            <a href="#form" class=" w-[30px] sm:w-[40px] lg:w-[50px] h-[30px] sm:h-[40px] lg:h-[50px] rounded-full border-2 border-gray-300 flex justify-center items-center  p-2">
                                 <span class="transform transition-transform duration-300 ">
                                 <svg class=" w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
