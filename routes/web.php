@@ -38,11 +38,8 @@ Route::get('/politicas', function () {
 
 
     Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
-    // Route::get('/contacto/create', [ContactoController::class, 'create'])->name('contacto.create');
-    // Route::post('/contacto/store', [ContactoController::class, 'store'])->name('contacto.store');
-    // Route::get('/contacto/{id}/edit', [ContactoController::class, 'edit'])->name('contacto.edit');
-    // Route::put('/contacto/{id}', [ContactoController::class, 'update'])->name('contacto.update');
-    // Route::delete('/contacto/{id}', [ContactoController::class, 'destroy'])->name('contacto.destroy');
+    Route::post('/contacto/store', [ContactoController::class, 'store'])->name('contacto.store');
+    
 
 
 //auth-user--------------------------------------------------------------

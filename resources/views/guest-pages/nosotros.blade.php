@@ -77,7 +77,7 @@
                                 nuestros
                                 clientes.
                             </h3>
-                            <p class="text-gray-700 text-base font-Raleway">
+                            <p class="text-gray-700 text-base ">
                                 Importadora K&G ha estado en el mercado desde el año 1986 ofreciendo productos de
                                 calidad en el
                                 área
@@ -515,14 +515,14 @@
 <div class="w-[90%] md:w-[600px] lg:w-[1200px] h-auto lg:h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/30 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center shrink-0 gap-4">
     <div class="flex flex-col space-y-2 text-black w-full lg:w-1/2">
        <div class="flex gap-2 mb-3">
-         <p class="font-bold"><span class=" font-light">FROM:</span> {{ $historia->from_year }}</p>
-         <p class="font-bold"><span class=" font-light">TO:</span> {{ $historia->to_year }}</p>
+         <p class="font-bold text-xl"><span class=" font-light">FROM:</span> {{ $historia->from_year }}</p>
+         <p class="font-bold text-xl"><span class=" font-light">TO:</span> {{ $historia->to_year }}</p>
        </div>
-        <p class="font-bold">{{ $historia->empresa }}</p>
-        <p class="font-bold">{{ $historia->ubicacion }}</p>
+        <p class="font-bold text-xl">{{ $historia->empresa }}</p>
+        <p class="font-bold text-xl">{{ $historia->ubicacion }}</p>
     </div>
     <div class="text-black w-full lg:w-1/2">
-        <p class="text-sm md:text-base lg:text-lg leading-snug font-semibold break-words">
+        <p class="text-xl md:text-base lg:text-lg leading-snug font-semibold break-words">
             {!! nl2br(e($historia->descripcion_historia)) !!}
         </p>
     </div>

@@ -207,21 +207,60 @@
     <!--section form-->
     <section class=" relative w-full h-screen flex justify-center items-center bg-white gap-6">
 
+         <div class=" absolute sm:right-0 lg:right-[400px] top-2 grid grid-cols-5">
+
+             <x-input-error :messages="$errors->get('nombre_completo')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('Whatsapp')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('email')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('empresa')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('marca_vehiculo')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('modelo_vehiculo')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('year_vehiculo')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('nota')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('sucursal')" class="mt-1 mb-1 text-[10px]" />
+
+             <x-input-error :messages="$errors->get('fecha_servicio')" class="mt-1 mb-1 text-[10px]" />
+
+
+         </div>
+
        
 
-         <div class=" card1 absolute translate-x-[0px] transition-all duration-700 ease-in-out rounded-3xl  w-[500px] h-[700px] bg-blue-300 z-10 shadow-md shadow-black">
+         <div class=" card1 absolute translate-x-[-276px] transition-all duration-700 ease-in-out rounded-3xl  w-[520px] h-[720px] bg-blue-300 z-10 shadow-md shadow-black">
             <div class=" absolute inset-0 bg-black/40 rounded-3xl flex justify-center items-center">
-                <button id="btn-contacto" class=" text-white font-Raleway font-bold text-xl w-40 bg-[#f2cd01] hover:bg-[#f6d939] rounded-md px-2 py-1 shadow-md shadow-black" >Contactanos</button>
+                <label for="nombre_completo" id="btn-contacto" class=" text-center cursor-pointer text-white font-Raleway font-bold text-xl w-40 bg-[#f2cd01] hover:bg-[#f6d939] rounded-md px-2 py-1 shadow-md shadow-black" >Contactanos</label>
             </div>
-            <img class="w-full h-full object-cover rounded-3xl" src="{{ asset('img/fondoTarjetaCont.jpg') }}" alt="">
+            <img class="w-full h-full object-cover rounded-3xl" src="{{ asset('img/fondoTarjetaCont.jpg') }}" alt="img contacto">
             <h2 class="absolute top-[200px] left-[0px] text-white text-center font-Raleway font-bold text-3xl w-full">"¿Tienes dudas? ¡Aquí y te ayudamos!"</h2>
          </div>
 
-         <div id="form" class=" card2 absolute translate-x-[0px] transition-all duration-700 ease-in-out  rounded-3xl  w-[500px] h-[700px]  px-6 py-6 border-2 border-[#c1c1c1] shadow-sm shadow-black">
+         <div id="form" class=" card2 absolute translate-x-[276px] transition-all duration-700 ease-in-out  rounded-3xl  w-[520px] h-[720px]  px-6 py-6 border-2 border-[#c1c1c1] shadow-sm shadow-black">
+
+
+            @if ($errors->any())
+             <script>
+               window.location.hash = '#form';
+            </script>
+            @endif
+            
+            @if(session('success'))
+                  <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-2">
+                    {{ session('success') }}
+                  </div>
+            @endif
+
 
                     <h2 class="mb-10 text-4xl font-Raleway font-bold">Formulario de Contacto</h2>
             
-             <form action="{{ route('Social.store') }}" method="POST" enctype="multipart/form-data" novalidate class=" w-full h-full rounded-3xl">
+             <form action="{{ route('contacto.store') }}" method="POST"  novalidate class=" w-full h-full rounded-3xl">
 
                 @csrf
 
@@ -240,7 +279,7 @@
                     <x-text-input id="nombre_completo" class=" p-2 w-full mb-2 " type="text" name="nombre_completo"
                     :value="old('nombre_completo')"  />
     
-                    <x-input-error :messages="$errors->get('nombre_completo')" class="mt-2 mb-3" />
+                   
 
                   </div>
 
@@ -256,7 +295,7 @@
                     <x-text-input id="Whatsapp" class=" p-2 w-full mb-2 " type="number" name="Whatsapp"
                     :value="old('Whatsapp')"  />
     
-                    <x-input-error :messages="$errors->get('Whatsapp')" class="mt-2 mb-3" />
+                    
 
                   </div>
 
@@ -272,7 +311,7 @@
                     <x-text-input id="email" class=" p-2 w-full mb-2 " type="text" name="email"
                     :value="old('email')"  />
     
-                    <x-input-error :messages="$errors->get('email')" class="mt-2 mb-3" />
+                   
 
                   </div>
 
@@ -288,7 +327,7 @@
                     <x-text-input id="empresa" class=" p-2 w-full mb-2 " type="text" name="empresa"
                     :value="old('empresa')"  />
     
-                    <x-input-error :messages="$errors->get('empresa')" class="mt-2 mb-3" />
+                   
 
                   </div>
 
@@ -304,7 +343,7 @@
                     <x-text-input id="marca_vehiculo" class=" p-2 w-full mb-2 " type="text" name="marca_vehiculo"
                     :value="old('marca_vehiculo')"  />
     
-                    <x-input-error :messages="$errors->get('marca_vehiculo')" class="mt-2 mb-3" />
+                    
 
                   </div>
 
@@ -320,7 +359,7 @@
                     <x-text-input id="modelo_vehiculo" class=" p-2 w-full mb-2 " type="text" name="modelo_vehiculo"
                     :value="old('modelo_vehiculo')"  />
     
-                    <x-input-error :messages="$errors->get('modelo_vehiculo')" class="mt-2 mb-3" />
+                   
 
                   </div>
 
@@ -336,7 +375,7 @@
                     <x-text-input id="year_vehiculo" class=" p-2 w-full mb-2 " type="number" name="year_vehiculo"
                     :value="old('year_vehiculo')"  />
     
-                    <x-input-error :messages="$errors->get('year_vehiculo')" class="mt-2 mb-3" />
+                    
 
                   </div>
 
@@ -352,7 +391,7 @@
                     <x-text-input id="nota" class=" p-2 w-full mb-2 " type="text" name="nota"
                     :value="old('nota')"  />
     
-                    <x-input-error :messages="$errors->get('nota')" class="mt-2 mb-3" />
+                    
 
                   </div>
 
@@ -368,7 +407,7 @@
                     <x-text-input id="sucursal" class=" p-2 w-full mb-2 " type="text" name="sucursal"
                     :value="old('sucursal')"  />
     
-                    <x-input-error :messages="$errors->get('sucursal')" class="mt-2 mb-3" />
+                    
 
                   </div>
 
@@ -384,8 +423,7 @@
                     <x-text-input id="fecha_servicio" class=" p-2 w-full mb-2 " type="date" name="fecha_servicio"
                     :value="old('fecha_servicio')"  />
     
-                    <x-input-error :messages="$errors->get('fecha_servicio')" class="mt-2 mb-3" />
-
+                   
                   </div>
 
                         
@@ -399,10 +437,16 @@
 
                 
 
-                  <button id="btn-contacto" class=" w-full text-white font-Raleway font-bold text-xl bg-[#f2cd01] hover:bg-[#f6d939] rounded-md px-2 py-2 shadow-sm shadow-black" >Contactanos</button>
+                  <button id="btn-contacto" class=" w-full text-white font-Raleway font-bold text-xl bg-[#f2cd01] hover:bg-[#f6d939] rounded-md px-2 py-2 shadow-sm shadow-black" >Enviar Formulario</button>
 
             </form>
          </div>
+
+         <div class=" absolute bottom-0 text-center mb-6 text-lg font-bold tracking-wide">
+            Trabajamos de Lunes a Viernes de 8:00AM a 6:00PM y los Sábados de 8:00AM a 3:00PM
+         </div>
+
+        
 
     </section>
 

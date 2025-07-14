@@ -35,7 +35,7 @@ if (currentPath === '/actividades') {
      //showboxactiviti
 
      document.addEventListener("DOMContentLoaded", () => {
-        const target = document.getElementById("actividades");
+        const target = document.querySelector(".actividades");
 
         
 

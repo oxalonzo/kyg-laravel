@@ -233,7 +233,7 @@
 
         <!--general information section -->
 
-        <section class="flex flex-col items-center sm:px-4 lg:px-32 bg-white">
+        <section class="flex flex-col items-center sm:px-4 lg:px-32 lg:py-20 bg-white">
 
             <div class="flex flex-col justify-center items-center text-center sm:px-0 sm:py-12 lg:p-20">
                 <h2 class=" font-Raleway text-3xl sm:text-4xl lg:text-6xl font-extrabold mb-7 tracking-wide ">Información sobre nuestros servicios</h2>
@@ -258,7 +258,7 @@
                             <ul class=" listText opacity-0 translate-y-10 transition-all duration-700 ease-in-out ml-5 list-disc">
                                 <!--decode the json string-->
                                 @foreach (json_decode($servicio->list) as $list)
-                                    <li class="text-[11px] sm:text-sm lg:text-[17px] text-gray-100 font-semibold font-Raleway tracking-wide ">{{ $list }}</li>
+                                    <li class="text-[11px] sm:text-sm lg:text-[17px] text-gray-100 font-semibold  tracking-wide ">{{ $list }}</li>
                                 @endforeach
                                 
                             </ul>

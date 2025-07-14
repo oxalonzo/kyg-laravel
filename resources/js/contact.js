@@ -177,17 +177,17 @@ if (currentPath === '/contacto') {
 //show the form of contact
 
 
-  document.getElementById('btn-contacto').addEventListener('click', function () {
+//   document.getElementById('btn-contacto').addEventListener('click', function () {
 
-        const card1 = document.querySelector('.card1');
-        card1.classList.remove('translate-x-[0px]');
-        card1.classList.add('translate-x-[-251px]');
+//         const card1 = document.querySelector('.card1');
+//         card1.classList.remove('translate-x-[0px]');
+//         card1.classList.add('translate-x-[-251px]');
 
-        const card2 = document.querySelector('.card2');
-        card2.classList.remove('translate-x-[0px]');
-        card2.classList.add('translate-x-[253px]');
+//         const card2 = document.querySelector('.card2');
+//         card2.classList.remove('translate-x-[0px]');
+//         card2.classList.add('translate-x-[253px]');
 
-    });
+//     });
 
 
     
