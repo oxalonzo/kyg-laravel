@@ -158,25 +158,75 @@
     </div>
 @endif
 
-{{-- @if ($path === 'servicio')
-    <div class="absolute inset-0 flex flex-col justify-center items-center z-0 overflow-hidden">
+@if ($path === 'servicio')
+    <div class="absolute inset-0 flex justify-around items-center z-0 overflow-hidden">
 
-         <h2 class=" absolute top-[240px] left-[520px] uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >¿Conoces nuestros servicios?</h2>
+         {{-- <h2 class=" absolute top-[240px] left-[520px] uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >¿Conoces nuestros servicios?</h2> --}}
 
-        <div class=" absolute bg-black w-[1800px] h-[1800px] rounded-full translate-y-[844px]" style="box-shadow:   0 0px 0px #f2cd01,  0 -10px 100px #f2cd01, 0 -5px 20px #f2cd01,  0 -2px 3px #f2cd01;"></div>
+         <div class="bg-transparent w-[55%] h-full flex justify-center items-center px-36">
+            <h2 class=" uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >Conoces nuestros servicios</h2>
+         </div>
+
+         <div id="tips" class=" px-5 w-[45%] h-full  bg-white/10 backdrop-blur-md border border-white/20  shadow-md shadow-[#f2cd01]/10 flex flex-col justify-center items-center">
+            
+            <h2 class="tipTitle opacity-0 translate-y-10 duration-700 ease-in-out text-4xl font-extrabold tracking-wide text-white mb-10 uppercase">tips</h2>
+
+            <div class="w-full tip1 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class="tracking-wide text-xl font-semibold tracking-wide">Revisa la presión cada 15 días</p>
+            </div>
+
+            <div class="w-full tip2 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class=" tracking-wide text-xl font-semibold tracking-wide">Consulta la presión recomendada por el fabricante</p>
+            </div>
+
+            <div class="w-full tip3 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class=" tracking-wide text-xl font-semibold tracking-wide">Haz una inspección visual semanal</p>
+            </div>
+
+            <div class="w-full tip4 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class=" tracking-wide text-xl font-semibold tracking-wide">Rota tus neumáticos cada 10.000 km</p>
+            </div>
+
+            <div class="w-full tip5 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class=" tracking-wide text-xl font-semibold tracking-wide">Equilibra las ruedas cada 10.000 km o si notas vibraciones</p>
+            </div>
+
+            <div class="w-full tip6 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class=" tracking-wide text-xl font-semibold tracking-wide">Haz alineación al menor signo de desvío</p>
+            </div>
+
+            <div class="w-full tip7 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                <p class=" tracking-wide text-xl font-semibold tracking-wide">Reemplaza los neumáticos cada 40.000 - 60.000 km</p>
+            </div>
+
+            <div class="w-full tip8 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+               <p class=" tracking-wide text-xl font-semibold tracking-wide">Verifica la profundidad del dibujo (mínimo legal: 1.6 mm)</p>
+            </div>
+
+            <div class="w-full tip9 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                 <p class=" tracking-wide text-xl font-semibold tracking-wide">Evita conducir con sobrecarga</p>
+            </div>
+
+            <div class="w-full tip10 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
+                 <p class=" tracking-wide text-xl font-semibold tracking-wide">Cambia los neumáticos cada 5 a 6 años aunque no estén desgastados</p>
+            </div>
+
+            
+            
+            
+            
+            
+            
+           
+            
+           
+            
+
+        </div>
         
-
-
-
-
-         <h2 class="uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold mb-2 drop-shadow-sm tracking-wide text-white font-Raleway" >Somos</h2>
-        <h1 id="rotatingLetters"
-            class="uppercase text-[70px] sm:text-[95px] lg:text-[150px] font-bold mb-2 drop-shadow-sm tracking-wide font-Raleway leading-relaxed transition-all duration-500 text-center flex gap-1 overflow-hidden"
-            style="background-image: url('./img/montaña3.jpg'); background-size: cover; background-position: center; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
-            Adventura
-        </h1>
+        
     </div> 
-@endif --}}
+@endif
 
   @if ($path === 'contacto')
     <div class="absolute inset-0 flex flex-col items-center z-0 overflow-hidden ">

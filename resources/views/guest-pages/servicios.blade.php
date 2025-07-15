@@ -4,7 +4,7 @@
 
 <x-guest2-layout>
 
-    <x-header-guest class="relative w-full h-screen text-white overflow-hidden" :picture="'img/nosotros1.png'" :section="'services'" />
+    <x-header-guest class="relative w-full h-screen text-white overflow-hidden object-cover" :picture="'img/bannerservicio10.avif'" :section="'services'" />
 
 
     <!-- MAIN -->
