@@ -15,7 +15,7 @@
 
         {{-- {{ print_r($banners) }} --}}
 
-        <div class="md:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 ">
+        <div class=" w-full lg:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 ">
 
             <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('banner.create')"
@@ -36,11 +36,11 @@
             @if ($banners->isEmpty())
                 <p class="mt-4">No hay banners disponibles aun. Por favor cree un banner</p>
             @else
-                <div class="container flex justify-center items-center flex-col lg:flex-col p-5 h-full  ">
+                <div class="container flex justify-center items-stretch flex-col lg:flex-col p-5 h-full  ">
                     @foreach ($banners as $banner)
                         <!-- Contenedor del banner con imagen y acciones -->
                         <div
-                            class="w-full bg-white p-4 rounded-lg shadow-sm shadow-gray-600 flex flex-col lg:flex-row mb-4 ">
+                            class="w-full bg-white p-4 rounded-lg shadow-sm shadow-gray-600 flex flex-col lg:flex-row mb-4">
 
 
 
@@ -52,14 +52,14 @@
 
                             @if ($isVideo)
                                 <video controls
-                                    class="w-[300px] h-[200px] md:mb-2 md:w-full lg:w-full lg:h-[300px] rounded-lg shadow-md mx-auto mb-2 sm:mb-2">
+                                    class=" h-[200px] md:mb-2 w-full lg:w-full lg:h-[300px] rounded-lg shadow-md mx-auto mb-2 sm:mb-2">
                                     <source src="{{ asset('storage/banners/' . $banner->imagen_banner) }}"
                                         type="video/{{ $extension }}">
                                     Tu navegador no soporta la reproducción de video.
                                 </video>
                             @else
                                 <img src="{{ asset('storage/banners/' . $banner->imagen_banner) }}" alt="Imagen Banner"
-                                    class="w-[300px] h-[200px] md:mb-2 md:w-full lg:w-full lg:h-[300px] rounded-lg shadow-md object-cover mx-auto mb-2 sm:mb-2">
+                                    class=" h-[200px] md:mb-2 w-full lg:w-full lg:h-[300px] rounded-lg shadow-md object-cover mx-auto mb-2 sm:mb-2">
                             @endif
 
                             <!-- Acciones -->
@@ -138,9 +138,9 @@
                         </div>
                     @endforeach
 
-                    <div class="mt-4 justify-between">
+                    
                         {{ $banners->links() }}
-                    </div>
+                    
 
             @endif
 

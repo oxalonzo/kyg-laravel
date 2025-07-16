@@ -512,7 +512,7 @@
  @foreach ($historias as $historia)
 
                             <!-- ITEM 1 -->
-<div class="w-[90%] md:w-[600px] lg:w-[1200px] h-auto lg:h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/30 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex flex-col lg:flex-row justify-between items-start lg:items-center shrink-0 gap-4">
+<div class="w-[90%] md:w-[600px] lg:w-[1200px] h-auto lg:h-[500px] bg-[#f2cd01]/10 backdrop-blur-md border border-[#f2cd01]/30 rounded-xl shadow-md shadow-[#f2cd01]/10 p-6 flex flex-col lg:flex-row justify-around sm:justify-between items-start lg:items-center shrink-0 gap-4">
     <div class="flex flex-col space-y-2 text-black w-full lg:w-1/2">
        <div class="flex gap-2 mb-3">
          <p class="font-bold text-xl"><span class=" font-light">FROM:</span> {{ $historia->from_year }}</p>

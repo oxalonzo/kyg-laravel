@@ -62,7 +62,7 @@
                             <div class="w-full lg:w-[60%] flex flex-col justify-between space-y-4">
                                 <!-- Descripción -->
                                 <p class="text-gray-700 leading-relaxed">
-                                    {{ $historia->descripcion_historia }}
+                                     {{ Str::limit($historia->descripcion_historia, 90)}}
                                 </p>
             
                                 <!-- Acciones -->

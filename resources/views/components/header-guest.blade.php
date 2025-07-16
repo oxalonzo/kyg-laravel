@@ -163,52 +163,52 @@
 
          {{-- <h2 class=" absolute top-[240px] left-[520px] uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >¿Conoces nuestros servicios?</h2> --}}
 
-         <div class="bg-transparent w-[55%] h-full flex justify-center items-center px-36">
-            <h2 class=" uppercase text-[30px] sm:text-[45px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >Conoces nuestros servicios</h2>
+         <div class="bg-transparent w-[55%] h-full flex justify-center items-center text-center px-0 lg:px-36">
+            <h2 class=" uppercase text-[30px] sm:text-[30px] lg:text-[50px] font-bold  drop-shadow-sm tracking-wide text-white font-Raleway" >Conoces nuestros servicios</h2>
          </div>
 
          <div id="tips" class=" px-5 w-[45%] h-full  bg-white/10 backdrop-blur-md border border-white/20  shadow-md shadow-[#f2cd01]/10 flex flex-col justify-center items-center">
             
-            <h2 class="tipTitle opacity-0 translate-y-10 duration-700 ease-in-out text-4xl font-extrabold tracking-wide text-white mb-10 uppercase">tips</h2>
+            <h2 class="tipTitle opacity-0 translate-y-10 duration-700 ease-in-out sm:text-3xl lg:text-4xl  sm:w-full text-center font-extrabold tracking-wide text-white  mb-5 lg:mb-10 uppercase">tips</h2>
 
-            <div class="w-full tip1 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class="tracking-wide text-xl font-semibold tracking-wide">Revisa la presión cada 15 días</p>
+            <div class="w-full tip1 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class=" text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Revisa la presión cada 15 días</p>
             </div>
 
-            <div class="w-full tip2 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class=" tracking-wide text-xl font-semibold tracking-wide">Consulta la presión recomendada por el fabricante</p>
+            <div class="w-full tip2 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Consulta la presión recomendada por el fabricante</p>
             </div>
 
-            <div class="w-full tip3 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class=" tracking-wide text-xl font-semibold tracking-wide">Haz una inspección visual semanal</p>
+            <div class="w-full tip3 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Haz una inspección visual semanal</p>
             </div>
 
-            <div class="w-full tip4 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class=" tracking-wide text-xl font-semibold tracking-wide">Rota tus neumáticos cada 10.000 km</p>
+            <div class="w-full tip4 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Rota tus neumáticos cada 10.000 km</p>
             </div>
 
-            <div class="w-full tip5 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class=" tracking-wide text-xl font-semibold tracking-wide">Equilibra las ruedas cada 10.000 km o si notas vibraciones</p>
+            <div class="w-full tip5 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Equilibra las ruedas cada 10.000 km o si notas vibraciones</p>
             </div>
 
-            <div class="w-full tip6 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class=" tracking-wide text-xl font-semibold tracking-wide">Haz alineación al menor signo de desvío</p>
+            <div class="w-full tip6 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Haz alineación al menor signo de desvío</p>
             </div>
 
-            <div class="w-full tip7 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                <p class=" tracking-wide text-xl font-semibold tracking-wide">Reemplaza los neumáticos cada 40.000 - 60.000 km</p>
+            <div class="w-full tip7 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Reemplaza los neumáticos cada 40.000 - 60.000 km</p>
             </div>
 
-            <div class="w-full tip8 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-               <p class=" tracking-wide text-xl font-semibold tracking-wide">Verifica la profundidad del dibujo (mínimo legal: 1.6 mm)</p>
+            <div class="w-full tip8 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+               <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Verifica la profundidad del dibujo (mínimo legal: 1.6 mm)</p>
             </div>
 
-            <div class="w-full tip9 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                 <p class=" tracking-wide text-xl font-semibold tracking-wide">Evita conducir con sobrecarga</p>
+            <div class="w-full tip9 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                 <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Evita conducir con sobrecarga</p>
             </div>
 
-            <div class="w-full tip10 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-8 py-3 rounded-lg text-center mb-2">
-                 <p class=" tracking-wide text-xl font-semibold tracking-wide">Cambia los neumáticos cada 5 a 6 años aunque no estén desgastados</p>
+            <div class="w-full tip10 bg-white/20 opacity-0 translate-x-10 duration-700 ease-in-out px-2 sm:px-8 py-3 sm:py-3 rounded-lg text-center mb-2">
+                 <p class="  text-[11px] sm:text-[14px] lg:text-xl font-semibold tracking-wide">Cambia los neumáticos cada 5 a 6 años aunque no estén desgastados</p>
             </div>
 
             

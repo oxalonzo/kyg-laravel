@@ -406,7 +406,7 @@
                     <p class="absolute top-[300px] left-[50px]  text-md sm:text-xl text-white font-semibold">Comunicate
                         con uno de nuestros expertos y solicita tu cotizacion. 829-638-8334</p>
 
-                    <a href="#"
+                    <a href="https://wa.me/8096887706" target="_blank"
                         class=" absolute bottom-[100px] right-[35px] sm:right-[50px] text-sm text-white font-bold bg-black p-4 rounded-md  group">
                         <span class=" relative z-10 group-hover:text-black duration-300 ease-out">Solicita tu
                             cotización</span>
