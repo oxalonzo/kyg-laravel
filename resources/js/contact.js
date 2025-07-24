@@ -66,6 +66,130 @@ if (currentPath === '/contacto') {
     observer.observe(target);
 });
 
+
+
+    //carousel of branches
+
+   document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    let currentIndex = 0;
+
+    const resetAnimationClasses = (slide) => {
+        const img = slide.querySelector(".img-location");
+        const city = slide.querySelector(".titleCity");
+        const street = slide.querySelector(".titleStreet");
+        const number = slide.querySelector(".titleNumber");
+        const infoCity = slide.querySelector(".infoCity");
+        const infoStreet = slide.querySelector(".infoStreet");
+        const infoNumber = slide.querySelector(".infoNumber");
+        const shadowblack = slide.querySelector(".shadowblack");
+
+        img.classList.add("opacity-0", "-translate-x-20");
+        img.classList.remove("opacity-100", "translate-x-0");
+
+        shadowblack.classList.remove("w-0");
+        shadowblack.classList.add("w-full");
+
+        [city, street, number].forEach(el => {
+            el.classList.add("opacity-0", "translate-y-20");
+            el.classList.remove("opacity-100", "translate-y-0");
+        });
+
+        [infoCity, infoStreet, infoNumber].forEach(el => {
+            el.classList.add("opacity-0", "translate-x-20");
+            el.classList.remove("opacity-100", "translate-y-0");
+        });
+    };
+
+    const animateSlide = (slide) => {
+        const img = slide.querySelector(".img-location");
+        const city = slide.querySelector(".titleCity");
+        const street = slide.querySelector(".titleStreet");
+        const number = slide.querySelector(".titleNumber");
+        const infoCity = slide.querySelector(".infoCity");
+        const infoStreet = slide.querySelector(".infoStreet");
+        const infoNumber = slide.querySelector(".infoNumber");
+        const shadowblack = slide.querySelector(".shadowblack");
+
+        setTimeout(() => {
+            img.classList.remove("opacity-0", "-translate-x-20");
+            img.classList.add("opacity-100", "translate-x-0");
+        }, 100);
+
+        setTimeout(() => {
+            shadowblack.classList.remove("w-full");
+            shadowblack.classList.add("w-0");
+        }, 300);
+
+        setTimeout(() => {
+            city.classList.remove("opacity-0", "translate-y-20");
+            city.classList.add("opacity-100", "translate-y-0");
+        }, 500);
+
+        setTimeout(() => {
+            street.classList.remove("opacity-0", "translate-y-20");
+            street.classList.add("opacity-100", "translate-y-0");
+        }, 600);
+
+        setTimeout(() => {
+            number.classList.remove("opacity-0", "translate-y-20");
+            number.classList.add("opacity-100", "translate-y-0");
+        }, 700);
+
+        setTimeout(() => {
+            infoCity.classList.remove("opacity-0", "translate-x-20");
+            infoCity.classList.add("opacity-100", "translate-y-0");
+        }, 900);
+
+        setTimeout(() => {
+            infoStreet.classList.remove("opacity-0", "translate-x-20");
+            infoStreet.classList.add("opacity-100", "translate-y-0");
+        }, 1000);
+
+        setTimeout(() => {
+            infoNumber.classList.remove("opacity-0", "translate-x-20");
+            infoNumber.classList.add("opacity-100", "translate-y-0");
+        }, 1100);
+    };
+
+    const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.remove("hidden");
+                resetAnimationClasses(slide); // Reiniciar clases de animación
+                animateSlide(slide);         // Ejecutar animación
+            } else {
+                slide.classList.add("hidden");
+                resetAnimationClasses(slide);
+            }
+        });
+    };
+
+    showSlide(currentIndex);
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }, 7000);
+});
+
+
+//show the form of contact
+
+
+//   document.getElementById('btn-contacto').addEventListener('click', function () {
+
+//         const card1 = document.querySelector('.card1');
+//         card1.classList.remove('translate-x-[0px]');
+//         card1.classList.add('translate-x-[-251px]');
+
+//         const card2 = document.querySelector('.card2');
+//         card2.classList.remove('translate-x-[0px]');
+//         card2.classList.add('translate-x-[253px]');
+
+//     });
+
+
     
 
 

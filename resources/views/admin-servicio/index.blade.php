@@ -11,7 +11,7 @@
 
     <div class="py-12 flex justify-center h-full">
 
-        <div class="md:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
+        <div class="w-full lg:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
 
                <!-- Botón Crear Actividad -->
   <div class="flex justify-end items-center mb-4">
@@ -45,14 +45,14 @@
                 </div>
 
                 <!-- Información (35%) -->
-                <div class="w-full lg:w-[35%] flex flex-col justify-between">
+                <div class="w-full lg:w-[35%] flex flex-col justify-around">
                     
                     <!-- Título -->
-                    <p class="text-2xl font-bold text-yellow-400 mb-2">{{ $servicio->titulo }}</p>
+                    <p class="text-2xl lg:text-xl font-bold text-yellow-400 mb-2">{{ $servicio->titulo }}</p>
 
                     <!-- Descripción (colapsable si es larga) -->
-                    <p x-show="!expand" x-cloak>
-                            {{ Str::limit($servicio->descripcion, 40) }}
+                    <p x-show="!expand" x-cloak class="mb-3">
+                            {{ Str::limit($servicio->descripcion, 20) }}
                     </p>
                     <!-- Lista -->
                     @if (!empty($servicio->list))
@@ -61,7 +61,9 @@
                         @endphp
                         <ul class="list-disc list-inside text-gray-600 text-sm mb-4 space-y-1">
                             @foreach ($items as $item)
-                                <li>{{ trim($item) }}</li>
+                                <li>
+                                     {{ Str::limit(trim($item), 23) }}
+                                </li>
                             @endforeach
                         </ul>
                     @endif

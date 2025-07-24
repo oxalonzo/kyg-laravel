@@ -11,7 +11,7 @@
 
     <div class="py-12 flex justify-center h-full">
 
-        <div class="md:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
+        <div class=" w-full lg:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
 
             <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('Social.create')"
@@ -56,16 +56,16 @@
                 </div>
 
                 <!-- Información (35%) -->
-                <div class="w-full lg:w-[35%] flex flex-col justify-between">
+                <div class="w-full lg:w-[35%] flex flex-col justify-around">
                     <!-- Enlace -->
                     <a href="{{ $publicacion->enlace_social }}" target="_blank"
-                       class="text-2xl font-bold text-black hover:text-yellow-300 mb-2 transition duration-200 ">
+                       class="text-2xl lg:text-xl font-bold text-black hover:text-yellow-300 mb-2 transition duration-200 ">
                         Ver publicación
                     </a>
 
                     <!-- Descripción -->
                     <p class="text-black mb-4 text-sm leading-relaxed">
-                       {{ Str::limit($publicacion->descripcion_social, 25)}}
+                       {{ Str::limit($publicacion->descripcion_social, 35)}}
                     </p>
 
                     <!-- Acciones -->

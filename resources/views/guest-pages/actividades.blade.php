@@ -12,7 +12,7 @@
 
         @foreach ($actividades as $actividad)
             <section id="actividades"
-                class=" w-full flex flex-col lg:flex-row justify-center items-center bg-[#111111] px-4 sm:px-24 py-20 border-2 border-black shadow-lg ">
+                class=" actividades w-full flex flex-col lg:flex-row justify-center items-center bg-[#111111] px-4 sm:px-24 py-20 border-2 border-black shadow-lg ">
 
 
                 <!-- Carousel container -->

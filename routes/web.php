@@ -4,6 +4,7 @@ use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Guest\ActividadGuestController;
+use App\Http\Controllers\Guest\ContactoController;
 use App\Http\Controllers\Guest\NosotrosController;
 use App\Http\Controllers\Guest\HomeController;
 use App\Http\Controllers\Guest\serviciosInfoController;
@@ -34,9 +35,11 @@ Route::get('/politicas', function () {
     return view('guest-pages/politicas');
 })->name('politicas');
 
-Route::get('/contacto', function () {
-    return view('guest-pages/contacto');
-})->name('contacto');
+
+
+    Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
+    Route::post('/contacto/store', [ContactoController::class, 'store'])->name('contacto.store');
+    
 
 
 //auth-user--------------------------------------------------------------

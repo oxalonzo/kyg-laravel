@@ -59,9 +59,9 @@
                 </div>
 
                 <!-- Información (35%) -->
-                <div class="w-full lg:w-[35%] flex flex-col justify-between">
+                <div class="w-full lg:w-[35%] flex flex-col justify-around">
                     <!-- Título -->
-                    <p class="text-2xl font-bold text-yellow-400 mb-2">{{ $actividad->titulo }}</p>
+                    <p class="text-2xl lg:text-xl font-bold text-black mb-2">{{ $actividad->titulo }}</p>
 
                     <!-- Descripción -->
                     <p class="text-gray-700 mb-4 text-sm leading-relaxed">{{ Str::limit($actividad->descripcion, 40) }}</p>

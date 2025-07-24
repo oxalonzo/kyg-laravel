@@ -348,17 +348,17 @@
                             [
                                 'img' => 'img/centrojfk.jpg',
                                 'title' => 'Centro de servicios Kenedy',
-                                'link' => 'https://www.youtube.com/',
+                                'link' => 'https://www.instagram.com/kygrd/',
                             ],
                             [
                                 'img' => 'img/centroduarte.jpg',
                                 'title' => 'Centro de servicios Duarte',
-                                'link' => 'https://www.youtube.com/',
+                                'link' => 'https://www.instagram.com/kygrd/',
                             ],
                             [
                                 'img' => 'img/centropuntacana.jpg',
                                 'title' => 'Centro de servicios punta cana',
-                                'link' => 'https://www.youtube.com/',
+                                'link' => 'https://www.instagram.com/kygrd/',
                             ],
                         ];
 
@@ -373,7 +373,7 @@
                                 class=" absolute bottom-2 left-2 uppercase text-md sm:text-xl text-white font-semibold">
                                 {{ $slide['title'] }}</h3>
                             <a href="{{ $slide['link'] }}"
-                                class=" absolute bottom-2 right-4 text-sm font-bold bg-[#f2cd01] hover:bg-[#f6d939] p-2 rounded-md border-1 border-black ">Ver
+                                class=" absolute bottom-2 right-4 text-sm font-bold bg-[#f2cd01] hover:bg-[#f6d939] p-2 rounded-md border-1 border-black " target="_blank">Ver
                                 centro</a>
                         </div>
                     @endforeach
@@ -406,7 +406,7 @@
                     <p class="absolute top-[300px] left-[50px]  text-md sm:text-xl text-white font-semibold">Comunicate
                         con uno de nuestros expertos y solicita tu cotizacion. 829-638-8334</p>
 
-                    <a href="#"
+                    <a href="https://wa.me/8096887706" target="_blank"
                         class=" absolute bottom-[100px] right-[35px] sm:right-[50px] text-sm text-white font-bold bg-black p-4 rounded-md  group">
                         <span class=" relative z-10 group-hover:text-black duration-300 ease-out">Solicita tu
                             cotización</span>
@@ -419,10 +419,7 @@
                 <div class=" relative w-full lg:w-[60%] flex flex-col justify-center items-center py-8 lg:py-0">
 
 
-                    <!--line divide of number-->
-                    <div
-                        class=" absolute top-[125px] sm:top-[125px] lg:top-[96px] left-[0px] sm:left-[52px] lg:left-[204px] 2xl:left-[270px] bg-gray-50 w-[160px] sm:w-[165px] lg:w-[162px] 2xl:w-[156px] h-[5px] rotate-[160deg]">
-                    </div>
+                   
 
                     <!--logic for the number increase-->
 

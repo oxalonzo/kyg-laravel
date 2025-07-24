@@ -10,10 +10,10 @@
         </h2>
     </x-slot>
 
-    <div class="py-12 flex justify-center">
+    <div class="py-12 sm:px-10 flex justify-center">
 
 
-        <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
+        <div class="w-full md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
 
             <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('banner.index')"

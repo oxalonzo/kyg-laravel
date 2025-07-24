@@ -302,7 +302,128 @@ const observer = new IntersectionObserver(
 
 
 
+//tips banner servicio view 
 
+ document.addEventListener("DOMContentLoaded", () => {
+        const target = document.getElementById("tips");
+
+        
+
+        const observe = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                   
+
+
+                   
+                    
+
+                  
+                    const tipTitle = document.querySelector(".tipTitle");
+                    tipTitle.classList.remove("opacity-0", "translate-y-10");
+                    tipTitle.classList.add("opacity-100", "translate-y-0");
+
+                    const tip1 = document.querySelector(".tip1");
+                    tip1.classList.remove("opacity-0", "translate-x-10");
+                    tip1.classList.add("opacity-100", "translate-x-0");
+                  
+
+
+
+                     //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip2 = document.querySelector(".tip2");
+                    tip2.classList.remove("opacity-0", "translate-x-10");
+                    tip2.classList.add("opacity-100", "translate-x-0");
+
+                    }, 200);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip3 = document.querySelector(".tip3");
+                    tip3.classList.remove("opacity-0", "translate-x-10");
+                    tip3.classList.add("opacity-100", "translate-x-0");
+
+                    }, 400);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip4 = document.querySelector(".tip4");
+                    tip4.classList.remove("opacity-0", "translate-x-10");
+                    tip4.classList.add("opacity-100", "translate-x-0");
+
+                    }, 600);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip5 = document.querySelector(".tip5");
+                    tip5.classList.remove("opacity-0", "translate-x-10");
+                    tip5.classList.add("opacity-100", "translate-x-0");
+
+                    }, 800);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip6 = document.querySelector(".tip6");
+                    tip6.classList.remove("opacity-0", "translate-x-10");
+                    tip6.classList.add("opacity-100", "translate-x-0");
+
+                    }, 1000);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip7 = document.querySelector(".tip7");
+                    tip7.classList.remove("opacity-0", "translate-x-10");
+                    tip7.classList.add("opacity-100", "translate-x-0");
+
+                    }, 1200);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip8 = document.querySelector(".tip8");
+                    tip8.classList.remove("opacity-0", "translate-x-10");
+                    tip8.classList.add("opacity-100", "translate-x-0");
+
+                    }, 1400);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip9 = document.querySelector(".tip9");
+                    tip9.classList.remove("opacity-0", "translate-x-10");
+                    tip9.classList.add("opacity-100", "translate-x-0");
+
+                    }, 1600);
+
+                      //Cards second fase with relantice
+                    setTimeout(() => {
+                      
+                      const tip10 = document.querySelector(".tip10");
+                    tip10.classList.remove("opacity-0", "translate-x-10");
+                    tip10.classList.add("opacity-100", "translate-x-0");
+
+                    }, 1800);
+                   
+
+                    // Para que solo ocurra una vez:
+                    observe.unobserve(target);
+                }
+            }, {
+            threshold: 0.4, //wait for 40% of the page
+        }
+        );
+
+        if (target) {
+            observe.observe(target);
+        }
+    })
 
 
 

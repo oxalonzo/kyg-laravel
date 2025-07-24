@@ -45,7 +45,7 @@
 
 
             <!-- section codigo -->
-            <section id="sectionpolitic" class=" w-full h-full flex flex-col justify-center items-center p-3">
+            <section id="sectionpolitic" class=" w-full h-full flex flex-col justify-center items-center px-3 sm:px-20">
 
                 <div class="text-center flex justify-center items-center text-black p-8">
                     <H2 class="font-bold font-Raleway text-3xl tracking-wide uppercase">nuestras politicas</H2>
@@ -59,24 +59,24 @@
                             <p class=" text-gray-500 font-semibold">Importadora K&G SAS</p>
                         </div>
     
-                        <div>
-                            <p class=" text-start text-xl text-gray-500 ">Importadora K&G cuenta con una política de control y seguridad definida, documentada, respaldada y publicada visiblemente en diferentes puntos de la empresa.  La misma es la manifestación de la organización en contra de actividades ilícitas y en ella la Alta dirección establece el compromiso para el mejoramiento continuo del SGCS. A continuación, se describe la política de seguridad.</p>
+                        <div >
+                            <p class=" text-start text-xl text-gray-500 font-semibold ">Importadora K&G cuenta con una política de control y seguridad definida, documentada, respaldada y publicada visiblemente en diferentes puntos de la empresa.  La misma es la manifestación de la organización en contra de actividades ilícitas y en ella la Alta dirección establece el compromiso para el mejoramiento continuo del SGCS. A continuación, se describe la política de seguridad.</p>
                         </div>
                     </div>
     
-                    <div class=" w-full lg:w-[50%] flex flex-col items-center px-4 lg:px-20 py-2 lg:py-10">
-                        <div id="box1" class=" opacity-0 translate-x-10 duration-700 ease-in-out rounded border-gray-50 shadow-xl text-start p-4 text-gray-500 font-semibold">
+                    <div class=" w-full lg:w-[50%] flex flex-col items-center px-0 lg:px-20 py-2 lg:py-10">
+                        <div id="box1" class=" opacity-0 translate-x-10 duration-700 ease-in-out rounded border-gray-50  mb-3 shadow-xl text-start p-4 text-gray-500 font-semibold">
 
                             Importadora K&G es una empresa dedicada a la importación y distribución de neumáticos, baterías, aceites, lubricantes, repuestos
                             
                             en general para todo tipo de vehículos, así como también servicios de mantenimiento y reparaciones para todo tipo de vehículos, y la importación y distribución de equipos y maquinarias para el sector automotriz.
                         </div>
 
-                        <div id="box2" class=" opacity-0 translate-x-10 duration-700 ease-in-out rounded border-gray-50 shadow-xl text-start p-4 text-gray-500 font-semibold">
+                        <div id="box2" class=" opacity-0 translate-x-10 duration-700 ease-in-out rounded border-gray-50  mb-3 shadow-xl text-start p-4 text-gray-500 font-semibold">
                             Estamos comprometidos con mantener la integridad de los procesos, cumplir con estándares de categoría mundial y con todos los requisitos legales aplicables al sector; en generar y ofrecer productos seguros y de clase mundial para los consumidores; mejorando continuamente y desempeñando actividades que validen nuestro compromiso de responsabilidad social, gestión ambiental y con seguridad en la cadena de suministro. 
                         </div>
                         
-                        <div id="box3" class=" opacity-0 translate-x-10 duration-700 ease-in-out rounded border-gray-50 shadow-xl text-start p-4 text-gray-500 font-semibold">
+                        <div id="box3" class=" opacity-0 translate-x-10 duration-700 ease-in-out rounded border-gray-50   shadow-xl text-start p-4 text-gray-500 font-semibold">
                             Promovemos: la mitigación de riesgos inherentes a la operación; un ambiente seguro, de respeto, de desarrollo, de igualdad de oportunidades y de pago justo para nuestros colaboradores; la prevención de acciones o actividades ilícitas, soborno, corrupción, lavado de activo, discriminación y conductas delictivas. No toleramos, ni nos asociamos con partes interesadas que inciten, efectúen o apoyen el irrespeto a los derechos humanos, abuso o acoso sexual, ni labor forzada o de menores de edad.
                         </div>
                     </div>

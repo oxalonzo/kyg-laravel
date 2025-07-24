@@ -11,7 +11,7 @@
 
     <div class="py-12 flex justify-center h-full">
       
-        <div class="md:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
+        <div class=" w-full lg:w-3/4 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0 h-full ">
 
             <div class="flex justify-end items-center mb-4">
                 <x-link :href="route('informacion.create')"
@@ -56,9 +56,9 @@
                             </div>
             
                             <!-- Información (35%) -->
-                            <div class="w-full lg:w-[35%] flex flex-col justify-between">
+                            <div class="w-full lg:w-[35%] flex flex-col justify-around">
                                 <!-- Título -->
-                                <p class="text-2xl font-bold text-yellow-300 mb-2">{{ $informacion->titulo_info_general }}</p>
+                                <p class="text-2xl lg:text-xl font-bold text-black mb-2">{{ $informacion->titulo_info_general }}</p>
             
                                 <!-- Descripción -->
                                 <p class="text-gray-700 mb-4 text-sm leading-relaxed">{{ Str::limit($informacion->descripcion_info, 40) }}</p> 

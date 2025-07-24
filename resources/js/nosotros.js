@@ -115,7 +115,7 @@ if (currentPath === '/nosotros') {
                     observer.unobserve(target);
                 }
             }, {
-            threshold: 0.3
+            threshold: 0.4
         }
         );
 

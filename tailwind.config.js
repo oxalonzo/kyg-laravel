@@ -26,29 +26,54 @@ export default {
             transform: 'translateX(0)',
           },
         },
+        // expandHeight1: {
+        //   '0%': { height: '0px' },
+        //   '100%': { height: '150px' },
+        // },
+        // expandHeight2: {
+        //   '0%': { width: '0px' },
+        //   '100%': { width: '610px' },
+        // },
+        // expandHeight3: {
+        //   '0%': { height: '0px' },
+        //   '100%': { height: '595px' },
+        // },
+        // expandHeight4: {
+        //   '0%': { width: '0px' },
+        //   '100%': { width: '542px' },
+        // },
+        // expandHeight5: {
+        //   '0%': { height: '0px' },
+        //   '100%': { height: '100%' },
+        // },
+        // expandHeight6: {
+        //   '0%': { height: '0px' },
+        //   '100%': { height: '100%' },
+        // },
+
         expandHeight1: {
           '0%': { height: '0px' },
-          '100%': { height: '150px' },
+          '100%': { height: '100%' },
         },
         expandHeight2: {
           '0%': { width: '0px' },
-          '100%': { width: '610px' },
+          '100%': { width: '100%' },
         },
         expandHeight3: {
           '0%': { height: '0px' },
-          '100%': { height: '595px' },
+          '100%': { height: '100%' },
         },
         expandHeight4: {
           '0%': { width: '0px' },
-          '100%': { width: '542px' },
+          '100%': { width: '100%' },
         },
         expandHeight5: {
           '0%': { height: '0px' },
-          '100%': { height: '156px' },
+          '100%': { height: '100%' },
         },
         expandHeight6: {
           '0%': { height: '0px' },
-          '100%': { height: '961px' },
+          '100%': { height: '100%' },
         },
 
         burbujaUno: {
